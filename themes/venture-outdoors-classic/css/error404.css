@@ -1,0 +1,77 @@
+/**
+* 404 Page
+*/
+.error404 .page-activity-list {
+  overflow: hidden;
+  padding-top: 56px;
+  padding-bottom: 47px;
+}
+
+.error404 .search-submit {
+  -webkit-appearance: none;
+  border: 2px solid #d18523;
+  cursor: pointer;
+  background-color: #d18523;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 14px 10px;
+  color: #fff;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+}
+
+.error404 .screen-reader-text {
+  display: block;
+  text-align: center;
+  display: none;
+}
+
+.error404 .search-submit:hover {
+  color: #d18523;
+  background-color: #fff;
+}
+
+.error404 input[type="search"] {
+  background: #fff;
+  border: none;
+  border-radius: 0;
+  border: 1px solid #c2ced7;
+  width: 50%;
+  height: 48px;
+  padding: 0 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+@media (max-width: 767px) {
+
+  .error404 .masthead,
+  .error404 .masthead-img {
+      min-height: 150px;
+  }
+
+  .error404 .intro-content {
+      padding-top: 26px;
+      padding-bottom: 17px;
+  }
+
+  .error404 .page-destin-list {
+      padding-top: 26px;
+      padding-bottom: 17px;
+  }
+}
+
+@media (min-width: 768px) {
+  .error404 input[type="search"] {
+      height: 58px;
+      width: 73%;
+  }
+
+  .error404 .search-submit {
+      padding: 18px 40px;
+  }
+}

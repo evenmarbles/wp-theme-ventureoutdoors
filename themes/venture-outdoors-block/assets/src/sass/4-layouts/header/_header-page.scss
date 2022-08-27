@@ -1,0 +1,131 @@
+.page-header,
+.page-header-fixed {
+  position: relative;
+  z-index: 999;
+}
+
+.page-header {
+  @include mq($from: small) {
+    border-bottom: none;
+  }
+  @include mq($from: medium) {
+    height: auto !important;
+
+    &-fixed {
+      background-color: var(--wp--preset--color--white);
+      box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1);
+      font-size: 19px;
+
+      &.hideheader {
+        top: -158px;
+      }
+
+      &.js-scrolled {
+        position: fixed;
+        z-index: 999;
+        top: 0px;
+        width: 100%;
+        -webkit-transition: all 500ms ease;
+        transition: all 500ms ease;
+      }
+    }
+  }
+}
+
+.page-header-cont {
+  padding-top: 18px;
+  padding-bottom: 15px;
+
+  @include mq($until: xsmall) {
+    padding-bottom: 6px;
+  }
+  @include mq($from: xsmall) {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  @include mq($from: medium) {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.page-header-main-menu {
+  @include mq($until: medium) {
+    position: static;
+  }
+  @include mq($until: large) {
+    padding-right: 230px;
+  }
+  @include mq($until: xxxlarge) {
+    padding-right: 230px;
+  }
+  @include mq($until: xxxxlarge) {
+    padding-right: 253px;
+  }
+}
+
+
+/** Custom Ubermenu settings */
+@media (min-width: 1025px) {
+  .page-header-cont .col-xs-6.col-md-9.col-lg-9,
+  .page-header_main-menu {
+      position: static;
+  }
+
+  .page-header-fixed.js-scrolled .ubermenu-main .ubermenu-item-level-0 > .ubermenu-target {
+      padding-top: 25px;
+      padding-bottom: 25px;
+  }
+
+  .page-header-fixed.js-scrolled .ubermenu-column, 
+  .page-header-fixed.js-scrolled .ubermenu .ubermenu-item {
+      line-height: 4em !important;
+  }
+
+  .page-header-fixed.js-scrolled .ubermenu-column, 
+  .page-header-fixed.js-scrolled .ubermenu .ubermenu-item {
+      line-height: 3.8em !important;
+  }
+
+  .page-header-fixed.js-scrolled .ubermenu .ubermenu-item.ubermenu-item-level-0 .search-icon {
+      line-height: 3.8em;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1366px) {
+  .page-header_main-menu {
+    padding-right: 185px;
+  }
+
+  .page-header-fixed .col-xs-6.col-md-9.col-lg-9 {
+    width: 83.33333333%
+  }
+  .page-header-fixed.js-scrolled .ubermenu .ubermenu-item.ubermenu-item-level-0 .search-icon {
+    line-height: 4.6em;
+  }
+  .page-header-fixed.js-scrolled .ubermenu-main .ubermenu-item-level-0>.ubermenu-target {
+    padding-top: 25px !important;
+    padding-bottom: 25px !important;
+  }
+  .search-icon {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1366px) {
+  .page-header-fixed.js-scrolled .ubermenu .ubermenu-item.ubermenu-item-level-0 .search-icon {
+    line-height: 3.3em;
+  }
+}
+
+@media (min-width: 1480px) {
+  .page-header-fixed.js-scrolled .ubermenu .ubermenu-item.ubermenu-item-level-0 .search-icon {
+      line-height: 3.5em;
+  }
+}
+
+@media (min-width: 1520px) {
+  .page-header_main-menu {
+      padding-right: 200px;
+  }
+}

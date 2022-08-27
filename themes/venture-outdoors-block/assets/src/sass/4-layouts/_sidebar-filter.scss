@@ -1,0 +1,203 @@
+/* Sidebar Filter */
+.sidebar-filter {
+  border: 1px solid var(--wp--preset--color--bright-gray);
+  background-color: var(--wp--preset--color--cultured);
+  margin-right: 30px;
+  padding: 23px 36px 70px;
+}
+
+.sidebar-filter h5 {
+  font-size: 14px;
+  text-transform: uppercase;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  margin: 0;
+}
+
+.sidebar-filter h5:before {
+  display: inline-block;
+  font-size: 14px;
+  width: 26px;
+  height: 26px;
+  line-height: 26px;
+  border: 1px solid var(--wp--preset--color--quaternary);
+  text-align: center;
+  border-radius: 50%;
+  color: var(--wp--preset--color--quaternary);
+  margin-right: 7px;
+}
+
+.sidebar-filter h5:after {
+  font-size: 28px;
+  color: var(--wp--preset--color--quaternary);
+  float: right;
+  line-height: 26px;
+}
+
+.sidebar-filter li {
+  margin: 0;
+  border-bottom: 1px solid var(--wp--preset--color--light-periwinkle);
+}
+
+.sidebar-filter li>div {
+  border-top: 1px solid var(--wp--preset--color--light-periwinkle);
+  background-color: rgba(255, 255, 255, .5);
+  padding: 26px;
+}
+
+.sidebar-filter li>div li {
+  border: 0;
+  padding: 0;
+}
+
+@media (min-width: 1025px) and (max-width: 1199px) {
+  .sidebar-filter {
+      margin-right: 5px;
+      padding: 23px 23px 70px;
+  }
+}
+
+.sidebar-filter-wrap {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.sidebar-filter-wrap .js-accordion {
+  cursor: pointer;
+}
+
+.activity-list-title {
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+
+
+.sidebar-filter h5.active:after {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.sidebar-filter .filter-tab a.active {
+  color: var(--wp--preset--color--senary);
+  text-decoration: none;
+}
+
+.sidebar-filter .filter-tab a.active:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--wp--preset--color--ochre);
+}
+
+.sidebar-filter .facetwp-checkbox {
+  color: var(--wp--preset--color--senary);
+  font-size: 14px;
+  font-family: $font__montserrat;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.sidebar-filter .facetwp-type-checkboxes .facetwp-depth.visible .facetwp-checkbox {
+  font-family: $font__main !important;
+  font-size: 15px;
+  line-height: 1.5em;
+}
+
+.sidebar-filter .facetwp-type-checkboxes .facetwp-depth.visible .facetwp-checkbox .facetwp-counter {
+  padding-left: 4px;
+}
+
+.sidebar-filter .facetwp-facet {
+  margin-bottom: 0;
+}
+
+.sidebar-filter .facetwp-toggle {
+  background: var(--wp--preset--color--ochre);
+  border: none;
+  font-family: $font__montserrat;
+  font-weight: 600;
+  line-height: 44px;
+  color: var(--wp--preset--color--white);
+  cursor: pointer;
+  font-size: 12px;
+  width: auto;
+  padding: 5px 38px 5px 28px;
+}
+
+.sidebar-filter .facetwp-toggle:after {
+  position: absolute;
+  color: var(--wp--preset--color--white);
+  font-size: 10px;
+  margin-left: 4px;
+}
+
+.sidebar-filter .facetwp-toggle.facetwp-toggle--less:after {
+  -webkit-transform: rotateZ(-180deg);
+  -ms-transform: rotate(-180deg);
+  transform: rotateZ(-180deg);
+}
+
+.sidebar-filter .facetwp-toggle:hover {
+  background: var(--wp--preset--color--secondary);
+  color: var(--wp--preset--color--white);
+  text-decoration: none;
+}
+
+/* .facetwp-facet {
+  margin-bottom: 40px;
+} */
+
+.facetwp-facet.is-loading {
+  opacity: 0.6;
+}
+
+.facetwp-hidden {
+  display: none;
+}
+
+.facetwp-checkbox.disabled,
+.facetwp-radio.disabled {
+    opacity: 0.4;
+    cursor: default;
+}
+
+
+.filter-tab h4 span {
+  @include font-family();
+}
+
+.filter-tab h4 span span {
+  bottom: 0;
+  left: 0;
+}
+
+.facetwp-checkbox .facetwp-expand {
+  float: right;
+}
+
+.facetwp-checkbox input {
+  display: inline-grid;
+}
+
+.facetwp-checkbox {
+  /* background: url('../images/checkbox.png') 0 50% no-repeat; */
+  background-size: 14px 14px;
+  margin-bottom: 4px;
+  padding-left: 20px;
+  cursor: pointer;
+}
+
+#difficulty-container img {
+  position: relative;
+  top: 5px;
+  margin-top: -5px;
+}
+
+#difficulty-container .facetwp-expand {
+  position: relative;
+  top: 5px;
+}

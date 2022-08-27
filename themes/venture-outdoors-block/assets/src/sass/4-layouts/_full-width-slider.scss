@@ -1,0 +1,86 @@
+/*Full Width Slider*/
+.full-width-slider .slick-arrow {}
+
+.full-width-slider .slick-arrow:before {
+  font-size: 50px;
+  line-height: 1em;
+  background: none;
+  width: auto;
+  height: auto;
+}
+
+.full-width-slider .slick-slide {
+  max-height: 400px;
+}
+
+.full-width-slider .slick-slide>div,
+.full-width-slider-img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  max-height: 320px;
+}
+
+/*Only show the 1st slide while your slider is loading*/
+.full-width-slider .slide { display: none; }
+.full-width-slider .slide:first-child { display: inline-block; }
+.full-width-slider.slick-initialized .slide { display: inline-block; }
+
+@media (min-width: 600px) {
+  .full-width-slider .slick-arrow:before {
+    font-size: 60px;
+  }
+}
+
+@media (min-width: 1366px) {
+
+  .full-width-slider .slick-slide>div,
+  .full-width-slider-img {
+    min-height: 430px;
+  }
+}
+
+@media (min-width:600px) {
+  .sngl-activity-banner .full-width-slider .slick-slide>div,
+  .sngl-activity-banner .full-width-slider-img {
+    min-height: 350px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .sngl-activity-banner img.full-width-slider-img {
+    border-left: solid var(--wp--preset--color--white);
+    border-right: solid var(--wp--preset--color--white);
+    border-width: 0.025em;
+  }
+
+  .sngl-activity-banner .full-width-slider .slick-slide>div,
+  .sngl-activity-banner .full-width-slider-img {
+    max-height: 430px !important;
+  }
+
+  .sngl-activity-banner .full-width-slider-img {
+    max-width: 100% !important;
+    width: auto !important;
+    height: auto;
+  }
+}
+
+@media (min-width: 1366px) {
+  .sngl-activity-banner .full-width-slider .slick-slide>div,
+  .sngl-activity-banner .full-width-slider-img {
+     max-height: 400px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .sngl-activity-banner .full-width-slider .slick-slide>div,
+  .sngl-activity-banner .full-width-slider-img {
+    min-height: 320px !important;
+  }
+
+  .sngl-activity-banner .full-width-slider-img {
+    max-width: 100% !important;
+    width: auto !important;
+    height: auto;
+  }
+}

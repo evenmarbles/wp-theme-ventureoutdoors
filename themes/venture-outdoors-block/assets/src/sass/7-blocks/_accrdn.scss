@@ -1,0 +1,67 @@
+/**
+* Accoridion
+*/
+
+.accordion {
+  border-bottom: 1px solid var(--wp--preset--color--light-periwinkle);
+
+  & .accordion-title {
+    &:first-child {
+      border-top: 0px;
+    }
+  }
+
+  &-title {
+    color: var(--wp--preset--color--cyan-cornflower-blue);
+    font-size: 22px;
+    font-weight: 600;
+    font-family: $font__montserrat;
+    text-transform: capitalize;
+    cursor: pointer;
+    position: relative;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-right: 20px;
+    border-top: 1px solid var(--wp--preset--color--light-periwinkle);
+
+    &:after {
+      font-size: 15px;
+      line-height: 30px;
+      width: 30px;
+      color: var(--wp--preset--color--senary);
+      background-color: var(--wp--preset--color--light-periwinkle);
+      position: absolute;
+      right: 0;
+      top: 50%;
+      text-align: center;
+      margin-top: -15px;
+    }
+
+    &.current {
+      -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
+
+    @media (max-width: 1024) {
+      font-size: 16px;
+    
+      &:after {
+        font-size: 10px;
+        line-height: 20px;
+        width: 20px;
+        margin-top: -10px;
+      }
+    }
+  }
+
+  &-cont {
+    display: none;
+
+    &.accordion-active {
+      display: block;
+      margin-top: 0;
+    }
+    
+  }
+}

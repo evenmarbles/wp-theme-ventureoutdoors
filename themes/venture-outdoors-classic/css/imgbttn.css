@@ -1,0 +1,35 @@
+/**
+* Image Button
+*/
+
+@media (max-width: 1024px) {
+  .imgbttn-btn {
+      bottom: 15px;
+      padding: 0 15px;
+  }
+  .imgbttn-btn a.btn-tertiary {
+      display: block;
+      background: #ff7240;
+      color: #fff;
+  }
+}
+
+@media (min-width: 1025px) {
+
+  .imgbttn:before {
+      background-color: transparent;
+  }
+
+  .imgbttn:hover:before {
+      background-color: rgba(28, 32, 42, .8);
+  }
+
+  .imgbttn .imgbttn-btn {
+      display: none;
+  }
+
+  .imgbttn:hover .imgbttn-btn {
+      display: block;
+  }
+}
+

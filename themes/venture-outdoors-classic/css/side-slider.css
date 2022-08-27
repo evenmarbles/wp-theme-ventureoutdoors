@@ -1,0 +1,68 @@
+/*Side Slider*/
+.side-slider-item {
+  position: relative;
+  cursor: pointer;
+  width: 270px !important;
+  padding-right: 10px;
+  padding-left: 0;
+}
+
+.side-slider-item .imgbttn-title:before {
+  margin-bottom: 15px;
+}
+
+@media (min-width: 768px) {
+  .side-slider-item {
+    width: 310px !important;
+    padding-right: 25px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .side-slider-item {
+    padding-right: 32px;
+    width: 461px !important;
+  }
+}
+
+/*Side Slider Arrows*/
+.side-slider .slick-arrow {
+  left: -33px;
+}
+
+.side-slider .slick-next {
+  margin-top: 30px;
+}
+
+@media (min-width: 600px) {
+  .side-slider .slick-arrow {
+    left: -57px;
+    margin-top: -48px;
+  }
+
+  .side-slider .slick-next {
+    margin-top: 0px;
+  }
+}
+
+@media (min-width: 768px) {
+  .side-slider .slick-arrow {
+    left: -60px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .side-slider .slick-arrow {
+    left: -80px;
+  }
+
+  .side-slider .slick-next {
+    margin-top: 10px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .side-slider .slick-arrow {
+    left: -100px;
+  }
+}

@@ -1,0 +1,132 @@
+/*Top Header*/
+.top-header {
+  position: relative;
+  z-index: 9999;
+  background-color: var(--wp--preset--color--arsenic);
+}
+
+.top-header-phone .mobile-phone {
+  display: inline-block;
+  font-size: 13px;
+  color: var(--wp--preset--color--white);
+  margin-left: 5px;
+}
+
+.top-header-phone {
+  color: var(--wp--preset--color--white);
+  font-size: 16px;
+  font-family: $font__montserrat;
+  font-weight: 600;
+  line-height: 1em;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.top-header-menu {
+  float: right;
+  max-width: 612px;
+  margin-right: 228px;
+}
+
+@media screen and (min-width: 1200px) {
+  .top-header-phone {
+    width: auto;
+  }
+
+  .top-header-menu {
+    max-width: 646px;
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  .top-header-phone {
+    width: 28%;
+  }
+
+  .top-header-menu {
+    max-width: 714px;
+  }
+}
+
+.top-header-phone span {
+  @include font-family();
+  font-weight: 400;
+  color: var(--wp--preset--color--light-periwinkle);
+}
+
+.top-header-phone a {
+  color: var(--wp--preset--color--white);
+}
+
+.top-header-phone a:hover {
+  color: var(--wp--preset--color--light-periwinkle);
+}
+
+.top-header-menu ul li {
+  line-height: 44px;
+  font-size: 16px;
+  color: var(--wp--preset--color--light-periwinkle);
+}
+
+.top-header-menu ul li a {
+  color: var(--wp--preset--color--light-periwinkle);
+  position: relative;
+  display: block;
+  padding-right: 22px;
+}
+
+.top-header-menu ul li a:hover {
+  color: var(--wp--preset--color--tangerine-yellow);
+}
+
+.top-header-lang {
+  width: 220px;
+  text-align: center;
+  padding: 4px 0 0 0;
+  height: 44px;
+  vertical-align: middle;
+  border-left: 1px solid var(--wp--preset--color--senary);
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.top-header-lang label {
+  @include font-family();
+  display: inline-block;
+  font-size: 14px;
+  color: var(--wp--preset--color--light-periwinkle);
+  line-height: 34px;
+  padding-right: 5px;
+  font-weight: 400;
+  text-transform: none;
+}
+
+.top-header-lang .selectric-wrapper {
+  width: 64px;
+  height: 34px;
+  display: inline-block;
+  padding: 0 0 0 0;
+  vertical-align: middle;
+}
+
+.top-header-lang .selectric {
+  background-color: var(--wp--preset--color--cyan-cornflower-blue);
+  border: 0;
+}
+
+.top-header-lang .selectric .label {
+  @include font-family();
+  height: 34px;
+  line-height: 34px;
+  font-size: 16px;
+  margin-right: 20px;
+  color: var(--wp--preset--color--light-periwinkle);
+  font-weight: 400;
+}
+
+.top-header-lang .selectric .button {
+  height: 34px;
+  background-color: var(--wp--preset--color--cyan-cornflower-blue);
+  width: 25px;
+}

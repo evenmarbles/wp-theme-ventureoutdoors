@@ -1,0 +1,143 @@
+/**
+ * Font
+ */
+
+// Global theme font.
+$font__main: "Manuale", sans-serif;
+
+// Global code font
+$font__code: "Manuale", sans-serif, monospace;
+
+// Global heading font
+$font__heading: "Oswald", "sans-serif";
+
+// Montserrat font
+$font__montserrat: "Montserrat", "sans-serif";
+
+// Fallback font when font is not loaded via WebFonts JS.
+$font__fallback: sans-serif;
+
+// Base line height.
+$font__base-line-height: 30px;
+
+/**
+ * Body Text Font Sizes
+ */
+
+$body-text: (
+	"h1": (
+		"xsmall": (
+			font-size: 33px,
+			line-height: 0.9em,
+		),
+		"small": (
+			font-size: 60px,
+		),
+		"large": (
+			font-size: 80px,
+		),
+	),
+	"h2": (
+		"xsmall": (
+			font-size: 30px,
+			line-height: 0.9em,
+		),
+		"small": (
+			font-size: 50px,
+		),
+		"large": (
+			font-size: 60px,
+		),
+	),
+	"h3": (
+		"xsmall": (
+			font-size: 26px,
+			line-height: 1em,
+		),
+		"small": (
+			font-size: 35px,
+		),
+		"large": (
+			font-size: 42px,
+		),
+	),
+	"h4": (
+		"xsmall": (
+			font-size: 20px,
+			line-height: 1.2em,
+		),
+		"small": (
+			font-size: 21px,
+		),
+		"large": (
+			font-size: 26px,
+		),
+	),
+	"h5": (
+		"xsmall": (
+			font-size: 18px,
+			line-height: 1.6em,
+		),
+		"large": (
+			font-size: 22px,
+		),
+	),
+	"h6": (
+		"xsmall": (
+			font-size: 15px,
+			line-height: 1.5em,
+		),
+		"small": (
+			font-size: 20px,
+		),
+		"large": (
+			font-size: 19px,
+		),
+	),
+	"body": (
+		"xsmall": (
+			font-size: 15px,
+			line-height: 1.5em,
+		),
+		"large": (
+			font-size: 19px,
+		),
+	),
+	"p.large": (
+		"xsmall": (
+			font-size: 18px,
+      line-height: 1.6em,
+		),
+		"small": (
+			font-size: 20px,
+		),
+		"large": (
+			font-size: 24px,
+		),
+	),
+	// "m": (
+	// 	"xsmall": (
+	// 		font-size: 16px,
+	// 	),
+	// ),
+	// "s": (
+	// 	"xsmall": (
+	// 		font-size: 12px,
+	// 	),
+	// ),
+	// "xs": (
+	// 	"xsmall": (
+	// 		font-size: 11px,
+	// 	),
+	// ),
+	// "td": (
+	// 	"xsmall": (
+	// 		font-size: 15px,
+	// 	),
+	// ),
+	// "th": (
+	// 	"xsmall": (
+	// 		font-size: 15px,
+	// 	),
+	// ),
+);

@@ -1,0 +1,76 @@
+/**
+* Social Media Bar
+*/
+.social-media {
+  padding-top: 25px;
+  padding-bottom: 0px;
+
+  &-cont {
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+
+  &-link {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 42px;
+    height: 42px;
+    margin-right: 2px;
+    margin-left: 2px;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-style: solid;
+    border-width: 2px;
+    border-color: $color__border-button-primary;
+    color: $color__text-button-primary;
+    font-size: 20px;
+    line-height: 38px;
+    text-align: center;
+
+    &:hover {
+      border-color: $color__border-button-secondary;
+      color: $color__text-button-secondary;
+    }
+
+    &.color-secondary {
+      border-color: $color__border-button-secondary;
+      color: $color__text-button-secondary;
+
+      &:hover {
+        border-color: $color__border-button-primary;
+        color: $color__text-button-primary;
+      }
+    }
+  }
+}
+
+
+.nav-primary .social-media-link {
+  width: 34px;
+  height: 34px;
+  border-color: $color__border-button-secondary;
+  color: $color__text-button-secondary;
+  font-size: 16px;
+  line-height: 30px;
+  display: flex;
+
+  &:hover {
+    border-color: $color__border-button-primary;
+    color: $color__text-button-primary;
+  }
+}

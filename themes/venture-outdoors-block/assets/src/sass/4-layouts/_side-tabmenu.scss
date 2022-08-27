@@ -1,0 +1,41 @@
+
+/*side-tabmenu*/
+.side-tabmenu {
+  padding: 34px 31px 38px;
+  background-color: var(--wp--preset--color--white);
+  border: 1px solid var(--wp--preset--color--light-periwinkle);
+  font-size: 16px;
+}
+
+.side-tabmenu li {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.side-tabmenu li a {
+  color: var(--wp--preset--color--black);
+  font-size: 26px;
+  font-family: $font__heading;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  white-space: nowrap;
+}
+
+.side-tabmenu li a.current {
+  border: 2px solid $color__border-button-primary !important;
+  padding: 10px;
+  padding-bottom: 5px;
+}
+
+.side-tabmenu .btn-primary {
+  padding: 18px 5px;
+  width: 100%;
+}
+
+.side-tabmenu .smoothlnk.btn-primary {
+  margin-bottom: 5px;
+}
+
+.side-tabmenu .side-calendar {
+  margin-top: 15px;
+}

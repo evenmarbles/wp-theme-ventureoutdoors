@@ -1,0 +1,59 @@
+.intro-content {
+  overflow: hidden;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  &-title {
+    @include mq($from: medium) {
+      padding-right: 45px;
+    }
+
+    h3 {
+      margin: 0;
+    }
+
+    @include mq($from: small) {
+      h2 {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  &-subtitle {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: var(--wp--preset--color--senary);
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 400;
+
+    @include mq($from: large) {
+      font-size: 19px;
+      line-height: 1.5em;
+    }
+    
+    @include mq($from: xxlarge) {
+      font-size: 24px;
+    }
+  }
+
+  @include mq($from: medium) {
+    overflow: hidden;
+    padding-top: 56px;
+    padding-bottom: 47px;
+  }
+}
+
+.blog .intro-content,
+.single .intro-content {
+  border-bottom: 1px solid var(--wp--preset--color--bright-gray);
+}
+
+.page-id-223 .intro-content {
+  padding-bottom: 0;
+}
+
+.error404 .intro-content h2 {
+  font-size: 55px;
+  line-height: 1.1em;
+}

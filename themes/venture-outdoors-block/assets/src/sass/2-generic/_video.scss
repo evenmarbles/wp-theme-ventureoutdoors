@@ -1,0 +1,60 @@
+ /* Individual video container */
+.video-wrap {
+  position: relative;
+  max-width: 700px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.video-wrap .placeholder {
+  max-width: 700px;
+  width: 100%;
+}
+
+.video-wrap .play-btn {
+  position: absolute;
+  max-width: 700px;
+  width: 60px;
+  height: 60px;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  line-height: 1; /* needed if using Bootstrap */
+  text-align: center;
+  color: var(--wp--preset--color--bright-gray);
+  background-color: rgba(0,0,0,.4);
+  border-radius: 50px;
+  -webkit-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.video-wrap .play-btn:hover,
+.video-wrap .play-btn:focus {
+  color: var(--wp--preset--color--black);
+  background-color: rgba(255,255,255,.8);
+  cursor: pointer;
+}
+
+.play-btn::after {
+  /*
+  Define the font family, weight, and icon
+  */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 900;
+  font-size: 17px;
+  content: "\e916";
+  /* positioning tweaks */
+  position: relative;
+  top: 35%;
+}

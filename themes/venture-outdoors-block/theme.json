@@ -1,0 +1,274 @@
+{
+  "version": 2,
+  "settings": {
+    "color": {
+      "palette": [
+        {
+          "slug": "primary",
+          "color": "#ff7240",
+          "name": "Primary"
+        },
+        {
+          "slug": "primary-hover",
+          "color": "#ff5f1d",
+          "name": "Primary (hover)"
+        },
+        {
+          "slug": "secondary",
+          "color": "#8b9a64",
+          "name": "Secondary"
+        },
+        {
+          "slug": "secondary-hover",
+          "color": "#6f8439",
+          "name": "Secondary (hover)"
+        },
+        {
+          "slug": "tertiary",
+          "color": "#919da6",
+          "name": "Tertiary"
+        },
+        {
+          "slug": "tertiary-hover",
+          "color": "#919da6",
+          "name": "Tertiary (hover)"
+        },
+        {
+          "slug": "quaternary",
+          "color": "#1c80b2",
+          "name": "Quaternary"
+        },
+        {
+          "slug": "quaternary-hover",
+          "color": "#0c6897",
+          "name": "Quaternary (hover)"
+        },
+        {
+          "slug": "senary",
+          "color": "#4b5263",
+          "name": "Senary"
+        },
+        {
+          "slug": "foreground",
+          "color": "#2e3b4e",
+          "name": "Foreground"
+        },
+        {
+          "slug": "background-body",
+          "color": "#fff",
+          "name": "Background Body"
+        },
+        {
+          "slug": "link",
+          "color": "#8b9a64",
+          "name": "Link"
+        },
+        {
+          "slug": "link-hover",
+          "color": "#8b9a64",
+          "name": "Link (hover)"
+        },
+        {
+          "slug": "light-periwinkle",
+          "color": "#c2ced7",
+          "name": "Light Periwinkle"
+        },
+        {
+          "slug": "white",
+          "color": "#fff",
+          "name": "White"
+        },
+        {
+          "slug": "black",
+          "color": "#000",
+          "name": "Black"
+        },
+        {
+          "slug": "chinese-black",
+          "color": "#111",
+          "name": "Chinese Black"
+        },
+        {
+          "slug": "vampire-black",
+          "color": "#0b0b0b",
+          "name": "Vampire Black"
+        },
+        {
+          "slug": "isabelline",
+          "color": "#eff4f7",
+          "name": "Isabelline"
+        },
+        {
+          "slug": "cultured",
+          "color": "#f5f5f5",
+          "name": "Cultured"
+        },
+        {
+          "slug": "anti-flash-white",
+          "color": "#f0f4f7",
+          "name": "Anti-Flash White"
+        },
+        {
+          "slug": "bright-gray",
+          "color": "#e6ecf2",
+          "name": "Bright Gray"
+        },
+        {
+          "slug": "chinese-gray",
+          "color": "#ccc",
+          "name": "Chinese Gray"
+        },
+        {
+          "slug": "dark-gray",
+          "color": "#92a2af",
+          "name": "Dark Gray"
+        },
+        {
+          "slug": "granite-gray",
+          "color": "#62656c",
+          "name": "Granite Gray"
+        },
+        {
+          "slug": "davys-gray",
+          "color": "#565755",
+          "name": "Davys Gray"
+        },
+        {
+          "slug": "outer-space",
+          "color": "#444",
+          "name": "Outer Space"
+        },
+        {
+          "slug": "gray",
+          "color": "#bdbdbd",
+          "name": "Gray"
+        },
+        {
+          "slug": "quick-silver",
+          "color": "#a2a2a2",
+          "name": "Quick Silver"
+        },
+        {
+          "slug": "american-silver",
+          "color": "#d0d0d0",
+          "name": "American Silver"
+        },
+        {
+          "slug": "cyan-cornflower-blue",
+          "color": "#1c202a",
+          "name": "Cyan Cornflower Blue"
+        },
+        {
+          "slug": "arsenic",
+          "color": "#353b49",
+          "name": "Arsenic"
+        },
+        {
+          "slug": "ochre",
+          "color": "#d18523",
+          "name": "Ochre"
+        },
+        {
+          "slug": "tangerine-yellow",
+          "color": "#ffce00",
+          "name": "Yellow Orange"
+        },
+        {
+          "slug": "yellow-orange",
+          "color": "#ffab3e",
+          "name": "Tangerine Yellow"
+        },
+        {
+          "slug": "laurel-green",
+          "color": "#bac3a3",
+          "name": "Laurel Green"
+        },
+        {
+          "slug": "tea-green",
+          "color": "#c5e7c9",
+          "name": "Tea Green"
+        },
+        {
+          "slug": "chinese-white",
+          "color": "#d7f3da",
+          "name": "Chinese White"
+        },
+        {
+          "slug": "cal-poly-pomona-green",
+          "color": "#234627",
+          "name": "Cal Poly Pomona Green"
+        },
+        {
+          "slug": "red",
+          "color": "#ff0000",
+          "name": "Red"
+        },
+        {
+          "slug": "pale-chestnut",
+          "color": "#dbb5b5",
+          "name": "Pale Chestnut"
+        },
+        {
+          "slug": "champagne-pink",
+          "color": "#f3d4d4",
+          "name": "Champagne Pink"
+        },
+        {
+          "slug": "blood",
+          "color": "#890b0b",
+          "name": "Blood"
+        },
+        {
+          "slug": "black-olive",
+          "color": "#3f3f3f",
+          "name": "Black Olive"
+        }
+      ]
+    },
+    "layout": {
+      "contentSize": "840px"
+    }
+  },
+  "customTemplates": [
+    {
+      "name": "archive-activity",
+      "title": "Activity Archive"
+    },
+    {
+      "name": "archive-activity-type",
+      "title": "Activity Type Archive"
+    },
+    {
+      "name": "single-activity",
+      "title": "Single Activity",
+      "postTypes" : [ "activity" ]
+    },
+    {
+      "name": "single-activity-type",
+      "title": "Single Activity Type",
+      "postTypes" : [ "activity-type" ]
+    }
+  ],
+  "templateParts": [
+    {
+      "name": "promobar",
+      "title": "Promobar"
+    },
+    {
+      "name": "header",
+      "title": "Header"
+    },
+    {
+      "name": "footer",
+      "title": "Footer"
+    },
+    {
+      "name": "breadcrumb",
+      "title": "Breadcrumb"
+    },
+    {
+      "name": "breadcrumb-activity",
+      "title": "Activity Breadcrumb"
+    }
+  ]
+}

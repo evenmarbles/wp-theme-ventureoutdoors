@@ -1,0 +1,23 @@
+.mobile-accrdn {
+  
+  & h5 {
+    display: inline-block;
+    margin-top: 0.2em;
+    margin-left: 70px;
+  }
+
+  & span:before {
+    font-weight: 300;
+    font-size: 25px;
+    position: absolute;
+    left: 0;
+  }
+
+  & span:before {
+    color: var(--wp--preset--color--quaternary);
+    font-size: 50px;
+    line-height: 50px;
+    top: 0;
+  }
+
+}

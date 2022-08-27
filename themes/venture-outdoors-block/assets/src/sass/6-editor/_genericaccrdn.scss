@@ -1,0 +1,25 @@
+.accrdn {
+  
+  & h4 {
+    display: inline-block;
+    margin-top: 0.2em;
+  }
+
+  .accrdn [class*=icon-] {
+    color: var(--wp--preset--color--secondary);
+    top: 0;
+  }
+
+  & span:before {
+    font-weight: 300;
+    font-size: 25px;
+    position: absolute;
+    left: 0;
+  }
+
+  & span:before {
+    color: var(--wp--preset--color--secondary);
+    top: 0;
+  }
+
+}

@@ -1,0 +1,97 @@
+/**
+* Forms
+*/
+
+.form-col {
+  margin-bottom: 20px;
+}
+
+.form-checkbox {
+  display: grid;
+  grid-template-columns: 1em auto;
+  gap: 0.8em;
+}
+
+.form-checkbox .opt-in-label {
+  font-family: 'Manuale', serif;
+  color: var(--wp--preset--color--black);
+  font-weight: 400;
+  font-size: 16px; 
+  text-transform: none; 
+}
+
+/* Default Submit Button Style */
+[type="submit"]:not(.find-activities-form-btn) {
+  -webkit-appearance: none;
+  background: $color__background-button-primary;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 18px 40px;
+  color: var(--wp--preset--color--white);
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
+  width: 100%;
+  border: 0;
+}
+
+[type="submit"]:hover {
+  background: var(--wp--preset--color--secondary);
+  color: var(--wp--preset--color--white);
+}
+
+/* Removes inconsistent padding from Firefox buttons */
+button::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border: none;
+  padding: 0;
+}
+
+.form-success {
+  border: 1px solid var(--wp--preset--color--tea-green);
+  background-color: var(--wp--preset--color--chinese-white);
+  color: var(--wp--preset--color--cal-poly-pomona-green);
+  padding: 10px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.form-error {
+  border: 1px solid var(--wp--preset--color--pale-chestnut);
+  background-color: var(--wp--preset--color--champagne-pink);
+  color: var(--wp--preset--color--blood);
+  padding: 10px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+/**
+* International Telephone Input
+*/
+.iti {
+  display: block;
+}
+
+.iti__flag-container {
+  height: 45px;
+}
+
+.iti__flag-container {
+  padding: 1px 16px;
+}
+
+.iti__selected-flag {
+  padding: 0;
+}
+
+.iti--allow-dropdown input, .iti--allow-dropdown input[type=tel] {
+  padding-right: 16px;
+  padding-left: 60px;
+}

@@ -1,0 +1,41 @@
+/**
+* Breadcrumbs
+*/
+.breadcrumbs {
+  padding-top: 1px;
+  padding-bottom: 2px;
+  color: var(--wp--preset--color--secondary);
+
+  & .aioseo-breadcrumbs span {
+    font-size: 15px;
+  }
+}
+
+.breadcrumbs.bgc-senary,
+.breadcrumbs.bgc-senary a {
+  color: var(--wp--preset--color--white);
+}
+
+.breadcrumbs a,
+.breadcrumbs span,
+.breadcrumbs i {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.breadcrumbs li {
+  display: inline-block;
+}
+
+.breadcrumbs i {
+  font-size: 12px;
+}
+
+.breadcrumbs a:hover {
+  color: var(--wp--preset--color--ochre);
+}
+
+.breadcrumbs-cont ul li a,
+.breadcrumbs-cont ul li span {
+  font-size: 15px;
+}

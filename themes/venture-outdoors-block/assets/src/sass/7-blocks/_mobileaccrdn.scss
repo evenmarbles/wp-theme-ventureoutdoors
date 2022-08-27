@@ -1,0 +1,56 @@
+/**/
+.mobile-accrdn {
+  border-top: 1px solid var(--wp--preset--color--light-periwinkle);
+
+  &-first {
+    border-top: 0;
+  }
+
+  &-title {
+    color: var(--wp--preset--color--cyan-cornflower-blue);
+    background: url(../images/plus.png) right center no-repeat;
+    cursor: pointer;
+    padding: 15px 30px 15px 35px;
+    position: relative;
+
+    &.open {
+      border-bottom: none;
+      background: url(../images/minus.png) right center no-repeat;
+    }
+
+    &:before {
+      color: var(--wp--preset--color--laurel-green);
+      font-weight: 300;
+      font-size: 25px;
+      position: absolute;
+      left: 0;
+      top: 25px !important;
+    }
+  }
+
+  &-cont {
+    display: none;
+
+    & p:first-child {
+      margin-top: 0;
+    }
+  }
+
+  & p {
+    margin-bottom: 15px;
+  }
+
+  @media (min-width: 768px) {
+    border-top: none;
+
+    &-title {
+      padding-top: 25px;
+      padding-bottom: 25px;
+    }
+
+    &-cont {
+      display: block;
+    }
+  }
+}
+

@@ -1,0 +1,130 @@
+/**
+* Buttons
+*/
+[class*="btn-"] {
+  position: relative;
+  border: none;
+  
+  &:before {
+    margin-right: 5px;
+  }
+
+  &:after {
+    padding-left: 5px;
+    content: "\e913";
+  }
+
+  &:hover {
+    color: var(--wp--preset--color--white);
+  }
+
+  @include mq($until: small) {
+    font-size: 12px;
+    padding: 15px 20px;
+  }
+  @include mq($until: large) {
+    padding: 12px 12px;
+  }
+}
+
+.btn {
+  &-primary,
+  &-secondary,
+  &-accent,
+  &-tertiary,
+  &-quaternary {
+    font-family: $font__montserrat;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--wp--preset--color--white);
+    text-transform: uppercase;
+    text-align: center;
+    display: inline-block;
+    padding: 14px 20px;
+    height: 100%;
+  }
+
+  &-block {
+    display: block;
+    width: 100%;
+  }
+
+  &-small {
+    padding: 4px 30px;
+
+    &:after {
+      display: none;
+    }
+  }
+
+  &-no-arrow {
+    &:after {
+      display: none;
+    }
+  }
+
+  &-primary {
+    background-color: $color__background-button-primary;
+
+    &:hover {
+      background-color: $color__background-button-primary-hover;
+    }
+  }
+
+  &-secondary {
+    background-color: $color__text-button-secondary;
+
+    &:hover {
+      background-color: $color__text-button-secondary-hover;
+    }
+  }
+
+  &-tertiary {
+    border: 2px solid var(--wp--preset--color--primary);
+    
+    &:hover {
+      background-color: var(--wp--preset--color--primary-hover);
+    }
+  }
+
+  &-quaternary {
+    background-color: var(--wp--preset--color--quaternary);
+    
+    &:hover {
+      background-color: var(--wp--preset--color--quaternary-hover);
+    }
+  } 
+}
+
+
+/*Book Button*/
+@include mq($from: small) {
+  .book-btn {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 230px;
+    height: 100%;
+    background-color: $color__background-button-primary;
+
+    a {
+      font-size: 13px;
+      right: auto;
+      top: 1px;
+      line-height: 3em !important;
+
+      @include vertical-align;
+      justify-content: center;
+
+      &:after {
+        -webkit-transition: all .5s ease;
+        -o-transition: all .5s ease;
+        transition: all .5s ease;
+      }
+
+      &:hover:after {
+        transform: translateX(25px);
+      }
+    }
+  }
+}

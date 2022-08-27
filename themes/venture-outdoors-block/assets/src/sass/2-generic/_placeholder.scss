@@ -1,0 +1,103 @@
+.vo-placeholder-block {
+  padding: 20px;
+  text-align: center;
+  font-size: 1.65rem;
+  background: linear-gradient(180deg, #dedede, #adadad);
+}
+
+/*
+* Effects
+*/
+a,
+span,
+[class*="btn-"],
+[class*="btn-"]:after,
+.imgbttn:before {
+  -webkit-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+html :where(img) {
+  max-width: none;
+}
+
+/**
+* UL listing
+*/
+
+/*check list*/
+ul.check-list>li:before {
+  background: none;
+  width: auto;
+  height: auto;
+  font-size: 13px;
+  top: 8px;
+  color: var(--wp--preset--color--secondary);
+}
+
+ul.check-list.flush-top.flush-sides {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  width: 100%;
+}
+
+ul.check-list li {
+  display: inline-block;
+  width: 100%;
+}
+
+
+/**
+* OL listing
+*/
+.page-header ul>li:before,
+.page-footer ul>li:before,
+.masthead ul>li:before,
+.banner ul>li:before,
+.slick-dots ul>li:before,
+[class*="flexbox-"]>li:before,
+.form-col ul>li:before,
+.list-style-none>li:before,
+.selectric-scroll li:before {
+    display: none;
+}
+
+.page-header li,
+.page-footer li,
+.masthead li,
+.slick-dots li,
+[class*="flexbox-"]>li,
+.list-style-none li {
+    margin: 0;
+    padding: 0;
+}
+
+/**
+ * Single Activity Type
+ */
+
+.imggrid {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-columns: 1fr;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: auto auto;
+  grid-template-rows: auto auto;
+  grid-row-gap: 16px;
+  grid-column-gap: 16px;
+}
+
+.rounded-corners {
+  border-radius: 6px;
+}
+
+
+.page-activity-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  text-transform: none;
+  text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.95);
+}

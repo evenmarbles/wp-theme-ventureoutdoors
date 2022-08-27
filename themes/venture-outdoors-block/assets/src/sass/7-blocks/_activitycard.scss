@@ -1,0 +1,107 @@
+/**
+* Image Button
+*/
+
+.imgbttn {
+  position: relative;
+}
+
+.imgbttn:before {
+  height: 100%;
+  top: 0;
+}
+
+.imgbttn-wbg:before {
+  content: '';
+  /* background: -webkit-gradient(linear,  left top, left bottom,  from(rgba(28,32,42,0)),to(rgba(28,32,42,0.7))); */
+  /* background: linear-gradient(to bottom,  rgba(28,32,42,0) 0%,rgba(28,32,42,0.7) 100%); */
+}
+
+.imgbttn-overlay {
+  height: 100%;
+  top: 0;
+  text-align: center;
+  color: var(--wp--preset--color--white);
+}
+
+.imgbttn:before {
+  background-color: transparent;/*rgba(28, 32, 42, .8)*/
+}
+
+.imgbttn-title:before {
+  font-size: 21px;
+  color: var(--wp--preset--color--white);
+  display: block;
+  border: 2px solid var(--wp--preset--color--white);
+  width: 46px;
+  height: 46px;
+  line-height: 46px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+  -webkit-box-shadow: 0px 0px 4px var(--wp--preset--color--black);
+  box-shadow: 0px 0px 4px var(--wp--preset--color--black);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.imgbttn:hover .imgbttn-title:before {
+  color: $color__text-button-secondary;
+  border: 2px solid $color__border-button-secondary;
+}
+
+.imgbttn-btn {
+  display: none;
+  position: absolute;
+  bottom: 50%;
+  width: 100%;
+}
+
+.imgbttn .imgbttn-btn {
+  display: block;
+}
+
+.imgbttn-btn a {
+  color: var(--wp--preset--color--yellow-orange);
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+@media (max-width: 1024px) {
+  .imgbttn-btn {
+      bottom: 15px;
+      padding: 0 15px;
+  }
+  .imgbttn-btn a.btn-tertiary {
+      display: block;
+      background: $color__background-button-primary;
+      color: var(--wp--preset--color--white);
+  }
+}
+
+@media (min-width: 1025px) {
+
+  .imgbttn:before {
+      background-color: transparent;
+  }
+
+  .imgbttn:hover:before {
+      background-color: rgba(28, 32, 42, .8);
+  }
+
+  .imgbttn .imgbttn-btn {
+      display: none;
+  }
+
+  .imgbttn:hover .imgbttn-btn {
+      display: block;
+  }
+}

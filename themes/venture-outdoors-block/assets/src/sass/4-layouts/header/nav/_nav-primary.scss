@@ -1,0 +1,132 @@
+.nav-primary {
+  display: none;
+  position: fixed;
+  overflow-y: auto;
+  z-index: 999;
+  padding-top: 50px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--wp--preset--color--white);
+  font-size: 14px;
+}
+
+.nav-primary li {
+  position: relative;
+  font-size: 14px;
+  line-height: 30px;
+  text-transform: uppercase;
+  font-family: $font__montserrat;
+  font-weight: 600;
+  background: var(--wp--preset--color--senary);
+}
+
+.nav-primary>ul>li {
+  background-color: var(--wp--preset--color--white);
+}
+
+.nav-primary>ul>li>a {
+  color: var(--wp--preset--color--senary);
+}
+
+.nav-primary a {
+  padding: 10px 15px;
+  overflow: hidden;
+  position: relative;
+  display: block;
+}
+
+.nav-primary a:hover,
+.nav-primary li.current-menu-item>a,
+.nav-primary li.current-menu-parent>a,
+.nav-primary li.current-menu-ancestor>a {
+  color: var(--wp--preset--color--secondary);
+}
+
+.nav-primary .submenu-toggle {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 27px;
+}
+
+.nav-primary .submenu-toggle:before {
+  content: "\e90a";
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+.nav-primary .submenu-toggle.current {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.submenu {
+  display: none;
+  margin-top: 0;
+}
+
+.submenu.opened-menu {
+  display: block;
+}
+
+.nav-primary .submenu li {
+  font-size: 13px;
+  line-height: 1em;
+  background: var(--wp--preset--color--light-periwinkle);
+}
+
+.nav-primary .submenu li a {
+  color: var(--wp--preset--color--senary);
+  padding: 20px 15px;
+}
+
+.nav-primary .submenu li a:hover {
+  color: var(--wp--preset--color--ochre);
+  padding: 20px 15px;
+}
+
+.nav-primary .submenu .submenu li {
+  background: var(--wp--preset--color--cultured);
+}
+
+.nav-primary .submenu .submenu li a {
+  color: var(--wp--preset--color--senary);
+  text-transform: none;
+  padding: 20px 15px;
+}
+
+.nav-primary .submenu .submenu .submenu li {
+  background: var(--wp--preset--color--white);
+}
+
+.nav-primary .submenu .submenu .submenu li a {
+  padding: 15px 15px;
+}
+
+.nav-primary .social-media .montserrattlt {
+  font-size: 14px;
+  color: var(--wp--preset--color--senary);
+  text-transform: uppercase;
+}
+
+.header-info {
+  font-size: 14px;
+  text-align: center;
+  color: var(--wp--preset--color--senary);
+  font-family: $font__montserrat;
+  font-weight: 600;
+  border-top: 1px solid var(--wp--preset--color--bright-gray);
+  padding-top: 40px;
+  margin-top: 35px;
+  padding-bottom: 40px;
+}

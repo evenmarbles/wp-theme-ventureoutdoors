@@ -1,0 +1,45 @@
+.find-activities-form {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+body:not(.error404) .find-activities-form {
+  border-bottom: 1px solid var(--wp--preset--color--bright-gray);
+}
+
+.find-activities-form-field {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.find-activities-form-btn {
+  padding: 15px 0px;
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .find-activities-form .center-block {
+      width: 100%;
+  }
+  .find-activities-form h4 {
+      font-size: 18px;
+  }
+  .find-activities-form-btn {
+    font-size: 12px;
+  }
+}
+@media (min-width: 768px) {
+  .find-activities-form-btn {
+      padding: 0 0;
+  }
+}
+@media (min-width: 877px) {
+  .find-activities-form-btn {
+      padding: 15px 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .find-activities-form h4 {
+      font-size: 20px;
+  }
+}

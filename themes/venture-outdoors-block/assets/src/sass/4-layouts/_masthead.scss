@@ -1,0 +1,78 @@
+/**
+* Masthead / page banner
+*/
+
+.masthead,
+.masthead-img {
+  min-height: 120px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  /* font-family: 'object-fit: cover;'; */
+
+  @include mq($from: small) {
+    min-height: 220px;
+  }
+  @include mq($from: medium) {
+    min-height: 300px;
+  }
+}
+
+.masthead {
+  position: relative;
+  color: var(--wp--preset--color--white);
+  height: 120px;
+  width: 100%;
+
+  &-cont {
+    background-color: rgba(0, 0, 0, .0);
+    height: 100%;
+    top: 0;
+    z-index: 2;
+  }
+
+  &-title {
+    text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.75);
+
+    &:first-child {
+      padding-top: .2em;
+    }
+    
+    &-blog {
+      margin-top: 30px;
+    }
+
+    span {
+      font-size: .5em;
+      display: block;
+      line-height: 1.4em;
+    }
+  }
+
+  &-img {
+    height: 100% !important;
+    width: 100%;
+    position: absolute;
+    -o-object-fit: cover;
+    z-index: 1;
+  }
+
+  &__content {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 90%;
+  }
+  
+  @include mq($from: small) {
+    height: 220px;
+  }
+  @include mq($from: medium) {
+    height: 300px;
+  }
+
+}
+
+@media (min-width: 1600px) {
+  .masthead {
+      height: 431px !important;
+  }
+}

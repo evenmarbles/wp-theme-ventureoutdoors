@@ -1,0 +1,60 @@
+.wysiwyg {
+
+  &-gray {
+    /*padding-bottom: 40px;*/
+
+    &-item {
+      margin-bottom: 30px;
+      margin-top: 30px;
+    }
+
+    &-cnt {
+      padding: 35px;
+
+      ul {
+        margin-left: 15px;
+      }
+
+      .whypics {
+        display: inline-block;
+        width: 100%;
+      }
+
+      @include mq($from: small) {
+        padding: 72px 74px 50px;
+
+        ul {
+          margin-left: 35px;
+        }
+      }
+    }
+
+    .testimonial {
+      margin-top: 40px;
+      margin-bottom: 80px;
+    }
+  }
+
+  &-cnt {
+    margin-right: 35px;
+    margin-left: 35px;
+
+    @include mq($from: small) {
+      margin-right: 74px;
+      margin-left: 74px;
+    }
+  }
+
+  &-cntnt {
+    margin-top: 44px;
+    margin-bottom: 80px;
+
+    .wpcf7-submit {
+      border: none;
+    }
+
+    @include mq($from: small) {
+      margin-top: 74px;
+    }
+  }
+}

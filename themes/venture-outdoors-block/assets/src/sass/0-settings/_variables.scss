@@ -1,0 +1,13 @@
+// Site variables.
+
+// mq breakpoints.
+$mq-breakpoints: (
+	xsmall: 600px,
+	small: 768px,
+	medium: 1024px,
+	large: 1200px,
+  xlarge: 1300px,
+	xxlarge: 1366px,
+	xxxlarge: 1520px,
+	xxxxlarge: 1920px,
+) !default;

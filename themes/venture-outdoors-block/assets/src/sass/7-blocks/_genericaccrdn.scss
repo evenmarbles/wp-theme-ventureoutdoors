@@ -1,0 +1,65 @@
+.accrdn {
+  
+  & h4 {
+    font-size: 17px;
+    color: var(--wp--preset--color--cyan-cornflower-blue);
+    position: relative;
+    padding-left: 35px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+
+  & h4:before {
+    font-weight: 300;
+    font-size: 25px;
+    position: absolute;
+    left: 0;
+  }
+
+  & h4:before {
+    color: var(--wp--preset--color--secondary);
+    top: 0;
+  }
+
+  &-title {
+    padding-left: 32px;
+    font-size: 17px;
+    color: var(--wp--preset--color--cyan-cornflower-blue);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-transform: none;
+  }
+
+  & h5[class*=icon-]:before {
+    left: 20px;
+    top: 2px;
+    color: var(--wp--preset--color--secondary);
+    font-size: 25px;
+  }
+
+  &-title[class*=icon-]:before {
+    padding-right: 8px;
+  }
+
+  @media (min-width: 768px) {
+    padding-bottom: 46px;
+
+    & p {
+      margin: 10px 0 0 36px;
+    }
+  }
+
+  @media (min-width: 1025px) {
+    & p {
+      margin: 10px 0 0 36px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    & p {
+      margin: 6px 15px 0 36px;
+    }
+  }
+
+}
