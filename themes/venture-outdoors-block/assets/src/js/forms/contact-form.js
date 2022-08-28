@@ -52,7 +52,8 @@ class ContactForm {
     jQuery.ajax({
         url: siteConfig.templateUrl + "/inc/helpers/send-email.php",
         data: 'firstName=' + $('#first_name').val() + '&lastName=' + $('#last_name').val() + '&phone=' + phoneNumber
-            + '&email=' + $('#email').val() + '&message=' + $('#description').val() + '&foundUs=' + $('#found_us option:selected').text() + '&optIn=' + $('#opt_in').val(),
+            + '&email=' + $('#email').val() + '&message=' + $('#description').val() + '&foundUs=' + $('#found_us option:selected').text()
+            + '&optIn=' + ($('#opt_in').is(':checked') ? 'Yes' : 'No'),
         type: "POST",
         success: function (data) {
           if (JSON.parse(data).status === "success") {

@@ -898,7 +898,7 @@ var ContactForm = /*#__PURE__*/function () {
     value: function sendEmail(phoneNumber) {
       jQuery.ajax({
         url: siteConfig.templateUrl + "/inc/helpers/send-email.php",
-        data: 'firstName=' + jquery__WEBPACK_IMPORTED_MODULE_0___default()('#first_name').val() + '&lastName=' + jquery__WEBPACK_IMPORTED_MODULE_0___default()('#last_name').val() + '&phone=' + phoneNumber + '&email=' + jquery__WEBPACK_IMPORTED_MODULE_0___default()('#email').val() + '&message=' + jquery__WEBPACK_IMPORTED_MODULE_0___default()('#description').val() + '&foundUs=' + jquery__WEBPACK_IMPORTED_MODULE_0___default()('#found_us option:selected').text() + '&optIn=' + jquery__WEBPACK_IMPORTED_MODULE_0___default()('#opt_in').val(),
+        data: 'firstName=' + jquery__WEBPACK_IMPORTED_MODULE_0___default()('#first_name').val() + '&lastName=' + jquery__WEBPACK_IMPORTED_MODULE_0___default()('#last_name').val() + '&phone=' + phoneNumber + '&email=' + jquery__WEBPACK_IMPORTED_MODULE_0___default()('#email').val() + '&message=' + jquery__WEBPACK_IMPORTED_MODULE_0___default()('#description').val() + '&foundUs=' + jquery__WEBPACK_IMPORTED_MODULE_0___default()('#found_us option:selected').text() + '&optIn=' + (jquery__WEBPACK_IMPORTED_MODULE_0___default()('#opt_in').is(':checked') ? 'Yes' : 'No'),
         type: "POST",
         success: function success(data) {
           if (JSON.parse(data).status === "success") {
