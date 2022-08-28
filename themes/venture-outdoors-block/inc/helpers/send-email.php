@@ -68,7 +68,12 @@
 
   /* Save contact information in Sendinblue CRM */
   try {
-    $dotenv = Dotenv\Dotenv::createImmutable( dirname( __DIR__, 2 ) );
+    if ( strstr( $_SERVER[ 'SERVER_NAME' ], 'venture-outdoors-classic.local' ) ) {
+      $dir = dirname( __DIR__, 2 );
+    } else {
+      $dir = dirname( $_SERVER['DOCUMENT_ROOT'], 2 ) . '/.envs/ventureoutdoorsllc.com';
+    }
+    $dotenv = Dotenv\Dotenv::createImmutable( $dir );
     $dotenv->load();
   } catch ( Exception $e ) {
     array_push( $errors, 'Exception when calling Dotenv->load: ' . $e->getMessage() );
