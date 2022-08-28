@@ -41,7 +41,9 @@ class PageFilter extends Filter {
 
   getData() {
     var data = super.getData()
-    data['slug'] = this.slug.length ? { slug: this.slug } : {}
+    if (this.slug.length) {
+      data['slug'] =  this.slug
+    }
     return data
   }
 

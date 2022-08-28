@@ -178,7 +178,6 @@ class Activities {
           break;
       }
   
-      $count = 0;
       foreach ( $this->data[ $key ] as $index => $value ) {
         // Reset query
         $query = $meta_query;
@@ -195,13 +194,11 @@ class Activities {
         ] );
   
         $meta_data[ $key ][ $index ][ 'count' ] = $query->found_posts;
-        $count += $query->found_posts;
 
         wp_reset_postdata();
       }
     }
   
-    $meta_data['count'] = $count;
     return $meta_data;
   }
 

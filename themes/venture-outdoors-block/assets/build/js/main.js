@@ -1841,9 +1841,10 @@ var PageFilter = /*#__PURE__*/function (_Filter) {
     value: function getData() {
       var data = _get(_getPrototypeOf(PageFilter.prototype), "getData", this).call(this);
 
-      data['slug'] = this.slug.length ? {
-        slug: this.slug
-      } : {};
+      if (this.slug.length) {
+        data['slug'] = this.slug;
+      }
+
       return data;
     }
   }, {
