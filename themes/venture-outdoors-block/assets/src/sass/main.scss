@@ -2,6 +2,13 @@
 @import "essentials";
 
 @import "intl-tel-input/build/css/intlTelInput.css";
+
+.iti__flag {background-image: url("../images/flags/flags.png");}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .iti__flag {background-image: url("../images/flags/flags@2x.png");}
+}
+
 @import "slick-carousel/slick/slick.scss";
 
 // Generic.
