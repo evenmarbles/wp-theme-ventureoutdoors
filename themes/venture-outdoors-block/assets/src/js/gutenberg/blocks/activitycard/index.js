@@ -39,7 +39,7 @@ registerBlockType("vo-blocks/activitycard", {
     } );
 
     let cards = ''
-    if ( typeList ) {
+    if ( typeList.length ) {
       cards = typeList.map( ( { title, permalink, thumbnail, count } ) => {
         return <div className="activity-slider-item side-slider-item">
           <a href={ permalink }>

@@ -478,7 +478,7 @@ __webpack_require__.r(__webpack_exports__);
     });
     var cards = '';
 
-    if (typeList) {
+    if (typeList.length) {
       cards = typeList.map(function (_ref2) {
         var title = _ref2.title,
             permalink = _ref2.permalink,
