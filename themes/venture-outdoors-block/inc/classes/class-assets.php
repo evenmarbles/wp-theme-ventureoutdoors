@@ -85,7 +85,8 @@ class Assets {
 			wp_enqueue_script( 'ventureoutdoors-blocks' );
 
 			wp_localize_script('ventureoutdoors-blocks', 'siteConfig', [
-				'restUrl' => rest_url( 'ventureoutdoors/v1/' )
+				'restUrl' => rest_url( 'ventureoutdoors/v1/' ),
+				'ajax_nonce' => wp_create_nonce( 'wp_rest' ),
 			] );
 
 			include get_theme_file_path('/assets/src/php/gutenberg/blocks.php');

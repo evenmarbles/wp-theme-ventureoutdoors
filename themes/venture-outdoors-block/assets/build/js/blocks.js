@@ -85,6 +85,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 var getCF = /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(name, postId, callback) {
+    var _siteConfig$ajax_nonc, _siteConfig;
+
     var response, data;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) {
@@ -95,7 +97,7 @@ var getCF = /*#__PURE__*/function () {
             }
 
             _context.next = 3;
-            return fetch("".concat(siteConfig.restUrl, "acf?id=").concat(postId, "&name=").concat(name), {
+            return fetch("".concat(siteConfig.restUrl, "acf?_wpnonce=").concat((_siteConfig$ajax_nonc = (_siteConfig = siteConfig) === null || _siteConfig === void 0 ? void 0 : _siteConfig.ajax_nonce) !== null && _siteConfig$ajax_nonc !== void 0 ? _siteConfig$ajax_nonc : '', "&id=").concat(postId, "&name=").concat(name), {
               method: 'GET',
               redirect: 'follow',
               referrer: 'no-referrer'
@@ -361,17 +363,18 @@ var Edit = function Edit(_ref) {
   var className = _ref.className,
       attributes = _ref.attributes,
       setAttributes = _ref.setAttributes;
-  var typeList = attributes.typeList;
 
   var filterRoute = /*#__PURE__*/function () {
     var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+      var _siteConfig$ajax_nonc, _siteConfig;
+
       var response, data;
       return _regeneratorRuntime().wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
               _context.next = 2;
-              return fetch("".concat(siteConfig.restUrl, "filter"), {
+              return fetch("".concat(siteConfig.restUrl, "filter?_wpnonce=").concat((_siteConfig$ajax_nonc = (_siteConfig = siteConfig) === null || _siteConfig === void 0 ? void 0 : _siteConfig.ajax_nonce) !== null && _siteConfig$ajax_nonc !== void 0 ? _siteConfig$ajax_nonc : ''), {
                 method: 'GET',
                 redirect: 'follow',
                 referrer: 'no-referrer'
@@ -552,13 +555,15 @@ var Edit = function Edit(_ref) {
 
   var filterRoute = /*#__PURE__*/function () {
     var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+      var _siteConfig$ajax_nonc, _siteConfig;
+
       var response, data;
       return _regeneratorRuntime().wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
               _context.next = 2;
-              return fetch("".concat(siteConfig.restUrl, "related?id=").concat(postId), {
+              return fetch("".concat(siteConfig.restUrl, "related?_wpnonce=").concat((_siteConfig$ajax_nonc = (_siteConfig = siteConfig) === null || _siteConfig === void 0 ? void 0 : _siteConfig.ajax_nonce) !== null && _siteConfig$ajax_nonc !== void 0 ? _siteConfig$ajax_nonc : '', "&id=").concat(postId), {
                 method: 'GET',
                 redirect: 'follow',
                 referrer: 'no-referrer'
@@ -2682,13 +2687,15 @@ var Edit = function Edit(_ref) {
 
   var getHeighlights = /*#__PURE__*/function () {
     var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+      var _siteConfig$ajax_nonc, _siteConfig;
+
       var response, data;
       return _regeneratorRuntime().wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
               _context.next = 2;
-              return fetch("".concat(siteConfig.restUrl, "highlights?id=").concat(postId), {
+              return fetch("".concat(siteConfig.restUrl, "highlights?_wpnonce=").concat((_siteConfig$ajax_nonc = (_siteConfig = siteConfig) === null || _siteConfig === void 0 ? void 0 : _siteConfig.ajax_nonce) !== null && _siteConfig$ajax_nonc !== void 0 ? _siteConfig$ajax_nonc : '', "&id=").concat(postId), {
                 method: 'GET',
                 redirect: 'follow',
                 referrer: 'no-referrer'

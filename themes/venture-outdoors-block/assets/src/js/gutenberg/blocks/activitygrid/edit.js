@@ -8,7 +8,7 @@ const Edit = ( { className, attributes, setAttributes } ) => {
   const postId = wp.data.select('core/editor').getCurrentPostId();
 
   const filterRoute = async () => {
-    const response = await fetch( `${ siteConfig.restUrl }related?id=${ postId }`, {
+    const response = await fetch( `${ siteConfig.restUrl }related?_wpnonce=${siteConfig?.ajax_nonce ?? ''}&id=${ postId }`, {
       method: 'GET',
       redirect: 'follow', 
       referrer: 'no-referrer', 

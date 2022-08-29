@@ -4,10 +4,9 @@
 import { __ } from '@wordpress/i18n';
  
 const Edit = ( { className, attributes, setAttributes } ) => {
-  const { typeList } = attributes;
 
   const filterRoute = async () => {
-    const response = await fetch( `${ siteConfig.restUrl }filter`, {
+    const response = await fetch( `${ siteConfig.restUrl }filter?_wpnonce=${siteConfig?.ajax_nonce ?? ''}`, {
       method: 'GET',
       redirect: 'follow', 
       referrer: 'no-referrer', 

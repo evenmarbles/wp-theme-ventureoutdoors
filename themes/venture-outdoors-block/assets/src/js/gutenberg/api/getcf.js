@@ -4,7 +4,7 @@ export const getCF = async ( name, postId, callback ) => {
     name = name.join(',')
   }
 
-  const response = await fetch( `${ siteConfig.restUrl }acf?id=${ postId }&name=${ name }`, {
+  const response = await fetch( `${ siteConfig.restUrl }acf?_wpnonce=${siteConfig?.ajax_nonce ?? ''}&id=${ postId }&name=${ name }`, {
     method: 'GET',
     redirect: 'follow', 
     referrer: 'no-referrer', 

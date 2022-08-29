@@ -9,7 +9,7 @@ const Edit = ( { className, attributes, setAttributes } ) => {
   const blockProps = useBlockProps()
   
   const getHeighlights = async () => {
-    const response = await fetch( `${ siteConfig.restUrl }highlights?id=${postId}`, {
+    const response = await fetch( `${ siteConfig.restUrl }highlights?_wpnonce=${siteConfig?.ajax_nonce ?? ''}&id=${postId}`, {
       method: 'GET',
       redirect: 'follow', 
       referrer: 'no-referrer', 

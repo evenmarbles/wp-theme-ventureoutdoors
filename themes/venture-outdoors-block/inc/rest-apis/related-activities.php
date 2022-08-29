@@ -9,6 +9,12 @@ namespace VENTUREOUTDOORS_THEME\Inc;
 use \WP_Query;
 
 function related_activities_results ( $data ) {
+
+  if ( !check_ajax_referer( 'wp_rest', 'ajax_nonce', false ) ) {
+    wp_send_json_error( __( 'Invalid security token sent.', 'ventureoutdoors' ) );
+    wp_die( '0', 400 );
+  }
+
   $id = $data['id'];
 
   $related_activities = array_map( function($x) { return $x->ID; }, get_field( 'related_activities', $id ) );
