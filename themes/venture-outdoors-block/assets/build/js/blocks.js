@@ -390,7 +390,7 @@ var Edit = function Edit(_ref) {
 
             case 5:
               data = _context.sent;
-              data = data.type;
+              data = data.types;
               setAttributes({
                 typeList: data
               });
@@ -467,7 +467,7 @@ __webpack_require__.r(__webpack_exports__);
       default: "full"
     },
     typeList: {
-      type: "object"
+      type: "array"
     }
   },
   edit: _edit__WEBPACK_IMPORTED_MODULE_0__["default"],

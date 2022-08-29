@@ -19,7 +19,7 @@ const Edit = ( { className, attributes, setAttributes } ) => {
     );
 
     let data = await response.json();
-    data = data.type;
+    data = data.types;
     setAttributes( { typeList: data } );
   }
   

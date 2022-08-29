@@ -28,7 +28,7 @@ registerBlockType("vo-blocks/activitycard", {
   },
   attributes: {
     align: { type: "string", default: "full" },
-    typeList: { type: "object" }
+    typeList: { type: "array" }
   },
 
   edit: Edit,
