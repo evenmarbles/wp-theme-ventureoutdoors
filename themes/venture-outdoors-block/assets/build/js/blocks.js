@@ -467,7 +467,7 @@ __webpack_require__.r(__webpack_exports__);
       default: "full"
     },
     typeList: {
-      type: "array"
+      type: "object"
     }
   },
   edit: _edit__WEBPACK_IMPORTED_MODULE_0__["default"],
