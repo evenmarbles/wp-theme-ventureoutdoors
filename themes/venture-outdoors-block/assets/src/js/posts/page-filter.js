@@ -10,7 +10,8 @@ class PageFilter extends Filter {
    */
   constructor() {
     super()
-    this.filterControl = $('.sidebar-filter-wrap');
+    this.filterControl = $('.sidebar-filter-wrap')
+    this.sidebarFilter = $('.sidebar-filter .facetwp-facet')
   }
 
   events() {
@@ -23,20 +24,16 @@ class PageFilter extends Filter {
   init() {
     var pathname = window.location.pathname.split('/')
     this.slug = pathname[pathname.length - 2]
+  }
 
-    $.each(['fvo_length', 'fvo_difficulty'], function (index, name) {
-      var value = this.getParameterByName(name)
+  addSpinner() {
+    this.sidebarFilter.addClass('is-loading')
+  }
 
-      if (value !== null) {
-        var inpt = $(`label[data-value='${value}'] > input`)
-        var filter = name.substr(4)
-        this.filterFields[filter].push(value)
-        inpt.attr('checked', 'checked')
-        inpt.closest('li').children('.js-accordion').trigger('click')
-      }
-    }.bind(this))
-
-    this.filterActivities(this.updateFilterControl.bind(this))
+  removeSpinner() {
+    if (!this.isOptionsProcessing && !this.isActivitiesProcessing) {
+      this.sidebarFilter.removeClass('is-loading')
+    }
   }
 
   getData() {
@@ -93,8 +90,6 @@ class PageFilter extends Filter {
         chkIn.prop('disabled', false)
       })
     }
-
-    this.isRequestProcessing = false;
   }
 
   // Event Handlers

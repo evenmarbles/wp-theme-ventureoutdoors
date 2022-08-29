@@ -1479,7 +1479,8 @@ var Filter = /*#__PURE__*/function () {
 
     this.restUrl = (_siteConfig$restUrl = (_siteConfig = siteConfig) === null || _siteConfig === void 0 ? void 0 : _siteConfig.restUrl) !== null && _siteConfig$restUrl !== void 0 ? _siteConfig$restUrl : '';
     this.ajaxNonce = (_siteConfig$ajax_nonc = (_siteConfig2 = siteConfig) === null || _siteConfig2 === void 0 ? void 0 : _siteConfig2.ajax_nonce) !== null && _siteConfig$ajax_nonc !== void 0 ? _siteConfig$ajax_nonc : '';
-    this.isRequestProcessing = false;
+    this.isOptionsProcessing = false;
+    this.isActivitiesProcessing = false;
     this.resetFilterFields();
     this.events();
     this.init();
@@ -1505,6 +1506,12 @@ var Filter = /*#__PURE__*/function () {
       throw new Error('Implementation required');
     }
   }, {
+    key: "addSpinner",
+    value: function addSpinner() {}
+  }, {
+    key: "removeSpinner",
+    value: function removeSpinner() {}
+  }, {
     key: "getData",
     value: function getData() {
       var data = {};
@@ -1522,23 +1529,30 @@ var Filter = /*#__PURE__*/function () {
     value: function filterActivities(callback) {
       var _this = this;
 
-      if (this.isRequestProcessing) {
+      if (this.isOptionsProcessing || this.isActivitiesProcessing) {
         return null;
       }
 
       var data = this.getData();
       data['_wpnonce'] = this.ajaxNonce;
-      this.isRequestProcessing = true;
+      this.isOptionsProcessing = true;
+      this.isActivitiesProcessing = true;
+      this.addSpinner();
       jquery__WEBPACK_IMPORTED_MODULE_0___default().ajax({
         type: 'get',
         url: this.restUrl + 'filter',
         data: data,
         success: function success(response) {
           callback(response);
+          _this.isOptionsProcessing = false;
+
+          _this.removeSpinner();
         },
         error: function error(response) {
           console.log(response);
-          _this.isRequestProcessing = false;
+          _this.isOptionsProcessing = false;
+
+          _this.removeSpinner();
         }
       });
       return jquery__WEBPACK_IMPORTED_MODULE_0___default().ajax({
@@ -1550,11 +1564,15 @@ var Filter = /*#__PURE__*/function () {
           publisher.publish('activitiesUpdated', {
             count: response.postCount
           });
-          _this.isRequestProcessing = false;
+          _this.isActivitiesProcessing = false;
+
+          _this.removeSpinner();
         },
         error: function error(response) {
           console.log(response);
-          _this.isRequestProcessing = false;
+          _this.isActivitiesProcessing = false;
+
+          _this.removeSpinner();
         }
       });
     }
@@ -1616,6 +1634,7 @@ var LoadMore = /*#__PURE__*/function () {
       threshold: 1.0 // 1.0 means set isIntersecting to true when element comes in 100% view.
 
     };
+    this.init();
     publisher.subscribe('activitiesUpdated', this.init.bind(this));
   }
 
@@ -1624,7 +1643,10 @@ var LoadMore = /*#__PURE__*/function () {
     value: function init(e, data) {
       var _this = this;
 
-      this.numberResults.text(data.count.toString());
+      if (data) {
+        this.numberResults.text(data.count.toString());
+      }
+
       this.loadMoreBtn = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#load-more');
 
       if (!this.loadMoreBtn.length) {
@@ -1699,6 +1721,7 @@ var LoadMore = /*#__PURE__*/function () {
       var nextPage = parseInt(page) + 1; // Increment page count by one.
 
       this.isRequestProcessing = true;
+      this.loadMoreBtn.addClass('is-loading');
       var data = this.filter.getData();
       data['page'] = page;
       data['_wpnonce'] = this.ajaxNonce;
@@ -1716,10 +1739,15 @@ var LoadMore = /*#__PURE__*/function () {
 
           _this3.removeLoadMoreIfOnLastPage(nextPage);
 
+          _this3.loadMoreBtn.removeClass('is-loading');
+
           _this3.isRequestProcessing = false;
         },
         error: function error(response) {
           console.log(response);
+
+          _this3.loadMoreBtn.removeClass('is-loading');
+
           _this3.isRequestProcessing = false;
         }
       });
@@ -1807,6 +1835,7 @@ var PageFilter = /*#__PURE__*/function (_Filter) {
 
     _this = _super.call(this);
     _this.filterControl = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.sidebar-filter-wrap');
+    _this.sidebarFilter = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.sidebar-filter .facetwp-facet');
     return _this;
   }
 
@@ -1823,18 +1852,18 @@ var PageFilter = /*#__PURE__*/function (_Filter) {
     value: function init() {
       var pathname = window.location.pathname.split('/');
       this.slug = pathname[pathname.length - 2];
-      jquery__WEBPACK_IMPORTED_MODULE_0___default().each(['fvo_length', 'fvo_difficulty'], function (index, name) {
-        var value = this.getParameterByName(name);
-
-        if (value !== null) {
-          var inpt = jquery__WEBPACK_IMPORTED_MODULE_0___default()("label[data-value='".concat(value, "'] > input"));
-          var filter = name.substr(4);
-          this.filterFields[filter].push(value);
-          inpt.attr('checked', 'checked');
-          inpt.closest('li').children('.js-accordion').trigger('click');
-        }
-      }.bind(this));
-      this.filterActivities(this.updateFilterControl.bind(this));
+    }
+  }, {
+    key: "addSpinner",
+    value: function addSpinner() {
+      this.sidebarFilter.addClass('is-loading');
+    }
+  }, {
+    key: "removeSpinner",
+    value: function removeSpinner() {
+      if (!this.isOptionsProcessing && !this.isActivitiesProcessing) {
+        this.sidebarFilter.removeClass('is-loading');
+      }
     }
   }, {
     key: "getData",
@@ -1902,8 +1931,6 @@ var PageFilter = /*#__PURE__*/function (_Filter) {
       for (var key in response) {
         _loop(key);
       }
-
-      this.isRequestProcessing = false;
     } // Event Handlers
 
   }, {

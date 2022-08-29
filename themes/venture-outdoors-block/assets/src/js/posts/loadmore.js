@@ -25,11 +25,14 @@ class LoadMore {
 			threshold: 1.0, // 1.0 means set isIntersecting to true when element comes in 100% view.
 		};
 
+		this.init()
 		publisher.subscribe('activitiesUpdated', this.init.bind(this))
 	}
 
 	init(e, data) {
-		this.numberResults.text(data.count.toString())
+		if (data) {
+			this.numberResults.text(data.count.toString())
+		}
 
 		this.loadMoreBtn = $('#load-more')
 
@@ -95,6 +98,7 @@ class LoadMore {
 
 		const nextPage = parseInt(page) + 1; // Increment page count by one.
 		this.isRequestProcessing = true;
+		this.loadMoreBtn.addClass('is-loading')
 
 		var data = this.filter.getData()
 		data['page'] = page
@@ -111,10 +115,12 @@ class LoadMore {
 				this.loadMoreBtn.data('page', nextPage);
 				$('#load-more-content').append(response);
 				this.removeLoadMoreIfOnLastPage(nextPage);
+				this.loadMoreBtn.removeClass('is-loading')
 				this.isRequestProcessing = false;
 			},
 			error: (response) => {
 				console.log(response);
+				this.loadMoreBtn.removeClass('is-loading')
 				this.isRequestProcessing = false;
 			},
 		})

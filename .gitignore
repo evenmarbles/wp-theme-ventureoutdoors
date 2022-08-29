@@ -19,6 +19,29 @@ plugins/*
 .*
 ~*
 
+# Ignore log files and databases
+*.log
+*.sql
+*.sqlite
+
+# Igonre compiled files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Ignore packaged files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
 # Ignore node dependency directories
 node_modules/
 

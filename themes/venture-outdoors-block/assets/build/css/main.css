@@ -10189,13 +10189,43 @@ img.mfp-img {
   text-decoration: none;
 }
 
+.is-loading {
+  display: block;
+  width: 100%;
+  position: absolute;
+  text-align: center;
+}
+
+.sidebar-filter .is-loading {
+  text-align: left;
+  position: relative;
+}
+
+.sidebar-filter .facetwp-facet.is-loading:before {
+  content: "";
+  position: absolute;
+}
+
+.sidebar-filter .facetwp-facet.is-loading:before {
+  top: 50%;
+  left: 50%;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 3px solid #5c6372;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  z-index: 1000;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-animation: isLoading 0.75s linear infinite;
+  animation: isLoading 0.75s linear infinite;
+}
+
 /* .facetwp-facet {
   margin-bottom: 40px;
 } */
-.facetwp-facet.is-loading {
-  opacity: 0.6;
-}
-
 .facetwp-hidden {
   display: none;
 }

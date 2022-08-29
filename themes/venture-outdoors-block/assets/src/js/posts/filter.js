@@ -12,7 +12,8 @@ class Filter {
   constructor() {
     this.restUrl = siteConfig?.restUrl ?? ''
     this.ajaxNonce = siteConfig?.ajax_nonce ?? ''
-    this.isRequestProcessing = false;
+    this.isOptionsProcessing = false;
+    this.isActivitiesProcessing = false;
 
     this.resetFilterFields()
 
@@ -37,6 +38,9 @@ class Filter {
     throw new Error('Implementation required')
   }
 
+  addSpinner() {}
+  removeSpinner() {}
+
   getData() {
     var data = {}
     for (const key in this.filterFields) {
@@ -48,14 +52,16 @@ class Filter {
   }
 
   filterActivities(callback) {
-    if (this.isRequestProcessing) {
+    if (this.isOptionsProcessing || this.isActivitiesProcessing) {
       return null;
     }
 
     var data = this.getData()
     data['_wpnonce'] = this.ajaxNonce
 
-    this.isRequestProcessing = true;
+    this.isOptionsProcessing = true;
+    this.isActivitiesProcessing = true;
+    this.addSpinner()
 
     $.ajax({
       type: 'get',
@@ -63,10 +69,13 @@ class Filter {
       data: data,
       success: (response) => {
         callback(response)
+        this.isOptionsProcessing = false;
+        this.removeSpinner()
       },
       error: (response) => {
         console.log(response);
-        this.isRequestProcessing = false;
+        this.isOptionsProcessing = false;
+        this.removeSpinner()
       },
     })
 
@@ -77,11 +86,13 @@ class Filter {
       success: (response) => {
         $('.load-more-content-wrap').html(response.innerHTML);
         publisher.publish('activitiesUpdated', { count: response.postCount })
-        this.isRequestProcessing = false;
+        this.isActivitiesProcessing = false;
+        this.removeSpinner()
       },
       error: (response) => {
         console.log(response);
-        this.isRequestProcessing = false;
+        this.isActivitiesProcessing = false;
+        this.removeSpinner()
       },
     })
   }
