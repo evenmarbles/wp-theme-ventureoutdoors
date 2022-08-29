@@ -476,36 +476,41 @@ __webpack_require__.r(__webpack_exports__);
     var blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useBlockProps.save({
       className: 'activity-card'
     });
-    var cards = typeList.map(function (_ref2) {
-      var title = _ref2.title,
-          permalink = _ref2.permalink,
-          thumbnail = _ref2.thumbnail,
-          count = _ref2.count;
-      return /*#__PURE__*/React.createElement("div", {
-        className: "activity-slider-item side-slider-item"
-      }, /*#__PURE__*/React.createElement("a", {
-        href: permalink
-      }, /*#__PURE__*/React.createElement("div", {
-        className: "imgbttn imgbttn-wbg"
-      }, /*#__PURE__*/React.createElement("img", {
-        src: "https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto,c_scale,h_428,dpr_2.0/activity-types/".concat(thumbnail),
-        loading: "lazy",
-        alt: title,
-        className: "imgbttn-img img-responsive objectfit"
-      }), /*#__PURE__*/React.createElement("div", {
-        className: "imgbttn-overlay"
-      }, /*#__PURE__*/React.createElement("div", {
-        className: "imgbttn-btn"
-      }, /*#__PURE__*/React.createElement("span", {
-        className: "btn-tertiary"
-      }, "Explore")), /*#__PURE__*/React.createElement("div", {
-        className: "imgbttn-txt activity-slide-cont"
-      }, /*#__PURE__*/React.createElement("h3", {
-        className: "h4 imgbttn-title flush-ends"
-      }, title), /*#__PURE__*/React.createElement("div", {
-        class: "activity-count"
-      }, count, " ", permalink.includes('lesson') ? 'Lessons' : 'Tours'))))));
-    });
+    var cards = '';
+
+    if (typeList) {
+      cards = typeList.map(function (_ref2) {
+        var title = _ref2.title,
+            permalink = _ref2.permalink,
+            thumbnail = _ref2.thumbnail,
+            count = _ref2.count;
+        return /*#__PURE__*/React.createElement("div", {
+          className: "activity-slider-item side-slider-item"
+        }, /*#__PURE__*/React.createElement("a", {
+          href: permalink
+        }, /*#__PURE__*/React.createElement("div", {
+          className: "imgbttn imgbttn-wbg"
+        }, /*#__PURE__*/React.createElement("img", {
+          src: "https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto,c_scale,h_428,dpr_2.0/activity-types/".concat(thumbnail),
+          loading: "lazy",
+          alt: title,
+          className: "imgbttn-img img-responsive objectfit"
+        }), /*#__PURE__*/React.createElement("div", {
+          className: "imgbttn-overlay"
+        }, /*#__PURE__*/React.createElement("div", {
+          className: "imgbttn-btn"
+        }, /*#__PURE__*/React.createElement("span", {
+          className: "btn-tertiary"
+        }, "Explore")), /*#__PURE__*/React.createElement("div", {
+          className: "imgbttn-txt activity-slide-cont"
+        }, /*#__PURE__*/React.createElement("h3", {
+          className: "h4 imgbttn-title flush-ends"
+        }, title), /*#__PURE__*/React.createElement("div", {
+          class: "activity-count"
+        }, count, " ", permalink.includes('lesson') ? 'Lessons' : 'Tours'))))));
+      });
+    }
+
     return /*#__PURE__*/React.createElement("section", blockProps, /*#__PURE__*/React.createElement("div", {
       className: "container-fluid hard-right"
     }, /*#__PURE__*/React.createElement("div", {

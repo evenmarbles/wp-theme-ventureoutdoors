@@ -9,11 +9,30 @@ namespace VENTUREOUTDOORS_THEME\Inc;
 
 use VENTUREOUTDOORS_THEME\Inc\Traits\Singleton;
 
+require_once( dirname( __DIR__, 2 ) . '/assets/vendor/autoload.php' );
+require_once( dirname( __DIR__, 1 ) . '/helpers/decrypt.php' );
+
 
 class Assets {
 	use Singleton;
 
 	protected function __construct() {
+
+		try {
+			if ( strstr( $_SERVER[ 'SERVER_NAME' ], 'venture-outdoors-classic.local' ) ) {
+				$dir = dirname( __DIR__, 2 );
+			} else {
+				$dir = dirname( $_SERVER['DOCUMENT_ROOT'], 2 ) . '/.envs/ventureoutdoorsllc.com';
+			}
+			$dotenv = \Dotenv\Dotenv::createImmutable( $dir );
+			$dotenv->load();
+	
+			$this->google_api_key = isset( $_ENV['GOOGLEMAPS'] ) ? decrypt( $_ENV['GOOGLEMAPS'] ) : '';
+				
+		} catch ( Exception $e ) {
+			echo 'Caught exception: ',  $e->getMessage(), "\n";
+		}
+	
 
 		// load class.
 		$this->setup_hooks();
@@ -43,7 +62,7 @@ class Assets {
 
 	public function register_scripts() {
 		// Register scripts.
-		wp_register_script( 'google-map', '//maps.googleapis.com/maps/api/js?key=AIzaSyC5-hjbF39wa7k4RnpJ_5h_kLr5yuAysrk', NULL, '1.0', true );
+		wp_register_script( 'google-map', "//maps.googleapis.com/maps/api/js?key={$this->google_api_key}", NULL, '1.0', true );
 		wp_register_script( 'main', VENTUREOUTDOORS_BUILD_JS_URI . '/main.js', [ 'jquery' ], filemtime( VENTUREOUTDOORS_BUILD_JS_PATH . '/main.js' ), true );
   
 		// Enqueue Scripts.
