@@ -475,7 +475,7 @@ __webpack_require__.r(__webpack_exports__);
     var typeList = _ref.attributes.typeList;
     var cards = '';
 
-    if (typeList.length) {
+    if (typeList !== null) {
       cards = typeList.map(function (_ref2) {
         var title = _ref2.title,
             permalink = _ref2.permalink,
