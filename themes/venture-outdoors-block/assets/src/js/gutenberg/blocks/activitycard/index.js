@@ -34,10 +34,6 @@ registerBlockType("vo-blocks/activitycard", {
   edit: Edit,
 
   save( { attributes: { typeList } }) {
-    const blockProps = useBlockProps.save( {
-      className: 'activity-card',
-    } );
-
     let cards = ''
     if ( typeList.length ) {
       cards = typeList.map( ( { title, permalink, thumbnail, count } ) => {
@@ -60,6 +56,10 @@ registerBlockType("vo-blocks/activitycard", {
         </div>
       } )
     }
+
+    const blockProps = useBlockProps.save( {
+      className: 'activity-card',
+    } );
 
     return (
       <section { ...blockProps }>

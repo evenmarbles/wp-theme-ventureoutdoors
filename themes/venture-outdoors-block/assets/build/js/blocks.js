@@ -473,9 +473,6 @@ __webpack_require__.r(__webpack_exports__);
   edit: _edit__WEBPACK_IMPORTED_MODULE_0__["default"],
   save: function save(_ref) {
     var typeList = _ref.attributes.typeList;
-    var blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useBlockProps.save({
-      className: 'activity-card'
-    });
     var cards = '';
 
     if (typeList.length) {
@@ -511,6 +508,9 @@ __webpack_require__.r(__webpack_exports__);
       });
     }
 
+    var blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useBlockProps.save({
+      className: 'activity-card'
+    });
     return /*#__PURE__*/React.createElement("section", blockProps, /*#__PURE__*/React.createElement("div", {
       className: "container-fluid hard-right"
     }, /*#__PURE__*/React.createElement("div", {
