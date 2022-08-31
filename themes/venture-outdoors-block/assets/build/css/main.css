@@ -7836,22 +7836,22 @@ body:not(.rtl) .ubermenu.ubermenu-horizontal .ubermenu-item-level-0:first-child 
   }
 }
 
-@media (max-width: 63.99em) {
+@media (min-width: 1025px) {
   .page-header-main-menu {
     position: static;
   }
 }
-@media (max-width: 74.99em) {
+@media (min-width: 1200px) {
   .page-header-main-menu {
     padding-right: 230px;
   }
 }
-@media (max-width: 94.99em) {
+@media (min-width: 1520px) {
   .page-header-main-menu {
-    padding-right: 230px;
+    padding-right: 200px;
   }
 }
-@media (max-width: 119.99em) {
+@media (min-width: 1920px) {
   .page-header-main-menu {
     padding-right: 253px;
   }

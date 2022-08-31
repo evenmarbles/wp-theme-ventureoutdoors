@@ -50,16 +50,16 @@
 }
 
 .page-header-main-menu {
-  @include mq($until: medium) {
+  @media (min-width: 1025px) {
     position: static;
   }
-  @include mq($until: large) {
+  @media (min-width: 1200px) {
     padding-right: 230px;
   }
-  @include mq($until: xxxlarge) {
-    padding-right: 230px;
+  @media (min-width: 1520px) {
+    padding-right: 200px;
   }
-  @include mq($until: xxxxlarge) {
+  @media (min-width: 1920px) {
     padding-right: 253px;
   }
 }

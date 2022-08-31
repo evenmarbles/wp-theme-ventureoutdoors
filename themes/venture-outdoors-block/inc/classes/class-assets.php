@@ -45,6 +45,8 @@ class Assets {
 		 */
 		add_action( 'wp_enqueue_scripts', [ $this, 'register_styles' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'register_scripts' ] );
+		// add_filter( 'clean_url', 'defer_parsing_of_js', 11, 1 );
+		
 		/**
 		 * The 'enqueue_block_assets' hook includes styles and scripts both in editor and frontend,
 		 * except when is_admin() is used to include them conditionally
@@ -129,5 +131,11 @@ class Assets {
 			filemtime( VENTUREOUTDOORS_BUILD_CSS_PATH . '/blocks.css' ),
 			'all'
 		);
+	}
+
+	function defer_parsing_of_js( $url ) {
+		if ( false === strpos( $url, '.js' ) ) return $url;
+		if ( strpos( $url, 'jquery.js' ) ) return $url;
+		return "$url' defer ";
 	}
 }
