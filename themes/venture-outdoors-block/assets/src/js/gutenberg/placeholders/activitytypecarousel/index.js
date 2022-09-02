@@ -19,8 +19,8 @@ import { useBlockProps } from '@wordpress/block-editor';
 /**
  * Register block type.
  */
-registerBlockType("vo-blocks/activitycard", {
-  title: __("Activity Type Carousel2", 'ventureoutdoors'),
+registerBlockType("vo-blocks/activitytypecarousel", {
+  title: __("Activity Type Carousel", 'ventureoutdoors'),
   icon: 'format-gallery',
   category: "ventureoutdoors",
   supports: {
@@ -37,23 +37,10 @@ registerBlockType("vo-blocks/activitycard", {
     let cards = ''
     if ( typeList !== null && typeList !== undefined ) {
       cards = typeList.map( ( { title, permalink, thumbnail, count } ) => {
-        return <div className="activity-slider-item side-slider-item">
-          <a href={ permalink }>
-            <div className="imgbttn imgbttn-wbg">
-              <img src={ `https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto,c_scale,h_428,dpr_2.0/activity-types/${ thumbnail }` }
-                loading="lazy" alt={ title } className="imgbttn-img img-responsive objectfit"/>
-              <div className="imgbttn-overlay">
-                <div className="imgbttn-btn">
-                  <span className="btn-tertiary">Explore</span>
-                </div>
-                <div className="imgbttn-txt activity-slide-cont">
-                  <h3 className="h4 imgbttn-title flush-ends">{ title }</h3>
-                  <div class="activity-count">{ count } { permalink.includes('lesson') ? 'Lessons' : 'Tours' }</div>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
+        return <a href={ permalink }>
+          <h3 className="h4 imgbttn-title flush-ends">{ title }</h3>
+          <div class="activity-count">{ count } { permalink.includes('lesson') ? 'Lessons' : 'Tours' }</div>
+        </a>
       } )
     }
 

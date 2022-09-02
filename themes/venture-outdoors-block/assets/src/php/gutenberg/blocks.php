@@ -14,6 +14,7 @@
 
   $placeholders = [
     'activitydetails',
+    'activitytypecarousel',
     'contactform',
     'filteractivity',
     'findactivity',

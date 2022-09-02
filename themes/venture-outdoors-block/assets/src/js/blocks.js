@@ -41,6 +41,7 @@ import "./gutenberg/blocks/wysiwygcntnt";
 import "./gutenberg/blocks/wysiwyggray";
 
 // Placeholder Blocks
+import './gutenberg/placeholders/activitytypecarousel';
 import "./gutenberg/placeholders/activitydetails"; // activity details box
 import "./gutenberg/placeholders/contactform";
 import './gutenberg/placeholders/filteractivity'; // activity filter
