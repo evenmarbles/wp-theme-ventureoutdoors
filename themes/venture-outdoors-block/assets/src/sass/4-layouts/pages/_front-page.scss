@@ -142,13 +142,7 @@
     }
   }
 
-  &-list .h5 {
-    color: var(--wp--preset--color--cyan-cornflower-blue);
-    font-weight: 600;
-    line-height: 19px;
-    font-family: $font__montserrat;
-    font-weight: 600;
-    text-transform: none;
+  &-list {
 
     & .mobile-accrdn-title {
       font-size: 17px;

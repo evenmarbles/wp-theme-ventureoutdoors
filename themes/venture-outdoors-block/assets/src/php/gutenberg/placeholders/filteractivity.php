@@ -9,7 +9,6 @@
 
   $loadmore_activities = VENTUREOUTDOORS_THEME\Inc\Loadmore_Activities::get_instance();
   $activities = VENTUREOUTDOORS_THEME\Inc\Activities::get_instance();
-  $activities_data = $activities->data;
 
   $clean_params = $activities->clean_parameters();
   $options = $activities->get_meta_data( ...$clean_params );

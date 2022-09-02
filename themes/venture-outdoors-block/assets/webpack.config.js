@@ -12,10 +12,17 @@ const LIB_DIR = path.resolve( __dirname, 'src/library' );
 const BUILD_DIR = path.resolve( __dirname, 'build' );
 
 const entry = {
-  main: JS_DIR + '/main.js',
-  single: JS_DIR + '/single.js',
-  editor: JS_DIR + '/editor.js',
-  blocks: JS_DIR + '/blocks.js',
+  'main': JS_DIR + '/main.js',
+  'single': JS_DIR + '/single.js',
+  'single-activity': JS_DIR + '/single-activity.js',
+  'archive-activity': JS_DIR + '/archive-activity.js',
+  'single-activity-type': JS_DIR + '/single-activity-type.js',
+  'page': JS_DIR + '/page.js',
+  'page-contact': JS_DIR + '/page-contact.js',
+  'frontpage': JS_DIR + '/frontpage.js',
+  '404': JS_DIR + '/404.js',
+  'editor': JS_DIR + '/editor.js',
+  'blocks': JS_DIR + '/blocks.js',
 };
 const output = {
   path: BUILD_DIR,

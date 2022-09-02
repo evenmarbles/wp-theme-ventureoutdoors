@@ -13,8 +13,6 @@ class BannerFilter extends Filter {
   constructor() {
     super()
     this.numberResults = $('.js-number-results');
-
-		publisher.subscribe('activitiesUpdated', this.updateResults.bind(this))
   }
 
   // 2. events
@@ -24,7 +22,7 @@ class BannerFilter extends Filter {
   }
 
   init() {
-    this.filterActivities(this.updateBannerFilter.bind(this))
+		publisher.subscribe('activitiesUpdated', this.updateResults.bind(this))
   }
 
 	updateResults(e, data) {
