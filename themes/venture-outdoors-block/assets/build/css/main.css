@@ -1127,14 +1127,12 @@ COMPONENTS
   max-width: 1820px;
 }
 
-@media (min-width: 37.5em) {
-  .container,
+.container,
 .container-fluid {
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 @media (min-width: 48em) {
   .container,
@@ -1173,11 +1171,9 @@ COMPONENTS
 * --------------------------------------------------------------------------
 * Learn more here: https://getbootstrap.com/css/#grid
 * -------------------------------------------------------------------------- */
-@media (min-width: 37.5em) {
-  .row {
-    margin-left: -20px;
-    margin-right: -20px;
-  }
+.row {
+  margin-left: -20px;
+  margin-right: -20px;
 }
 @media (min-width: 48em) {
   .row {
@@ -1186,14 +1182,12 @@ COMPONENTS
   }
 }
 
-@media (min-width: 37.5em) {
-  [class*=col-],
+[class*=col-],
 .grid li {
-    position: relative;
-    min-height: 1px;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
+  position: relative;
+  min-height: 1px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 @media (min-width: 48em) {
   [class*=col-],
@@ -1203,12 +1197,10 @@ COMPONENTS
   }
 }
 
-@media (min-width: 37.5em) {
-  .grid [class*=col-],
+.grid [class*=col-],
 .grid li {
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 @media (min-width: 64em) {

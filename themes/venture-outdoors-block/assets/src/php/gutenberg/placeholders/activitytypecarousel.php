@@ -19,7 +19,7 @@ $options = $activities->get_meta_data( ...$clean_params );
               <div class="activity-slider-item side-slider-item">
                 <a href="<?php echo $activity[ 'slug' ]; ?>">
                   <div class="imgbttn imgbttn-wbg">
-                    <img src="https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto,c_scale,h_428,dpr_2.0/activity-types/<?php echo $item[ 'thumbnail' ]; ?>"
+                    <img width="285" height="428px" src="https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto,c_scale,h_428,dpr_2.0/activity-types/<?php echo $item[ 'thumbnail' ]; ?>"
                       loading="lazy" alt="<?php echo $item[ 'title' ]; ?>" class="imgbttn-img img-responsive objectfit">
                     <div class="imgbttn-overlay">
                       <div class="imgbttn-btn">

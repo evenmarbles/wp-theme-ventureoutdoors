@@ -11,12 +11,11 @@ COMPONENTS
 
 .container,
 .container-fluid {
-  @include mq($from: xsmall) {
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+
   @include mq($from: small) {
     padding-left: 16px;
     padding-right: 16px;
@@ -54,10 +53,9 @@ COMPONENTS
 * Learn more here: https://getbootstrap.com/css/#grid
 * -------------------------------------------------------------------------- */
 .row {
-  @include mq($from: xsmall) {
     margin-left: -20px;
     margin-right: -20px;
-  }
+
   @include mq($from: small) {
     margin-left: -16px;
     margin-right: -16px;
@@ -66,12 +64,11 @@ COMPONENTS
 
 [class*="col-"],
 .grid li {
-  @include mq($from: xsmall) {
     position: relative;
     min-height: 1px;
     padding-left: 20px;
     padding-right: 20px;
-  }
+
   @include mq($from: small) {
     padding-left: 16px;
     padding-right: 16px;
@@ -80,10 +77,8 @@ COMPONENTS
 
 .grid [class*="col-"],
 .grid li {
-  @include mq($from: xsmall) {
     padding-top: 20px;
     padding-bottom: 20px;
-  }
 }
 
 @include mq($from: medium) {
