@@ -1,5 +1,7 @@
 // Essentials.
-@import "essentials";
+@import "0-settings/settings";
+@import "~sass-mq";
+@import "1-tools/tools";
 
 @import "4-layouts/full-width-slider";
 @import "4-layouts/slick-custom";

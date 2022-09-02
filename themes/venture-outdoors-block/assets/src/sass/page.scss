@@ -1,5 +1,6 @@
 // Essentials.
-@import "essentials";
+@import "0-settings/settings";
+@import "~sass-mq";
 
 @import "4-layouts/selectric";
 @import "4-layouts/masthead";
