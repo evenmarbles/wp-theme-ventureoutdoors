@@ -665,7 +665,7 @@ if ( ! function_exists( 'wptt_get_webfont_url' ) ) {
 	 * @return string Returns the CSS.
 	 */
 	function wptt_get_webfont_url( $url, $format = 'woff2' ) {
-		$font = new WPTT_WebFont_Loader( $url );
+		$font = new WPTT_WebFont_Loader( esc_url_raw( $url ) );
 		$font->set_font_format( $format );
 		return $font->get_url();
 	}
