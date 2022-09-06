@@ -53,8 +53,8 @@ registerBlockType("vo-blocks/testimonial", {
           <RichText.Content { ...blockProps } tagName='p' value={ content } />
           <div className="testimonial-author">
             <div>— <RichText.Content tagName='span' value={ author } />
-              <img src="https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto/affiliates/tripadvisor_secondary.svg"
-                loading="lazy" height="16" alt="Hear from past guests about their experience with Venture Outdoors on TripAdvisor." />
+              <img width="105px" height="24px" src="https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto/affiliates/tripadvisor_secondary.svg"
+                loading="lazy" alt="Hear from past guests about their experience with Venture Outdoors on TripAdvisor." />
             </div>
           </div>
       </>

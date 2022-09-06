@@ -40,17 +40,12 @@ registerBlockType("vo-blocks/banner", {
     } );
 
     return (
-      <>
-        <div className="banner-logo-container">
-          <img src="https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto/logo/venture-outdoors-base_382x200.png" alt="Go to Venture Outdoors&#x27; homepage."
-            className="logo-base" />
-          <img src="https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto/logo//venture-outdoors-logo-needle_195x200.png"
-            alt="Go to Venture Outdoors&#x27; homepage." className="logo-needle" />
+      <div className="banner-item">
+        <div className="mobile-banner-img hidden-sm-up">
+          <img width="600px" height="300px" src="" id="randomImage" alt="#" />
         </div>
-        <div className="banner-item">
-          <InnerBlocks.Content /> 
-        </div>
-      </>
+        <InnerBlocks.Content /> 
+      </div>
     )
   }
 })

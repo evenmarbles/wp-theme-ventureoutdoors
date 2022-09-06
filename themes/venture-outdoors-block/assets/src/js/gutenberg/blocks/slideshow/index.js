@@ -40,9 +40,6 @@ registerBlockType("vo-blocks/slideshow", {
 
     return (
       <>
-        <div className="mobile-banner-img hidden-sm-up">
-          <img src="" id="randomImage" alt="#" />
-        </div>
         <div { ...blockProps }>
           <InnerBlocks.Content />
         </div>

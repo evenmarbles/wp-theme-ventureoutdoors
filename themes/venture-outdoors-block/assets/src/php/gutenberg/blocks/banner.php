@@ -3,6 +3,12 @@ $activities = VENTUREOUTDOORS_THEME\Inc\Activities::get_instance()->data;
 ?>
 
 <header id="masthead" class="banner">
+  <div class="banner-logo-container">
+    <img width="382px" height="200px" src="https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto/logo/venture-outdoors-base_382x200.png" alt="Go to Venture Outdoors&#x27; homepage."
+      class="logo-base" />
+    <img width="195px" height="200px" src="https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto/logo//venture-outdoors-logo-needle_195x200.png"
+      alt="Go to Venture Outdoors&#x27; homepage." class="logo-needle" />
+  </div>
   <?php echo $content; ?>
   <div class="banner-form">
     <div class="banner-form__content">

@@ -978,19 +978,17 @@ __webpack_require__.r(__webpack_exports__);
       className: 'banner',
       id: 'masthead'
     });
-    return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
-      className: "banner-logo-container"
-    }, /*#__PURE__*/React.createElement("img", {
-      src: "https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto/logo/venture-outdoors-base_382x200.png",
-      alt: "Go to Venture Outdoors' homepage.",
-      className: "logo-base"
-    }), /*#__PURE__*/React.createElement("img", {
-      src: "https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto/logo//venture-outdoors-logo-needle_195x200.png",
-      alt: "Go to Venture Outdoors' homepage.",
-      className: "logo-needle"
-    })), /*#__PURE__*/React.createElement("div", {
+    return /*#__PURE__*/React.createElement("div", {
       className: "banner-item"
-    }, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.InnerBlocks.Content, null)));
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "mobile-banner-img hidden-sm-up"
+    }, /*#__PURE__*/React.createElement("img", {
+      width: "600px",
+      height: "300px",
+      src: "",
+      id: "randomImage",
+      alt: "#"
+    })), /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.InnerBlocks.Content, null));
   }
 });
 
@@ -5054,13 +5052,7 @@ __webpack_require__.r(__webpack_exports__);
     var blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useBlockProps.save({
       className: 'banner-img hidden-xs-down'
     });
-    return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
-      className: "mobile-banner-img hidden-sm-up"
-    }, /*#__PURE__*/React.createElement("img", {
-      src: "",
-      id: "randomImage",
-      alt: "#"
-    })), /*#__PURE__*/React.createElement("div", blockProps, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.InnerBlocks.Content, null)), /*#__PURE__*/React.createElement("div", {
+    return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", blockProps, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.InnerBlocks.Content, null)), /*#__PURE__*/React.createElement("div", {
       class: "banner-pagination"
     }, /*#__PURE__*/React.createElement("div", {
       class: "slider-control"
@@ -5746,9 +5738,10 @@ function _extends() { _extends = Object.assign ? Object.assign.bind() : function
       tagName: "span",
       value: author
     }), /*#__PURE__*/React.createElement("img", {
+      width: "105px",
+      height: "24px",
       src: "https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto/affiliates/tripadvisor_secondary.svg",
       loading: "lazy",
-      height: "16",
       alt: "Hear from past guests about their experience with Venture Outdoors on TripAdvisor."
     }))));
   }
