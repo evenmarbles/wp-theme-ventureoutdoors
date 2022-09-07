@@ -1,5 +1,9 @@
 <?php
-$activities = VENTUREOUTDOORS_THEME\Inc\Activities::get_instance()->data;
+$activities = VENTUREOUTDOORS_THEME\Inc\Activities::get_instance();
+
+$clean_params = $activities->clean_parameters();
+$options = $activities->get_meta_data( ...$clean_params );
+$query = $activities->get_query( ...$clean_params );
 ?>
 
 <header id="masthead" class="banner">
@@ -19,7 +23,7 @@ $activities = VENTUREOUTDOORS_THEME\Inc\Activities::get_instance()->data;
             <div class="facetwp-facet facetwp-facet-frontpage_activity_type facetwp-type-dropdown" data-name="frontpage_activity_types" data-type="dropdown">
               <select id="activity_types" class="facetwp_dropdown">
                 <option value="">Activity Type</option>
-                <?php foreach( $activities[ 'types' ] as $item ) { ?>
+                <?php foreach( $options[ 'types' ] as $item ) { ?>
                 <option value="<?php echo $item[ 'slug' ]; ?>"><?php echo $item[ 'title' ] . ' (' . $item[ 'count' ] . ')'?></option>
                 <?php } ?>
               </select>
@@ -31,7 +35,7 @@ $activities = VENTUREOUTDOORS_THEME\Inc\Activities::get_instance()->data;
             <div class="facetwp-facet facetwp-facet-frontpage_activity_length facetwp-type-dropdown" data-name="frontpage_activity_lengths" data-type="dropdown">
               <select id="activity_lengths" class="facetwp_dropdown">
                 <option value="">Activity Length</option>
-                <?php foreach( $activities['lengths'] as $item ) { ?>
+                <?php foreach( $options['lengths'] as $item ) { ?>
                 <option value="<?php echo $item[ 'slug' ]; ?>"><?php echo $item[ 'title' ] . ' (' . $item[ 'count' ] . ')'?></option>
                 <?php } ?>
               </select>
@@ -43,11 +47,13 @@ $activities = VENTUREOUTDOORS_THEME\Inc\Activities::get_instance()->data;
             <div class="facetwp-facet facetwp-facet-frontpage_difficulty_level facetwp-type-dropdown" data-name="frontpage_difficulties" data-type="dropdown">
               <select id="difficulties" class="facetwp_dropdown">
                 <option value="">Difficulty</option>
-                <?php foreach( $activities['difficulties'] as $item ) { 
+                <?php foreach( $options['difficulties'] as $item ) { 
                   $title = substr( $item[ 'title' ], 0, strlen( $item[ 'title' ] ) - 1 ) . ' ' . substr( $item[ 'title' ], -1 );
+                  if ( $item[ 'count' ] > 0 ) {
                 ?>
                 <option value="<?php echo $item[ 'slug' ]; ?>"><?php echo $title . ' (' . $item[ 'count' ] . ')'?></option>
-                <?php } ?>
+                <?php } 
+                  } ?>
               </select>
             </div>
           </div>
@@ -56,7 +62,7 @@ $activities = VENTUREOUTDOORS_THEME\Inc\Activities::get_instance()->data;
           <button class="btn-primary btn-block js-frontpage-filter">View Activities</button>
         </div>
       </div>
-      <p class="flush-bottom"><span class="js-number-results"><?php echo $activities[ 'count' ]; ?></span> activities meet your criteria</p>
+      <p class="flush-bottom"><span class="js-number-results"><?php echo $query->found_posts; ?></span> activities meet your criteria</p>
     </div>
   </div>
 </header>

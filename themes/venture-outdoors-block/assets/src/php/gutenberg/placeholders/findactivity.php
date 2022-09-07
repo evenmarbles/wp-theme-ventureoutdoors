@@ -38,11 +38,13 @@ $options = $activities->get_meta_data( ...$clean_params );
             <div class="facetwp-facet facetwp-facet-frontpage_difficulty_level facetwp-type-dropdown" data-name="frontpage_difficulties" data-type="dropdown">
               <select id="difficulties" class="facetwp_dropdown">
                 <option value="">Difficulty</option>
-                <?php foreach( $options[ 'difficulty' ] as $item ) { 
+                <?php foreach( $options[ 'difficulties' ] as $item ) { 
                   $title = substr( $item[ 'title' ], 0, strlen( $item[ 'title' ]) - 1 ) . ' ' . substr( $item[ 'title' ], -1 );
+                  if ( $item[ 'count' ] > 0 ) {
                 ?>
                   <option value="<?php echo $item[ 'slug' ]; ?>"><?php echo $title . ' (' . $item[ 'count' ] . ')'?></option>
-                <?php } ?>
+                <?php }
+                  } ?>
               </select>
             </div>
           </div>
