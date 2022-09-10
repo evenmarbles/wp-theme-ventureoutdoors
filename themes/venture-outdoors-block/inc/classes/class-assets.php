@@ -56,7 +56,7 @@ class Assets {
 
 	public function register_styles() {
 		// Register styles.
-		wp_register_style( 'slick', VENTUREOUTDOORS_BUILD_CSS_URI . '/css/slick.css', [], false, 'all' );
+		wp_register_style( 'slick', VENTUREOUTDOORS_BUILD_LIB_URI . '/css/slick.css', [], false, 'all' );
 		wp_register_style( 'main', VENTUREOUTDOORS_BUILD_CSS_URI . '/main.css', [], filemtime( VENTUREOUTDOORS_BUILD_CSS_PATH . '/main.css' ), 'all' );
 		wp_register_style( 'page', VENTUREOUTDOORS_BUILD_CSS_URI . '/page.css', [], filemtime( VENTUREOUTDOORS_BUILD_CSS_PATH . '/page.css' ), 'all' );
 		wp_register_style( 'page-contact', VENTUREOUTDOORS_BUILD_CSS_URI . '/page-contact.css', [], filemtime( VENTUREOUTDOORS_BUILD_CSS_PATH . '/page-contact.css' ), 'all' );

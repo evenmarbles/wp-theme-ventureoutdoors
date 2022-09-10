@@ -34,11 +34,6 @@ registerBlockType("vo-blocks/banner", {
   edit: Edit,
 
   save() {
-    const blockProps = useBlockProps.save( {
-      className: 'banner',
-      id: 'masthead',
-    } );
-
     return (
       <div className="banner-item">
         <div className="mobile-banner-img hidden-sm-up">

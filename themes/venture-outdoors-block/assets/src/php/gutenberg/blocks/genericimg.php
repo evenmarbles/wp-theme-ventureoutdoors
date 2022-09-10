@@ -3,7 +3,7 @@
 $className = $attributes['className'] ? $attributes['className'].' lazyload' : 'lazyload';
 $alt = $attributes['context'] ? $attributes['context']['alt'] : '';
 
-$thisSrc = "https://res.cloudinary.com/ventureoutdoors/image/upload/pixelate:20/{$attributes['public_id']}";
+$thisSrc = "https://res.cloudinary.com/ventureoutdoors/image/upload/e_pixelate:20/{$attributes['public_id']}";
 $dataSrc = "https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto/{$attributes['public_id']}";
 $thisSrcset = "";
 $dataSrcset = "";
@@ -11,7 +11,7 @@ $dataSrcset = "";
 if ( $attributes['width'] > 500 ) {
   $imageSizes = $attributes['imageSizes'] ? explode(',', $attributes['imageSizes']) : [500, 800, 1000];
   foreach ( $imageSizes as $index=>$d) {
-    $thisSrcset .= "https://res.cloudinary.com/ventureoutdoors/image/upload/pixelate:20/c_scale,w_$d/{$attributes['public_id']} ${d}w";
+    $thisSrcset .= "https://res.cloudinary.com/ventureoutdoors/image/upload/e_pixelate:20/c_scale,w_$d/{$attributes['public_id']} ${d}w";
     $dataSrcset .= "https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto/c_scale,w_$d/{$attributes['public_id']} ${d}w";
     if ( $index < count($imageSizes) - 1 ) { 
       $thisSrcset .= ",";
@@ -31,11 +31,10 @@ if (  strlen($thisSrcset) > 0 || strlen($dataSrcset) > 0 ) {
 
 ?>
 <img class="<?php echo $className ?>"<?php echo $dimAttr; echo $sizeAttr; ?>
-  src = "<?php echo $thisSrc; ?>"
+  src="<?php echo $thisSrc; ?>"
   <?php 
     echo $thisSrcset ? " srcset='$thisSrcset'" : "";
     echo $dataSrc ? " data-src='$dataSrc'" : ""; 
     echo $dataSrcset ? " data-srcset='$dataSrcset'" : ""
-  ?>
-  alt="<?php echo $alt; ?>" 
+  ?> alt="<?php echo $alt; ?>" 
 />

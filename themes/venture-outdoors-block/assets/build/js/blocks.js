@@ -974,10 +974,6 @@ __webpack_require__.r(__webpack_exports__);
   },
   edit: _edit__WEBPACK_IMPORTED_MODULE_0__["default"],
   save: function save() {
-    var blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useBlockProps.save({
-      className: 'banner',
-      id: 'masthead'
-    });
     return /*#__PURE__*/React.createElement("div", {
       className: "banner-item"
     }, /*#__PURE__*/React.createElement("div", {
