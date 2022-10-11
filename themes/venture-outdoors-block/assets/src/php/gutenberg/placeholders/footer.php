@@ -1,12 +1,17 @@
+<?php
+$cloudinary = VENTUREOUTDOORS_THEME\Inc\Cloudinary::get_instance();
+?>
+
 <div class="container">
   <div class="row clearfix">
     <div class="col-sm-6 col-md-4 push-top-md-up">
       <div class="footer-column text-center">
-        <div class="footer-logo"><img
-            src="https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto/logo/venture-outdoors-base_132x132.png" loading="lazy"
-            alt="Go to Venture Outdoors&#x27; homepage." class="logo-base"><img
-            src="https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto/logo/venture-outdoors-logo-needle_132x132.png" loading="lazy"
-            alt="Go to Venture Outdoors&#x27; homepage." class="logo-needle"></div>
+        <div class="footer-logo">
+          <?php 
+            echo $cloudinary->get_image_tag( 'venture-outdoors-base_132x132', 'logo-base', 'auto', true, false );
+            echo $cloudinary->get_image_tag( 'venture-outdoors-logo-needle_132x132', 'logo-needle', 'auto', true, false );
+          ?>
+        </div>
         <div class="back-to-top hidden-md-up hidden-xs-down js-slide-to-top">
           <a class="btn-primary" href="#top">Back to Top</a>
         </div>

@@ -58,7 +58,8 @@ class Activities {
         'title' => get_the_title(),
         'slug' => get_post_field( 'post_name', $type_id ),
         'permalink' => get_the_permalink(),
-        'thumbnail' => get_field( 'thumbnail' ),
+//        'featured' => get_the_post_thumbnail( null, 'post-thumbnail', [ 'class' => 'imgbttn-img img-responsive objectfit' ] ),
+        'featured_url' => basename( get_the_post_thumbnail_url(), '.jpg' ),
         'id' => $type_id
       ];
     }
@@ -107,10 +108,10 @@ class Activities {
 		 * Activity Type.
 		 * If $_GET['slug'] has a value it means we are on the 'activities' page, else we are on an activity type page
 		 */
-		$slug = $_GET['slug'] ? $_GET['slug'] : 'activities';
-		$types = $this->to_array( $slug === 'activities' ? $_GET['type'] : $slug );
-		$lengths = $this->to_array( $_GET['length'] );
-		$difficulties = $this->to_array( $_GET['difficulty'] );
+		$slug = isset( $_GET[ 'slug' ] ) ? $_GET[ 'slug' ] : 'activities';
+		$types = $this->to_array( $slug === 'activities' ? ( isset( $_GET[ 'type' ] ) ? $_GET[ 'type' ] : '' ) : $slug );
+		$lengths = $this->to_array( isset( $_GET[ 'length' ] ) ? $_GET[ 'length' ]: '' );
+		$difficulties = isset( $_GET[ 'difficulty' ] ) ? $this->to_array( $_GET[ 'difficulty' ] ) : [''];
 
     return [ $types, $lengths, $difficulties ];
   }
@@ -184,7 +185,7 @@ class Activities {
         $query[] = [ [ 'relation' => 'OR' ], [
           'key' => $meta_key,
           'compare' => 'LIKE',
-          'value' => $value['id'] ? '"' . $value['id'] . '"' : $value['title'],
+          'value' => isset( $value[ 'id' ] ) ? '"' . $value[ 'id' ] . '"' : $value[ 'title' ],
         ] ];
   
         $query = new WP_Query( [

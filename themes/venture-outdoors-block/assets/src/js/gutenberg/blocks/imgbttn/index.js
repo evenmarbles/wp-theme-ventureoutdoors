@@ -28,23 +28,20 @@ registerBlockType("vo-blocks/imgbttn", {
   },
   attributes: {
     align: { type: "string", default: "full" },
-    src: {
-      type: "string",
-      selector: "img",
-      attribute: "src",
-      source: "attribute",
-    },
     public_id: { type: "string" },
     context: { type: "object" },
     height: { type: "number" },
     width: { type: "number" },
     version: { type: "number" },
     linkObject: { type: "object", default: { url: "" } },
+    is_lazyload: { type: "boolean" },
+    is_responsive: { type: "boolean" },
+    is_placeholder: { type: "boolean" }
   },
 
   edit: Edit,
 
-  save( { attributes: { public_id, context, height, width, linkObject } } ) {
+  save( { attributes: { public_id, context, height, width, linkObject, is_lazyload, is_responsive, is_placeholder } } ) {
     let alt = context ? context.alt : ''
 
     let rel=""
@@ -61,7 +58,7 @@ registerBlockType("vo-blocks/imgbttn", {
 
     return (
       <a href={ linkObject.url } { ...blockProps }>
-        <img width={ width } height={ height } src={ `https://res.cloudinary.com/ventureoutdoors/image/upload/${ public_id }` } alt={ alt } />
+        <img width={ width } height={ height } loading="lazy" data-public-id={ public_id } data-lazyload={ is_lazyload } data-responsive={ is_responsive } data-placeholder={ is_placeholder } alt={ alt } />
       </a>
     )
   }

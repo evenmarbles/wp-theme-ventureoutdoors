@@ -1,17 +1,17 @@
 <?php
   $content = get_post( get_the_ID() )->post_content;
-  $html = str_get_html($content);
+  $html = str_get_html( $content );
 
-  $blockInclude = $attributes['blockInclude'];
+  $blockInclude = $attributes[ 'blockInclude' ];
   $endBlock = '/'.strtok( $blockInclude, ' ' );
 
-  $blockId = $attributes['blockId'];
+  $blockId = isset( $attributes[ 'blockId' ] ) ? $attributes[ 'blockId' ] : '';
 
   // echo '<pre>';
   // print_r($blockInclude);
   // echo '</pre>';
 
-  foreach( $html->find('comment') as $e) {
+  foreach( $html->find( 'comment' ) as $e) {
     if ( strpos( $e->innertext, $blockInclude ) !== false &&    // this is the block type we are looking for
          strpos( $e->innertext, $endBlock) === false &&         // this is NOT the end of the block
          ( !$blockId || strpos( $e->innertext, $blockId ) ) ) { // if block ID is set, this is the block with the ID

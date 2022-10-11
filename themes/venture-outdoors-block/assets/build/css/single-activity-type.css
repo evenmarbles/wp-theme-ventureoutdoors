@@ -212,6 +212,26 @@
   animation: isLoading 0.75s linear infinite;
 }
 
+@-webkit-keyframes isLoading {
+  0% {
+    -webkit-transform: translate(-50%, -50%) rotateZ(0);
+    transform: translate(-50%, -50%) rotateZ(0);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotateZ(360deg);
+    transform: translate(-50%, -50%) rotateZ(360deg);
+  }
+}
+@keyframes isLoading {
+  0% {
+    -webkit-transform: translate(-50%, -50%) rotateZ(0);
+    transform: translate(-50%, -50%) rotateZ(0);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotateZ(360deg);
+    transform: translate(-50%, -50%) rotateZ(360deg);
+  }
+}
 /* Sidebar Filter */
 .sidebar-filter {
   border: 1px solid var(--wp--preset--color--bright-gray);

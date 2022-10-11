@@ -35,7 +35,10 @@ function ventureoutdoors_post_types() {
       'singular_name' => 'Activity'
     ),
     'menu_icon' => 'dashicons-universal-access-alt',
-    'taxonomies' => ['category']
+    'taxonomies' => ['category'],
+    'show_in_graphql' => true,
+    'graphql_single_name' => 'activity',
+    'graphql_plural_name' => 'activitys'
   ));
 }
 
@@ -44,9 +47,9 @@ add_action( 'init', 'ventureoutdoors_post_types' );
 
 function ventureoutdoors_modify_archive_titles( $titles, $original_title, $prefix ) {
   if ( is_post_type_archive() ) {
-    $title = sprintf( __('%1$s', 'ventureoutdoors'), $original_title );
+    $titles = sprintf( __('%1$s', 'ventureoutdoors'), $original_title );
   }
-  return $title;
+  return $titles;
 }
 
 add_filter( 'get_the_archive_title', 'ventureoutdoors_modify_archive_titles', 10, 3 );

@@ -7,9 +7,10 @@
     $_GET[$key] = $value;
   }
 
+  $cloudinary = VENTUREOUTDOORS_THEME\Inc\Cloudinary::get_instance();
   $loadmore_activities = VENTUREOUTDOORS_THEME\Inc\Loadmore_Activities::get_instance();
-  $activities = VENTUREOUTDOORS_THEME\Inc\Activities::get_instance();
 
+  $activities = VENTUREOUTDOORS_THEME\Inc\Activities::get_instance();
   $clean_params = $activities->clean_parameters();
   $options = $activities->get_meta_data( ...$clean_params );
   $query = $activities->get_query( ...$clean_params );
@@ -76,11 +77,7 @@
                 <label class="facetwp-checkbox" data-value="<?php echo $v[ 'slug' ]; ?>">
                   <input type="checkbox" <?php if ( in_array( $v['slug'], $clean_params[2] ) ) { echo "checked='checked'"; } ?>></input>
                   <span class="facetwp-display-value">
-                    <img width="75" height="20" class="sngl-activity-similar-difficulty__img lazyload" 
-                      sizes="(max-width: 75px) 100vw, 75px"
-                      data-src="https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto/icons/<?php echo $v[ 'slug' ]; ?>.png" 
-                      data-srcset="https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto,c_scale,w_75/icons/<?php echo $v[ 'slug' ]; ?> 75w, https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto,c_scale,w_49/icons/<?php echo $v[ 'slug' ]; ?> 49w"
-                      alt="" loading="lazy" />
+                    <?php echo $cloudinary->get_image_tag( 'levels/'.$v['slug'], 'sngl-activity-similar-difficulty__img', 'auto', true, false ); ?>  
                   </span>
                   <span class="facetwp-counter">(<?php echo $v['count'] ?>)</span>
                   <!-- <span class="facetwp-expand">[+]</span> -->
@@ -93,7 +90,7 @@
       </div>
     </div>
     <div class="col-md-8 sngl-activity-sec-cont">
-      <div  class="load-more-content-wrap">
+      <div class="load-more-content-wrap">
         <div id="load-more-content" class="row grid eqhwrap disblock-xxs facetwp-template">
           <?php
 

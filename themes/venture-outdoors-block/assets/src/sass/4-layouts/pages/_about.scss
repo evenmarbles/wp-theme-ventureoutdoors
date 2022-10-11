@@ -8,3 +8,11 @@
   margin-bottom: 22px;
   float: left;
 }
+
+.tour .container {
+  padding-top: 80px;
+
+  @media (min-width: 1280px) {
+    padding-top: 120px;
+  }
+}

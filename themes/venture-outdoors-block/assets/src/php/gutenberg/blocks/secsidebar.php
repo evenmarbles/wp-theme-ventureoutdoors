@@ -4,9 +4,9 @@
   }, get_field('activity_type') ) );
 
   $is_lesson = strpos( $activity_type, 'Lesson' );
-  $title = $is_lesson ? ' Classes' . $title : ' Tours' . $title;
+  $suffix = $is_lesson ? ' Classes' : ' Tours';
 ?>
-<div class="sec-with-floating-sidebar"<?php echo $attributes["className"] ? ' '.$attributes["className"] : "" ?>>
+<div class="sec-with-floating-sidebar"<?php echo isset( $attributes["className"] ) ? ' ' . $attributes["className"] : "" ?>>
   <?php echo $content; ?>
   <div class="floating-sidebar hidden-sm-down">
     <div class="container">
@@ -18,7 +18,7 @@
               <li><a class="smoothlnk" href="#booking">Tour Dates</a></li>
               <li><a class="smoothlnk" href="#details">Details</a></li>
               <li><a class="smoothlnk" href="#logistics">Logistics</a></li>
-              <li><a class="smoothlnk" href="#related">Similar <?php echo $title ?></a></li>
+              <li><a class="smoothlnk" href="#related">Similar <?php echo $suffix ?></a></li>
             </ul>
             <div class="side-calendar text-center">
               <a class="smoothlnk btn-primary btn-no-arrow btn-block icon-calendar">Book Online</a>

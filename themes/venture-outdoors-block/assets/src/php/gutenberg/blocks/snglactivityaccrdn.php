@@ -6,15 +6,15 @@
   $is_lesson = strpos( $activity_type, 'Lesson' );
 
   $title = $attributes['title'];
-  if ( $attributes['addPrefix'] ) {
+  if ( isset( $attributes['addPrefix'] ) ) {
     $title = $is_lesson ? 'Class ' . $title : 'Tour ' . $title;
   }
-  if ( $attributes['addSuffix'] ) {
+  if ( isset( $attributes['addSuffix'] ) ) {
     $title .= $is_lesson ? ' Classes' : ' Tours';
   }
 
   $className = "sngl-activity-sec sngl-activity-spacer mobile-accordion-container";
-  if ( $attributes['className'] ) {
+  if ( isset( $attributes['className'] ) ) {
     $className .= " ".$attributes['className'];
   }
 
@@ -26,7 +26,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-9 col-md-offset-3 sngl-activity-sec-cont">
-        <h3 class="flush-top hidden-sm-down"><?php echo $attributes['altTitle'] ? $attributes['altTitle'] : $title ?></h3>
+        <h3 class="flush-top hidden-sm-down"><?php echo isset( $attributes['altTitle'] ) ? $attributes['altTitle'] : $title ?></h3>
           <?php echo $content; ?>
       </div>
     </div>

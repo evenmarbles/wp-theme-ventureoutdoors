@@ -33,26 +33,22 @@ registerBlockType("vo-blocks/slide", {
     context: { type: "object" },
     height: { type: "number" },
     width: { type: "number" },
-    version: { type: "number" }
+    version: { type: "number" },
+    is_lazyload: { type: "boolean" },
+    is_responsive: { type: "boolean" },
+    is_placeholder: { type: "boolean" }
   },
 
   edit: Edit,
 
-  save( { attributes: { public_id, context, height, width } } ) {
+  save( { attributes: { public_id, context, height, width, is_lazyload, is_responsive, is_placeholder } } ) {
     let alt = context ? context.alt : '';
 
-    const blockProps = useBlockProps.save( {
-      className: 'lazyload',
-    } );
+    const blockProps = useBlockProps.save();
 
     return (
       <div>
-        <img width={ width } height={ height } { ...blockProps } sizes="100vw"
-          src={ `https://res.cloudinary.com/ventureoutdoors/image/upload/q_1,e_pixelate:5/c_scale,w_800/${ public_id }` }
-          srcset={ `https://res.cloudinary.com/ventureoutdoors/image/upload/q_1,e_pixelate:5/c_scale,w_500/${ public_id } 500w,https://res.cloudinary.com/ventureoutdoors/image/upload/q_1,e_pixelate:5/c_scale,w_800/${ public_id } 800w,https://res.cloudinary.com/ventureoutdoors/image/upload/q_1,e_pixelate:5/c_scale,w_1080/${ public_id } 1080w,https://res.cloudinary.com/ventureoutdoors/image/upload/q_1,e_pixelate:5/c_scale,w_1600/${ public_id } 1600w` }
-          data-src={ `https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto/c_scale,w_800/${ public_id }` }
-          data-srcset={ `https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto/c_scale,w_500/${ public_id } 500w,https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto/c_scale,w_800/${ public_id } 800w,https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto/c_scale,w_1080/${ public_id } 1080w,https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto/c_scale,w_1600/${ public_id } 1600w` }
-          alt={ alt } />
+        <img width={ width } height={ height } loading="lazy" { ...blockProps } data-public-id={ public_id } data-lazyload={ is_lazyload } data-responsive={ is_responsive } data-placeholder={ is_placeholder } alt={ alt } />
       </div>
     )
   }

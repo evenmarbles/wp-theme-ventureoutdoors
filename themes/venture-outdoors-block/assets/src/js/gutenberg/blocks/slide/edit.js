@@ -2,12 +2,12 @@
  * WordPress Dependencies.
  */
 import { __ } from '@wordpress/i18n'
-import { Placeholder, Button, ToolbarGroup } from "@wordpress/components";
-import { useBlockProps, BlockIcon, BlockControls } from "@wordpress/block-editor";
+import { Placeholder, Button, CheckboxControl, ToolbarGroup, PanelBody, PanelRow } from "@wordpress/components";
+import { useBlockProps, BlockIcon, BlockControls, InspectorControls } from "@wordpress/block-editor";
 import Cloudinary from '../../api/image'
 
 const Edit = ( { className, attributes, setAttributes, clientId } ) => {
-  const { src } = attributes
+  const { src, is_lazyload, is_responsive, is_placeholder } = attributes
   const isSourceAvailable = typeof src !== "undefined";
   const blockProps = useBlockProps();
 
@@ -56,6 +56,31 @@ const Edit = ( { className, attributes, setAttributes, clientId } ) => {
           </Button>
         </Placeholder>
       ) }
+      <InspectorControls>
+        <PanelBody title={ __('Image Settings', 'ventureoutdoors' ) } initialOpen={ true }>
+          <PanelRow>
+            <CheckboxControl
+              label={ __( 'lazyload', 'ventureoutdoors' ) }
+              checked={ is_lazyload }
+              onChange={ () => { setAttributes( { is_lazyload : !is_lazyload } ) } }
+            />
+          </PanelRow>
+          <PanelRow>
+            <CheckboxControl
+              label={ __( 'responsive', 'ventureoutdoors' ) }
+              checked={ is_responsive }
+              onChange={ () => { setAttributes( { is_responsive : !is_responsive } ) } }
+            />				
+          </PanelRow>
+          <PanelRow>
+            <CheckboxControl
+              label={ __( 'placeholder', 'ventureoutdoors' ) }
+              checked={ is_placeholder }
+              onChange={ () => { setAttributes( { is_placeholder : !is_placeholder } ) } }
+            />				
+          </PanelRow>
+        </PanelBody>
+      </InspectorControls>
     </>
   );
 }

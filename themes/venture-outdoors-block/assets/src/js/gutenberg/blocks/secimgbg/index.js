@@ -31,7 +31,7 @@ registerBlockType("vo-blocks/secimgbg", {
     align: { type: "string", default: "full" },
     src: { type: "string", default: secimgbg.fallbackimage },
     context: { type: "object" },
-    derived: { type: "array" },
+    public_id: { type: "string" },
     height: { type: "number" },
     width: { type: "number" },
     version: { type: "number" },
@@ -41,38 +41,20 @@ registerBlockType("vo-blocks/secimgbg", {
 
   edit: Edit,
 
-  save( { attributes: { src, context, derived, height, width, bkgClassName, option } } ) {
+  save( { attributes: { context, public_id, height, width, bkgClassName, option } } ) {
     let alt = context ? context.alt : ''
     const blockProps = useBlockProps.save( {
       className: 'sec-with-imgbg',
     } );
 
-    let slantbgClass = ( !isEmpty(option) && option === " slantbg" ) ? 'slantbg' : ''
-
-    const className = bkgClassName ? `sec-imgbg ${bkgClassName}${slantbgClass} lazyload` : `sec-imgbg${slantbgClass} lazyload`
-
-    let sizes = [500, 800, 1080, 1600]
-
-    let thisSrc = src
-    let thisSrcset = ''
-
-    if ( derived ) {
-      thisSrc = derived[0].secure_url
-      derived.slice(1).forEach(( d, index ) => {
-        thisSrcset += `${ d.secure_url } ${sizes[index]}w`
-        if ( index !== derived.length - 2 ) { thisSrcset += ',' }
-      })
-    }
+    let slantbgClass = ( option && option === "slantbg" ) ? ' slantbg' : ''
+    const className = bkgClassName ? `sec-imgbg ${bkgClassName}${slantbgClass}` : `sec-imgbg${slantbgClass}`
 
     return (
       <>
         <section { ...blockProps }>
           <InnerBlocks.Content />
-          { ( !isEmpty(option) && option === "slantbg" ) && <div className="sec-slantbg"></div> }
-          <img width={ width } height={ height } className={ className } 
-            data-src={ thisSrc }
-            data-srcset={ thisSrcset }
-            alt={ alt } />
+          <img width={ width } height={ height } loading="lazy" className={ className } data-public-id={ public_id } data-lazyload="true" data-responsive="true" alt={ alt } />
         </section>
       </>
     )

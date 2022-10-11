@@ -1,10 +1,9 @@
 <?php 
+$cloudinary = VENTUREOUTDOORS_THEME\Inc\Cloudinary::get_instance();
 
 $activities = VENTUREOUTDOORS_THEME\Inc\Activities::get_instance();
-
 $clean_params = $activities->clean_parameters();
-$options = $activities->get_meta_data( ...$clean_params );
-
+$options = $activities->get_meta_data( ...$clean_params )[ 'types' ];
 ?>
 
 <section class="activity-card">
@@ -14,20 +13,19 @@ $options = $activities->get_meta_data( ...$clean_params );
         <div class="activity-slider side-slider">
           <?php 
 
-            foreach ( $options[ 'types' ] as $item ) { ?>
+            foreach ( $options as $item ) { ?>
 
               <div class="activity-slider-item side-slider-item">
-                <a href="<?php echo $activity[ 'slug' ]; ?>">
+                <a href="<?php echo $item[ 'slug' ]; ?>">
                   <div class="imgbttn imgbttn-wbg">
-                    <img width="285" height="428px" src="https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto,c_scale,h_428,dpr_2.0/activity-types/<?php echo $item[ 'thumbnail' ]; ?>"
-                      loading="lazy" alt="<?php echo $item[ 'title' ]; ?>" class="imgbttn-img img-responsive objectfit">
+                    <?php echo $cloudinary->get_image_tag( $item[ 'featured_url' ], 'imgbttn-img img-responsive objectfit', 'auto', true, false ); ?>
                     <div class="imgbttn-overlay">
                       <div class="imgbttn-btn">
                         <span class="btn-tertiary">Explore</span>
                       </div>
                       <div class="imgbttn-txt activity-slide-cont">
                         <h3 class="h4 imgbttn-title flush-ends"><?php echo $item[ 'title' ]; ?></h3>
-                        <div class="activity-count"><?php echo $item[ 'count' ] . ' ' . str_contains( $item[ 'slug '], 'lessons' ) ? 'Lessons' : 'Tours'; ?></div>
+                        <div class="activity-count"><?php echo $item[ 'count' ] . ' ' . ( str_contains( $item[ 'slug' ], 'lessons' ) ? 'Lessons' : 'Tours' ); ?></div>
                       </div>
                     </div>
                   </div>

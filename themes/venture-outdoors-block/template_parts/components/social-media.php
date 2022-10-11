@@ -1,8 +1,8 @@
 <?php 
-  $ele = $args['ele'] ? $args['ele'] : 'span';
-  $margin = $args['margin'] ? ' ' . $args['margin'] : '';
-  $txt_color = $args['txt_color'] ? ' ' . $args['txt_color'] : '';
-  $btn_color = $args['btn_color'] ? ' ' . $args['btn_color'] : '';
+  $ele = isset( $args[ 'ele' ] ) ? $args[ 'ele' ] : 'span';
+  $margin = isset( $args[ 'margin' ] ) ? ' ' . $args[ 'margin' ] : '';
+  $txt_color = isset( $args[ 'txt_color' ] ) ? ' ' . $args[ 'txt_color' ] : '';
+  $btn_color = isset( $args[ 'btn_color' ] ) ? ' ' . $args[ 'btn_color' ] : '';
 ?>
 <<?php echo $ele; ?> class="social-media">
   <h3 class="h5 montserrattlt text-center<?php echo $margin; ?><?php echo $txt_color; ?>">Connect With</h3>

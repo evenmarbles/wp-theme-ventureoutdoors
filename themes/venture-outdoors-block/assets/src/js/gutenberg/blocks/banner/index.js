@@ -15,7 +15,6 @@ import Edit from './edit';
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
 import { InnerBlocks } from '@wordpress/block-editor';
-import { useBlockProps } from '@wordpress/block-editor';
 
 /**
  * Register block type.
@@ -37,7 +36,7 @@ registerBlockType("vo-blocks/banner", {
     return (
       <div className="banner-item">
         <div className="mobile-banner-img hidden-sm-up">
-          <img width="600px" height="300px" src="" id="randomImage" alt="#" />
+          <img width="600" height="300" loading="lazy" data-lazyload="true" data-responsive="true" data-placeholder="true" id="randomImage" />
         </div>
         <InnerBlocks.Content /> 
       </div>

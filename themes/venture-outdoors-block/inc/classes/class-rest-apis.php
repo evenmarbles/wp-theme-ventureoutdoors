@@ -39,32 +39,38 @@ class Rest_APIs {
 
     register_rest_route('ventureoutdoors/v1', 'acf', array(
       'method' => \WP_REST_SERVER::READABLE,
-      'callback' => 'VENTUREOUTDOORS_THEME\Inc\acf_results'
+      'callback' => 'VENTUREOUTDOORS_THEME\Inc\acf_results',
+      'permission_callback' => '__return_true'
     ) );
 
     register_rest_route('ventureoutdoors/v1', 'filter', array(
       'method' => \WP_REST_SERVER::READABLE,
-      'callback' => 'VENTUREOUTDOORS_THEME\Inc\filter_options_results'
+      'callback' => 'VENTUREOUTDOORS_THEME\Inc\filter_options_results',
+      'permission_callback' => '__return_true'
     ) );
 
     register_rest_route('ventureoutdoors/v1', 'activities', array(
       'method' => \WP_REST_SERVER::READABLE,
-      'callback' => 'VENTUREOUTDOORS_THEME\Inc\filter_activities_results'
+      'callback' => 'VENTUREOUTDOORS_THEME\Inc\filter_activities_results',
+      'permission_callback' => '__return_true'
     ) );
 	
     register_rest_route('ventureoutdoors/v1', 'highlights', array(
       'method' => \WP_REST_SERVER::READABLE,
-      'callback' => 'VENTUREOUTDOORS_THEME\Inc\highlights_callback'
+      'callback' => 'VENTUREOUTDOORS_THEME\Inc\highlights_callback',
+      'permission_callback' => '__return_true'
     ) );
 	
     register_rest_route('ventureoutdoors/v1', 'loadmore', array(
       'method' => \WP_REST_SERVER::READABLE,
-      'callback' => 'VENTUREOUTDOORS_THEME\Inc\Loadmore_Activities::loadmore'
+      'callback' => 'VENTUREOUTDOORS_THEME\Inc\Loadmore_Activities::loadmore',
+      'permission_callback' => '__return_true'
     ) );
 
     register_rest_route('ventureoutdoors/v1', 'related', array(
       'method' => \WP_REST_SERVER::READABLE,
-      'callback' => 'VENTUREOUTDOORS_THEME\Inc\related_activities_results'
+      'callback' => 'VENTUREOUTDOORS_THEME\Inc\related_activities_results',
+      'permission_callback' => '__return_true'
     ) );
 
 	}

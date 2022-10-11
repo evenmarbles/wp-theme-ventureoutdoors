@@ -1,5 +1,6 @@
 import $ from 'jquery'
 import "slick-carousel";
+import CloudinaryHelper from '../helpers/cloudinary-helper'
 
 class BannerGallery {
   constructor() {
@@ -17,17 +18,15 @@ class BannerGallery {
       'Find tranquility and solitude on a kayak tour or a hike to Lake Norris, one of Venture Outdoors\' day tours.',
       'A kayak lessons with one of Venture Outdoors\' certified kayak instructor.'];
     var randomNum = this.getRandomNumber(images.length);
-    var htmlImage = document.getElementById("randomImage");
+    var imgTag = document.getElementById("randomImage");
 
-    if (!htmlImage) {
+    if (!imgTag) {
       return
     }
     
-    htmlImage.classList.add("lazyload");
-    htmlImage.src = 'https://res.cloudinary.com/ventureoutdoors/image/upload/q_1,e_pixelate:5,w_600/slides/slide-' + images[randomNum];
-    htmlImage.setAttribute('data-src', 'https://res.cloudinary.com/ventureoutdoors/image/upload/dpr_2,w_600/slides/slide-' + images[randomNum]);
-    //htmlImage.srcset = images[randomNum];
-    htmlImage.alt = altTexts[randomNum];
+    imgTag.setAttribute('data-public-id', 'slide-' + images[randomNum])
+    imgTag.alt = altTexts[randomNum];
+    CloudinaryHelper.cloudinaryImage(imgTag)
 
     // Desktop: Slider
     this.bannerImage.slick({

@@ -38,25 +38,60 @@ registerBlockType("vo-blocks/testimonial", {
       type: 'string',
       source: 'html',
       selector: 'span',
-    }
+    },
+    public_id: { type: "string" },
+    context: { type: "object" },
+    height: { type: "number" },
+    width: { type: "number" },
+    version: { type: "number" },
+    transformation: { type: "string" },
+    is_lazyload: { type: "boolean" },
+    is_responsive: { type: "boolean" },
+    is_placeholder: { type: "boolean" }
   },
 
   edit: Edit,
 
-  save( { attributes: { content, author } } ) {
+  save( { attributes: { content, author, public_id, context, height, width, transformation, is_lazyload, is_responsive, is_placeholder } } ) {
+    let alt = context ? context.alt : '';
+
+    var newTransformation = []
+
+    if ( transformation ) {
+      var transformArray = transformation.split( '/' )
+      transformArray.forEach( item => {
+        if ( item !== 'q_auto' && item !== 'f_auto' ) {
+          if ( transformation.search( 'c_scale' ) !== -1 ) {
+            var dims = item.split( ',' )
+            dims.forEach( d => {
+              var pos =  d.search( 'w_' )
+              if ( pos !== -1 ) {
+                width = parseInt( d.substring( pos + 2 ) )
+              }
+              pos =  d.search( 'h_' )
+              if ( pos !== -1 ) {
+                height = parseInt( d.substring( pos + 2 ) )
+              }
+            })
+          } else {
+            newTransformation.push( item )
+          }
+        }
+      })
+    }
+
     const blockProps = useBlockProps.save( {
       className: 'flush-top',
     } );
 
     return (
       <>
-          <RichText.Content { ...blockProps } tagName='p' value={ content } />
-          <div className="testimonial-author">
-            <div>— <RichText.Content tagName='span' value={ author } />
-              <img width="105px" height="24px" src="https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto/affiliates/tripadvisor_secondary.svg"
-                loading="lazy" alt="Hear from past guests about their experience with Venture Outdoors on TripAdvisor." />
-            </div>
+        <RichText.Content { ...blockProps } tagName='p' value={ content } />
+        <div className="testimonial-author">
+          <div>— <RichText.Content tagName='span' value={ author } />
+            <img width={ width } height={ height } loading="lazy" data-public-id={ public_id } data-transformation={ newTransformation.join() } data-lazyload={ is_lazyload } data-responsive={ is_responsive } data-placeholder={ is_placeholder } alt={ alt } />
           </div>
+        </div>
       </>
     )
   }

@@ -7,7 +7,7 @@ import { useBlockProps, BlockIcon, BlockControls, InspectorControls } from "@wor
 import Cloudinary from '../../api/image'
   
 const Edit = ( { className, attributes, setAttributes, clientId } ) => {
-  const { src, sizes, isHeight100, isWidth100, imageSizes } = attributes
+  const { src, sizes, isHeight100, isWidth100, imageSizes, is_lazyload, is_responsive, is_placeholder } = attributes
   const isSourceAvailable = typeof src !== "undefined";
   const blockProps = useBlockProps();
   
@@ -85,6 +85,27 @@ const Edit = ( { className, attributes, setAttributes, clientId } ) => {
               help={ __('The image download sizes, separeate sizes by comma', 'ventureoutdoors') }
               value={ imageSizes }
               onChange={ (imageSizes) => { setAttributes( { imageSizes } ) } }
+            />				
+          </PanelRow>
+          <PanelRow>
+            <CheckboxControl
+              label={ __( 'lazyload', 'ventureoutdoors' ) }
+              checked={ is_lazyload }
+              onChange={ () => { setAttributes( { is_lazyload : !is_lazyload } ) } }
+            />
+          </PanelRow>
+          <PanelRow>
+            <CheckboxControl
+              label={ __( 'responsive', 'ventureoutdoors' ) }
+              checked={ is_responsive }
+              onChange={ () => { setAttributes( { is_responsive : !is_responsive } ) } }
+            />				
+          </PanelRow>
+          <PanelRow>
+            <CheckboxControl
+              label={ __( 'placeholder', 'ventureoutdoors' ) }
+              checked={ is_placeholder }
+              onChange={ () => { setAttributes( { is_placeholder : !is_placeholder } ) } }
             />				
           </PanelRow>
         </PanelBody>

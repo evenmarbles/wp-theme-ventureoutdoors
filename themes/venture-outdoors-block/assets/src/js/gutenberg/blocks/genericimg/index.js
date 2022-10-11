@@ -33,25 +33,24 @@ registerBlockType("vo-blocks/genericimg", {
     sizes: { type: "string" },
     isHeight100: { type: "boolean", default: false },
     isWidth100: { type: "boolean", default: false },
-    imageSizes: { type: "string" }
+    imageSizes: { type: "string" },
+    is_lazyload: { type: "boolean" },
+    is_responsive: { type: "boolean" },
+    is_placeholder: { type: "boolean" }
   },
 
   edit: Edit,
 
-  save( { attributes: { public_id, context, height, width, isHeight100, isWidth100 } } ) {
+  save( { attributes: { public_id, context, height, width, isHeight100, isWidth100, is_lazyload, is_responsive, is_placeholder } } ) {
     let alt = context ? context.alt : '';
-
-    let src = `https://res.cloudinary.com/ventureoutdoors/image/upload/${ public_id }`
 
     width = isWidth100 ? "100%" : width;
     height = isHeight100 ? "100%" : height;
 
-    const blockProps = useBlockProps.save( {
-      className: 'lazyload',
-    } );
+    const blockProps = useBlockProps.save();
 
     return (
-      <img { ...blockProps } width={ width } height={ height } src={ src } alt={ alt} />
+      <img width={ width } height={ height } { ...( is_lazyload && { loading: "lazy" } ) } { ...blockProps } data-public-id={ public_id } data-lazyload={ is_lazyload } data-responsive={ is_responsive } data-placeholder={ is_placeholder } alt={ alt } />
     )
   }
 })

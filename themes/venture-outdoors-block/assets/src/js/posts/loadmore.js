@@ -1,4 +1,5 @@
 import $ from 'jquery'
+import CloudinaryHelper from '../helpers/cloudinary-helper'
 
 const publisher = require('../helpers/publisher')
 
@@ -113,7 +114,8 @@ class LoadMore {
 			data: data,
 			success: (response) => {
 				this.loadMoreBtn.data('page', nextPage);
-				$('#load-more-content').append(response);
+				$('#load-more-content').append(JSON.parse(response));
+				CloudinaryHelper.createImage();
 				this.removeLoadMoreIfOnLastPage(nextPage);
 				this.loadMoreBtn.removeClass('is-loading')
 				this.isRequestProcessing = false;

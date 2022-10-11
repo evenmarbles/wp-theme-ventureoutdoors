@@ -77,8 +77,8 @@ class Loadmore_Activities {
 			// Return response as zero, when no post found.
 			wp_die( '0' );
 		endif;
-	
-		return $results;
+
+		return json_encode($results);
 	}
 
 	/**

@@ -2,6 +2,7 @@
   "require" : {
     "sendinblue/api-v3-sdk": "8.*",
     "vlucas/phpdotenv": "5.4.*",
-    "defuse/php-encryption": "2.3.*"
+    "defuse/php-encryption": "2.3.*",
+    "cloudinary/cloudinary_php": "^2"
   }
 }

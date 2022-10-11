@@ -537,6 +537,15 @@ body:not(.error404) .find-activities-form {
   float: left;
 }
 
+.tour .container {
+  padding-top: 80px;
+}
+@media (min-width: 1280px) {
+  .tour .container {
+    padding-top: 120px;
+  }
+}
+
 .paragraph-wrapper {
   margin-bottom: 80px;
 }

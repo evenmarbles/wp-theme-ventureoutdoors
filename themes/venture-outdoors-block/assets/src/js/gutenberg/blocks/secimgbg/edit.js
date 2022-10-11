@@ -7,7 +7,7 @@ import { useBlockProps, InnerBlocks, InspectorControls } from "@wordpress/block-
 import Cloudinary from '../../api/image'
 
 const Edit = ( { className, attributes, setAttributes, clientId } ) => {
-  const { src, bkgClassName, option } = attributes;
+  const { src, public_id, bkgClassName, option } = attributes;
 
   const blockProps = useBlockProps( {
     className: 'sec-with-imgbg',
@@ -21,7 +21,7 @@ const Edit = ( { className, attributes, setAttributes, clientId } ) => {
     setAttributes( {
       src: data.secure_url,
       context: data.context ? data.context.custom : '',
-      derived: data.derived ? data.derived : '',
+      public_id: data.public_id,
       height: data.height,
       width: data.width,
       version: data.version
@@ -29,13 +29,7 @@ const Edit = ( { className, attributes, setAttributes, clientId } ) => {
   } )
 
   function openML () {
-    Cloudinary.openMediaLibrary( clientId, { default_transformations: [
-      [{quality: "auto"},{fetch_format: "auto"}],
-      [{crop: "scale", width: 500},{quality: "auto"},{fetch_format: "auto"}],
-      [{crop: "scale", width: 800},{quality: "auto"},{fetch_format: "auto"}],
-      [{crop: "scale", width: 1080},{quality: "auto"},{fetch_format: "auto"}],
-      [{crop: "scale", width: 1600},{quality: "auto"},{fetch_format: "auto"}],
-    ] } );
+    Cloudinary.openMediaLibrary( clientId );
   }
 
   return (
@@ -44,6 +38,9 @@ const Edit = ( { className, attributes, setAttributes, clientId } ) => {
         <PanelBody title={ __('Background Settings', 'ventureoutdoors' ) } initialOpen={true}>
           <PanelRow>
             <Button variant='secondary' onClick={ openML }>Choose Image</Button>
+          </PanelRow>
+          <PanelRow>
+            <p>{ 'File: ' + ( public_id === null ? '' : public_id ) }</p>
           </PanelRow>
           <PanelRow>
             <TextControl 
@@ -62,9 +59,7 @@ const Edit = ( { className, attributes, setAttributes, clientId } ) => {
 							{ label: 'Normal', value: 'normalbg' },
 							{ label: "Slant", value: 'slantbg' },
 						] }
-						onChange={ ( optionVal ) => {
-							setAttributes( { optionVal } );
-						} }
+						onChange={ ( optionVal ) => { setAttributes( { option: optionVal } ) } }
 					/>
 				</PanelBody>
       </InspectorControls>

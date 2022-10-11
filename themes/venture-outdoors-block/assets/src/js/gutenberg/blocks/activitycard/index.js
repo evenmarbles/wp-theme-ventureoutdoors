@@ -40,8 +40,7 @@ registerBlockType("vo-blocks/activitycard", {
         return <div className="activity-slider-item side-slider-item">
           <a href={ permalink }>
             <div className="imgbttn imgbttn-wbg">
-              <img src={ `https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto,c_scale,h_428,dpr_2.0/activity-types/${ thumbnail }` }
-                loading="lazy" alt={ title } className="imgbttn-img img-responsive objectfit"/>
+              <img width="571" height="428" className="imgbttn-img img-responsive objectfit" loading="lazy" data-public-id={ `activity-types/${ thumbnail }` } data-lazyload="true" data-responsive="true" data-placeholder="true" alt={ title } />
               <div className="imgbttn-overlay">
                 <div className="imgbttn-btn">
                   <span className="btn-tertiary">Explore</span>

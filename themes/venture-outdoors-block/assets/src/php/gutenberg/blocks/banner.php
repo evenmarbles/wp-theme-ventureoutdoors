@@ -1,6 +1,7 @@
 <?php
-$activities = VENTUREOUTDOORS_THEME\Inc\Activities::get_instance();
+$cloudinary = VENTUREOUTDOORS_THEME\Inc\Cloudinary::get_instance();
 
+$activities = VENTUREOUTDOORS_THEME\Inc\Activities::get_instance();
 $clean_params = $activities->clean_parameters();
 $options = $activities->get_meta_data( ...$clean_params );
 $query = $activities->get_query( ...$clean_params );
@@ -8,10 +9,10 @@ $query = $activities->get_query( ...$clean_params );
 
 <header id="masthead" class="banner">
   <div class="banner-logo-container">
-    <img width="382px" height="200px" src="https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto/logo/venture-outdoors-base_382x200.png" alt="Go to Venture Outdoors&#x27; homepage."
-      class="logo-base" />
-    <img width="195px" height="200px" src="https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto/logo//venture-outdoors-logo-needle_195x200.png"
-      alt="Go to Venture Outdoors&#x27; homepage." class="logo-needle" />
+    <?php 
+      echo $cloudinary->get_image_tag( 'venture-outdoors-base_382x200', 'logo-base', 'auto', true, false );
+      echo $cloudinary->get_image_tag( 'venture-outdoors-logo-needle_195x200', 'logo-needle', 'auto', true, false );
+    ?>
   </div>
   <?php echo $content; ?>
   <div class="banner-form">
