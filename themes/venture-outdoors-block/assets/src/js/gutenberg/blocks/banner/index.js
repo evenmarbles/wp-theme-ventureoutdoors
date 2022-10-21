@@ -36,7 +36,7 @@ registerBlockType("vo-blocks/banner", {
     return (
       <div className="banner-item">
         <div className="mobile-banner-img hidden-sm-up">
-          <img width="600" height="300" loading="lazy" data-lazyload="true" data-responsive="true" data-placeholder="true" id="randomImage" />
+          <img width="600" height="300" loading="eager" data-lazyload="false" data-responsive="true" data-placeholder="false" id="randomImage" />
         </div>
         <InnerBlocks.Content /> 
       </div>

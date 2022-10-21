@@ -44,11 +44,13 @@ registerBlockType("vo-blocks/slide", {
   save( { attributes: { public_id, context, height, width, is_lazyload, is_responsive, is_placeholder } } ) {
     let alt = context ? context.alt : '';
 
-    const blockProps = useBlockProps.save();
+    const blockProps = useBlockProps.save()
+
+    const loading = is_lazyload ? "lazy" : "eager"
 
     return (
       <div>
-        <img width={ width } height={ height } loading="lazy" { ...blockProps } data-public-id={ public_id } data-lazyload={ is_lazyload } data-responsive={ is_responsive } data-placeholder={ is_placeholder } alt={ alt } />
+        <img width={ width } height={ height } loading={ loading } { ...blockProps } data-public-id={ public_id } data-lazyload={ is_lazyload } data-responsive={ is_responsive } data-placeholder={ is_placeholder } alt={ alt } />
       </div>
     )
   }

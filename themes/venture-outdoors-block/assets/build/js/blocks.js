@@ -985,10 +985,10 @@ __webpack_require__.r(__webpack_exports__);
     }, /*#__PURE__*/React.createElement("img", {
       width: "600",
       height: "300",
-      loading: "lazy",
-      "data-lazyload": "true",
+      loading: "eager",
+      "data-lazyload": "false",
       "data-responsive": "true",
-      "data-placeholder": "true",
+      "data-placeholder": "false",
       id: "randomImage"
     })), /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.InnerBlocks.Content, null));
   }
@@ -5026,10 +5026,11 @@ function _extends() { _extends = Object.assign ? Object.assign.bind() : function
         is_placeholder = _ref$attributes.is_placeholder;
     var alt = context ? context.alt : '';
     var blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useBlockProps.save();
+    var loading = is_lazyload ? "lazy" : "eager";
     return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("img", _extends({
       width: width,
       height: height,
-      loading: "lazy"
+      loading: loading
     }, blockProps, {
       "data-public-id": public_id,
       "data-lazyload": is_lazyload,
