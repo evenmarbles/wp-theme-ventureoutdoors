@@ -7,7 +7,7 @@
     if ( strstr( $_SERVER[ 'SERVER_NAME' ], 'venture-outdoors-classic.local' ) ) {
       $file = dirname( __DIR__, 2 ) . "/.encryption/{$file}";
     } else {
-      $file = dirname( $_SERVER['DOCUMENT_ROOT'], 2 ) . "/etc/ventureoutdoorsllc.com/{$file}";
+      $file = dirname( $_SERVER['DOCUMENT_ROOT'], 1 ) . "/private_html/{$file}";
     }
     $secretKey = file_get_contents( $file );
       return Defuse\Crypto\Key::loadFromAsciiSafeString($secretKey);

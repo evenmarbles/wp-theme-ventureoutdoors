@@ -41,7 +41,7 @@ class Cloudinary {
 			if ( strstr( $_SERVER[ 'SERVER_NAME' ], 'venture-outdoors-classic.local' ) ) {
 				$dir = dirname( __DIR__, 2 );
 			} else {
-				$dir = dirname( $_SERVER[ 'DOCUMENT_ROOT' ], 2 ) . '/.envs/ventureoutdoorsllc.com';
+				$dir = dirname( $_SERVER[ 'DOCUMENT_ROOT' ], 1 ) . '/private_html';
 			}
 			$dotenv = \Dotenv\Dotenv::createImmutable( $dir );
 			$dotenv->load();
