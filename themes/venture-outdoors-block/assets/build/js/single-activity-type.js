@@ -158,9 +158,11 @@ var CloudinaryHelper = /*#__PURE__*/function () {
         image.resize((0,_cloudinary_url_gen_actions_resize__WEBPACK_IMPORTED_MODULE_3__.scale)().width('auto'));
       }
 
-      if (!isNativeLazyload() && imgTag.getAttribute('data-placeholder') === 'true') {
+      if (
+      /*!isNativeLazyload() &&*/
+      imgTag.getAttribute('data-placeholder') === 'true') {
         plugins.push((0,_cloudinary_html__WEBPACK_IMPORTED_MODULE_2__.placeholder)({
-          mode: 'pixelate'
+          mode: 'vectorize'
         }));
       }
 

@@ -76,9 +76,8 @@ registerBlockType("vo-blocks/gallerybanner", {
         height = Math.ceil( image.height * hs )
       }
       imageHTML.push( <img width={ width } height={ height } 
-        className='full-width-slider-image lazyload' 
-        src={ image.derived[0].secure_url } 
-        data-src={ image.derived[1].secure_url }
+        className='full-width-slider-image' 
+        data-public-id={ image.public_id }
         alt={ image.context ? image.context.alt : '' } /> )
     }
   

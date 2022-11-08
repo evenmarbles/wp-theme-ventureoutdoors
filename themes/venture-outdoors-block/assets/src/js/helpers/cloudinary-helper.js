@@ -61,8 +61,8 @@ class CloudinaryHelper {
     }else {
       image.resize(scale().width('auto'))
     }
-    if( !isNativeLazyload() && imgTag.getAttribute('data-placeholder') === 'true' ) {
-      plugins.push( placeholder( {mode: 'pixelate'} ) )
+    if( /*!isNativeLazyload() &&*/ imgTag.getAttribute('data-placeholder') === 'true' ) {
+      plugins.push( placeholder( {mode: 'vectorize'} ) )
     }
     new HtmlImageLayer(imgTag, image, plugins, { sdkSemver: "Base Semver", sdkCode: '1', techVersion: '1.0.0'})
   }
