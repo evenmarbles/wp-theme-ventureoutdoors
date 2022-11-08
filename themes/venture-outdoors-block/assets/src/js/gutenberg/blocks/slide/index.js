@@ -46,11 +46,9 @@ registerBlockType("vo-blocks/slide", {
 
     const blockProps = useBlockProps.save()
 
-    const loading = is_lazyload ? "lazy" : "eager"
-
     return (
       <div>
-        <img width={ width } height={ height } loading={ loading } { ...blockProps } data-public-id={ public_id } data-lazyload={ is_lazyload } data-responsive={ is_responsive } data-placeholder={ is_placeholder } alt={ alt } />
+        <img width={ width } height={ height } { ...( is_lazyload && { loading: "lazy" } ) } { ...blockProps } data-public-id={ public_id } data-lazyload={ is_lazyload } data-responsive={ is_responsive } data-placeholder={ is_placeholder } alt={ alt } />
       </div>
     )
   }

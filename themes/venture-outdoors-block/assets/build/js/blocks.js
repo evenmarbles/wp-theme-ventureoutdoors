@@ -5035,11 +5035,11 @@ function _extends() { _extends = Object.assign ? Object.assign.bind() : function
         is_placeholder = _ref$attributes.is_placeholder;
     var alt = context ? context.alt : '';
     var blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useBlockProps.save();
-    var loading = is_lazyload ? "lazy" : "eager";
     return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("img", _extends({
       width: width,
-      height: height,
-      loading: loading
+      height: height
+    }, is_lazyload && {
+      loading: "lazy"
     }, blockProps, {
       "data-public-id": public_id,
       "data-lazyload": is_lazyload,
