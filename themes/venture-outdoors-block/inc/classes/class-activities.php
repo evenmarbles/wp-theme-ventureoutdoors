@@ -58,8 +58,7 @@ class Activities {
         'title' => get_the_title(),
         'slug' => get_post_field( 'post_name', $type_id ),
         'permalink' => get_the_permalink(),
-//        'featured' => get_the_post_thumbnail( null, 'post-thumbnail', [ 'class' => 'imgbttn-img img-responsive objectfit' ] ),
-        'featured_url' => basename( get_the_post_thumbnail_url(), '.jpg' ),
+        'featured_public_id' => get_field( 'thumbnail' ),
         'id' => $type_id
       ];
     }

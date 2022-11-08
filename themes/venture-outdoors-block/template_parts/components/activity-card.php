@@ -9,9 +9,11 @@ if ( empty( get_the_ID() ) ) {
 	return null;
 }
 
+
 $cloudinary = VENTUREOUTDOORS_THEME\Inc\Cloudinary::get_instance();
 
 $activityType = implode( ',', array_map( function ( $t ) { return get_the_title( $t->ID ); }, get_field( 'activity_type' ) ) );
+$thumbnail = strtolower( get_field( 'thumbnail' ) );
 $difficulty = str_replace( ' ', '-', strtolower( get_field( 'difficulty_level' ) ) );
 $solitude = str_replace( ' ', '-', strtolower( get_field( 'solitude_level' ) ) );
 ?>
@@ -24,7 +26,7 @@ $solitude = str_replace( ' ', '-', strtolower( get_field( 'solitude_level' ) ) )
       </div>
     <?php } ?>
     <div class="sngl-activity-similar-item-img">
-      <?php echo get_the_post_thumbnail( get_the_ID(), 'post-thumbnail', [ 'class' => 'objectfit img-responsive' ] ); ?>
+      <?php echo $cloudinary->get_image_tag( 'activities-thumb/'. $thumbnail, 'objectfit img-responsive', 'auto', true, false, false ); ?>
     </div>
     <div class="sngl-activity-similar-item-cont">
       <div class="sngl-activity-duration"><?php the_field( 'duration' ); ?></div>
