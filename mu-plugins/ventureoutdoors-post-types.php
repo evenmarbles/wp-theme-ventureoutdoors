@@ -4,7 +4,7 @@ function ventureoutdoors_post_types() {
   // Activity Type post type
   register_post_type('activity-type', array(
     'show_in_rest' => true,
-    'supports' => array('page-attributes','title', 'editor'),
+    'supports' => array('page-attributes','title', 'editor', 'thumbnail'),
     'rewrite' => array('slug' => 'activity-types'),
     'has_archive' => true,
     'hierarchical' => true,
@@ -22,7 +22,7 @@ function ventureoutdoors_post_types() {
   // Activity post type
   register_post_type('activity', array(
     'show_in_rest' => true,
-    'supports' => array('page-attributes','title', 'editor', 'excerpt'),
+    'supports' => array('page-attributes','title', 'editor', 'excerpt', 'thumbnail'),
     'rewrite' => array('slug' => 'activities'),
     'has_archive' => true,
     'hierarchical' => true,
