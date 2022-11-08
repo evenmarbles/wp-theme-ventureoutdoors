@@ -13,7 +13,7 @@
       
       $cloudinary = VENTUREOUTDOORS_THEME\Inc\Cloudinary::get_instance();
 
-      echo $cloudinary->get_image_tag( $public_id, 'masthead-img img-responsive', 'auto', false ); 
+      echo $cloudinary->get_image_tag( $public_id, 'masthead-img img-responsive', 'auto', false, true, false ); 
     ?>
   </div>
 </header>

@@ -45,10 +45,10 @@ class Assets {
 		 */
 		add_action( 'wp_enqueue_scripts', [ $this, 'register_styles' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'register_scripts' ] );
+		// add_action( 'wp_head', [ $this, 'hook_css'] );
 
-		if ( !is_admin() ) {
-			add_filter( 'clean_url', [ $this, 'defer_parsing_of_js' ], 11, 1 );
-		}
+		add_filter( 'clean_url', [ $this, 'defer_parsing_of_js' ], 11, 1 );
+		//add_filter( 'style_loader_tag', [ $this, 'add_rel_preload'], 10, 4 );
 		
 		/**
 		 * The 'enqueue_block_assets' hook includes styles and scripts both in editor and frontend,
@@ -214,8 +214,24 @@ class Assets {
 	}
 
 	public function defer_parsing_of_js( $url ) {
+		if ( is_admin() ) {
+			return $url;
+		}
+
 		if ( false === strpos( $url, '.js' ) ) return $url;
 		if ( strpos( $url, 'jquery.js' ) ) return $url;
 		return "$url' defer ";
 	}
+
+	public function add_rel_preload( $html, $handle, $href, $media ) {
+		if ( is_admin() ) {
+			return $html;
+		}
+
+		$html = <<<EOT
+<link rel='preload' as='style' onload="this.onload=null;this.rel='stylesheet'" id='$handle' href='$href' type='text/css' media='all' />
+EOT;
+    return $html;
+	}
+
 }

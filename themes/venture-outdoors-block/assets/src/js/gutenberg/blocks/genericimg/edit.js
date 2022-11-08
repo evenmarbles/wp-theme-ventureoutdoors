@@ -7,7 +7,7 @@ import { useBlockProps, BlockIcon, BlockControls, InspectorControls } from "@wor
 import Cloudinary from '../../api/image'
   
 const Edit = ( { className, attributes, setAttributes, clientId } ) => {
-  const { src, sizes, isHeight100, isWidth100, imageSizes, is_lazyload, is_responsive, is_placeholder } = attributes
+  const { src, customHeight, customWidth, is_lazyload, is_responsive, is_placeholder } = attributes
   const isSourceAvailable = typeof src !== "undefined";
   const blockProps = useBlockProps();
   
@@ -59,35 +59,6 @@ const Edit = ( { className, attributes, setAttributes, clientId } ) => {
       <InspectorControls>
         <PanelBody title={ __('Image Settings', 'ventureoutdoors' ) } initialOpen={ true }>
           <PanelRow>
-            <TextControl 
-              label={ __( 'Custom `sizes` definition', 'ventureoutdoors' ) }
-              value={ sizes } 
-              onChange={ ( sizes ) => setAttributes({ sizes }) } 
-            />
-          </PanelRow>
-          <PanelRow>
-            <CheckboxControl
-              label={ __( 'height=100%', 'ventureoutdoors' ) }
-              checked={ isHeight100 }
-              onChange={ () => { setAttributes( { isHeight100 : !isHeight100 } ) } }
-            />
-          </PanelRow>
-          <PanelRow>
-            <CheckboxControl
-              label={ __( 'width=100%', 'ventureoutdoors' ) }
-              checked={ isWidth100 }
-              onChange={ () => { setAttributes( { isWidth100 : !isWidth100 } ) } }
-            />				
-          </PanelRow>
-          <PanelRow>
-            <TextControl
-              label={ __( 'Responsive Image Sizes', 'ventureoutdoors' ) }
-              help={ __('The image download sizes, separeate sizes by comma', 'ventureoutdoors') }
-              value={ imageSizes }
-              onChange={ (imageSizes) => { setAttributes( { imageSizes } ) } }
-            />				
-          </PanelRow>
-          <PanelRow>
             <CheckboxControl
               label={ __( 'lazyload', 'ventureoutdoors' ) }
               checked={ is_lazyload }
@@ -106,6 +77,22 @@ const Edit = ( { className, attributes, setAttributes, clientId } ) => {
               label={ __( 'placeholder', 'ventureoutdoors' ) }
               checked={ is_placeholder }
               onChange={ () => { setAttributes( { is_placeholder : !is_placeholder } ) } }
+            />				
+          </PanelRow>
+          <PanelRow>
+            <TextControl
+              label={ __( 'Custom Height', 'ventureoutdoors' ) }
+              help={ __( 'Give the height with the measure apprivation', 'ventureoutdoors' ) }
+              value={ customHeight }
+              onChange={ ( customHeight ) => { setAttributes( { customHeight } ) } }
+            />
+          </PanelRow>
+          <PanelRow>
+            <TextControl
+              label={ __( 'Custom Width', 'ventureoutdoors' ) }
+              help={ __( 'Give the width with the measure apprivation', 'ventureoutdoors' ) }
+              value={ customWidth }
+              onChange={ ( customWidth ) => { setAttributes( { customWidth } ) } }
             />				
           </PanelRow>
         </PanelBody>

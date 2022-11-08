@@ -84,12 +84,14 @@ registerBlockType("vo-blocks/testimonial", {
       className: 'flush-top',
     } );
 
+    const loading = is_lazyload ? "lazy" : "eager"
+
     return (
       <>
         <RichText.Content { ...blockProps } tagName='p' value={ content } />
         <div className="testimonial-author">
           <div>— <RichText.Content tagName='span' value={ author } />
-            <img width={ width } height={ height } loading="lazy" data-public-id={ public_id } data-transformation={ newTransformation.join() } data-lazyload={ is_lazyload } data-responsive={ is_responsive } data-placeholder={ is_placeholder } alt={ alt } />
+            <div style={{ display: 'inline-block'}}><img width={ width } height={ height } loading={ loading } data-public-id={ public_id } data-transformation={ newTransformation.join() } data-lazyload={ is_lazyload } data-responsive={ is_responsive } data-placeholder={ is_placeholder } alt={ alt } /></div>
           </div>
         </div>
       </>

@@ -18,7 +18,7 @@ $options = $activities->get_meta_data( ...$clean_params )[ 'types' ];
               <div class="activity-slider-item side-slider-item">
                 <a href="<?php echo $item[ 'slug' ]; ?>">
                   <div class="imgbttn imgbttn-wbg">
-                    <?php echo $cloudinary->get_image_tag( $item[ 'featured_url' ], 'imgbttn-img img-responsive objectfit', 'auto', true, false ); ?>
+                    <?php echo $cloudinary->get_image_tag( $item[ 'featured_url' ], 'imgbttn-img img-responsive objectfit', 'auto', true, false, false ); ?>
                     <div class="imgbttn-overlay">
                       <div class="imgbttn-btn">
                         <span class="btn-tertiary">Explore</span>

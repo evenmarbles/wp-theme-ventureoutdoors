@@ -20,7 +20,7 @@ $solitude = str_replace( ' ', '-', strtolower( get_field( 'solitude_level' ) ) )
   <a class="sngl-activity-similar-item" href="<?php the_permalink(); ?>">
     <?php if ( get_field( 'guides_choice' ) ) { ?>
       <div class="sngl-activity-badges">
-        <?php echo $cloudinary->get_image_tag( 'background-images/guides-choice', 'badge img-responsive' ); ?>
+        <?php echo $cloudinary->get_image_tag( 'background-images/guides-choice', 'badge img-responsive', 'auto', true, false, false ); ?>
       </div>
     <?php } ?>
     <div class="sngl-activity-similar-item-img">

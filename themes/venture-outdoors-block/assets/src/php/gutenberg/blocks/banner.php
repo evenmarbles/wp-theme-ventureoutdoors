@@ -10,8 +10,8 @@ $query = $activities->get_query( ...$clean_params );
 <header id="masthead" class="banner">
   <div class="banner-logo-container">
     <?php 
-      echo $cloudinary->get_image_tag( 'venture-outdoors-base_382x200', 'logo-base', 'auto', true, false );
-      echo $cloudinary->get_image_tag( 'venture-outdoors-logo-needle_195x200', 'logo-needle', 'auto', true, false );
+      echo $cloudinary->get_image_tag( 'venture-outdoors-base_382x200', 'logo-base', 'auto', false, false );
+      echo $cloudinary->get_image_tag( 'venture-outdoors-logo-needle_195x200', 'logo-needle', 'auto', false, false );
     ?>
   </div>
   <?php echo $content; ?>

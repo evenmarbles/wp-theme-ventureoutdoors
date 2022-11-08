@@ -150,13 +150,15 @@ var CloudinaryHelper = /*#__PURE__*/function () {
 
       if (imgTag.getAttribute('data-responsive') === 'true') {
         plugins.push((0,_cloudinary_html__WEBPACK_IMPORTED_MODULE_2__.responsive)());
+      } else if (imgTag.hasAttribute('data-width')) {
+        image.resize((0,_cloudinary_url_gen_actions_resize__WEBPACK_IMPORTED_MODULE_3__.scale)().width(imgTag.getAttribute('data-width')));
+      } else if (imgTag.hasAttribute('data-height')) {
+        image.resize((0,_cloudinary_url_gen_actions_resize__WEBPACK_IMPORTED_MODULE_3__.scale)().height(imgTag.getAttribute('data-height')));
       } else {
         image.resize((0,_cloudinary_url_gen_actions_resize__WEBPACK_IMPORTED_MODULE_3__.scale)().width('auto'));
       }
 
-      if (
-      /*!isNativeLazyload() &&*/
-      imgTag.getAttribute('data-placeholder') === 'true') {
+      if (!isNativeLazyload() && imgTag.getAttribute('data-placeholder') === 'true') {
         plugins.push((0,_cloudinary_html__WEBPACK_IMPORTED_MODULE_2__.placeholder)({
           mode: 'pixelate'
         }));

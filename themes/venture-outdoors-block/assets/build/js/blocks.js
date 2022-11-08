@@ -642,25 +642,27 @@ var HoverCard = function HoverCard(props) {
   }, props.guides_choice && /*#__PURE__*/React.createElement("div", {
     className: "sngl-activity-badges"
   }, /*#__PURE__*/React.createElement("img", {
-    width: "300",
-    height: "300",
+    width: "250",
+    height: "250",
+    loading: "lazy",
     className: "badge img-responsive lazyload",
-    sizes: "(max-width: 300px) 100vw, 300px",
-    "data-src": "https://wildlandtrekking.com/content/uploads/2020/03/guideschoice-icon.png",
-    "data-srcset": "https://wildlandtrekking.com/content/uploads/2020/03/guideschoice-icon.png 300w, \r https://wildlandtrekking.com/content/uploads/2020/03/guideschoice-icon-150x150.png 150w, \r https://wildlandtrekking.com/content/uploads/2020/03/guideschoice-icon-37x37.png 37w",
-    alt: "",
-    loading: "lazy"
+    "data-public-id": "background-images/guides-choice",
+    "data-lazyload": "true",
+    "data-responsive": "false",
+    "data-placeholder": "false",
+    alt: "Guides\\' Choice"
   })), /*#__PURE__*/React.createElement("div", {
     className: "sngl-activity-similar-item-img"
   }, /*#__PURE__*/React.createElement("img", {
-    width: "890",
-    height: "500",
+    width: "546",
+    height: "302",
+    loading: "lazy",
     className: "objectfit img-responsive lazyload",
-    sizes: "(max-width: 890px) 100vw, 890px",
-    "data-src": "https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto/activities-thumb/".concat(props.thumbnail),
-    "data-srcset": "https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto,c_scale,w_890/activities-thumb/".concat(props.thumbnail, " 890w, \n          https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto,c_scale,w_300/activities-thumb/").concat(props.thumbnail, " 300w, \n          https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto,c_scale,w_853/activities-thumb/").concat(props.thumbnail, " 853w, \n          https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto,c_scale,w_768/activities-thumb/").concat(props.thumbnail, " 768w, \n          https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto,c_scale,w_49/activities-thumb/").concat(props.thumbnail, " 49w"),
-    alt: "",
-    loading: "lazy"
+    "data-public-id": "activities-thumb/".concat(props.thumbnail),
+    "data-lazyload": "true",
+    "data-responsive": "true",
+    "data-placeholder": "false",
+    alt: ""
   })), /*#__PURE__*/React.createElement("div", {
     className: "sngl-activity-similar-item-cont"
   }, /*#__PURE__*/React.createElement("div", {
@@ -674,23 +676,25 @@ var HoverCard = function HoverCard(props) {
   }, /*#__PURE__*/React.createElement("strong", null, "Difficulty:"), /*#__PURE__*/React.createElement("img", {
     width: "75",
     height: "20",
+    loading: "lazy",
     className: "sngl-activity-similar-difficulty__img lazyload",
-    sizes: "(max-width: 75px) 100vw, 75px",
-    "data-src": "https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto/icons/".concat(props.difficulty, ".png"),
-    "data-srcset": "https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto,c_scale,w_75/icons/".concat(props.difficulty, " 75w, \n            https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto,c_scale,w_49/icons/").concat(props.difficulty, " 49w"),
-    alt: "",
-    loading: "lazy"
+    "data-public-id": "icons/".concat(props.difficulty, ".png"),
+    "data-lazyload": "true",
+    "data-responsive": "false",
+    "data-placeholder": "false",
+    alt: ""
   })), props.solitude && /*#__PURE__*/React.createElement("div", {
     className: "sngl-activity-similar-difficulty"
   }, /*#__PURE__*/React.createElement("strong", null, "Solitude:"), /*#__PURE__*/React.createElement("img", {
     width: "75",
     height: "20",
+    loading: "lazy",
     className: "sngl-activity-similar-difficulty__img lazyload",
-    sizes: "(max-width: 75px) 100vw, 75px",
-    "data-src": "https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto/icons/".concat(props.solitude, ".png"),
-    "data-srcset": "https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto,c_scale,w_75/icons/".concat(props.solitude, " 75w, \n            https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto,c_scale,w_49/icons/").concat(props.solitude, " 49w"),
-    alt: "",
-    loading: "lazy"
+    "data-public-id": "icons/".concat(props.solitude, ".png"),
+    "data-lazyload": "true",
+    "data-responsive": "false",
+    "data-placeholder": "false",
+    alt: ""
   })), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("strong", null, "Highlights:"), " ", props.excerpt))));
 };
 
@@ -1092,8 +1096,15 @@ __webpack_require__.r(__webpack_exports__);
     }, /*#__PURE__*/React.createElement("div", {
       className: "banner-txt text-shadow-black"
     }, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.InnerBlocks.Content, null)), /*#__PURE__*/React.createElement("img", {
-      src: "https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto/vector-images/feather-divider.svg",
-      className: "imgdivider small hidden-xs-down"
+      width: "173",
+      height: "25",
+      loading: "eager",
+      className: "imgdivider small hidden-xs-down",
+      "data-public-id": "vector-images/feather-divider",
+      "data-height": "25",
+      "data-lazyload": "false",
+      "data-responsive": "false",
+      "data-placeholder": "false"
     }))));
   }
 });
@@ -2381,10 +2392,8 @@ var Edit = function Edit(_ref) {
       setAttributes = _ref.setAttributes,
       clientId = _ref.clientId;
   var src = attributes.src,
-      sizes = attributes.sizes,
-      isHeight100 = attributes.isHeight100,
-      isWidth100 = attributes.isWidth100,
-      imageSizes = attributes.imageSizes,
+      customHeight = attributes.customHeight,
+      customWidth = attributes.customWidth,
       is_lazyload = attributes.is_lazyload,
       is_responsive = attributes.is_responsive,
       is_placeholder = attributes.is_placeholder;
@@ -2429,40 +2438,7 @@ var Edit = function Edit(_ref) {
   }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Choose Image", "ventureoutdoors"))), /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Image Settings', 'ventureoutdoors'),
     initialOpen: true
-  }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Custom `sizes` definition', 'ventureoutdoors'),
-    value: sizes,
-    onChange: function onChange(sizes) {
-      return setAttributes({
-        sizes: sizes
-      });
-    }
-  })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.CheckboxControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('height=100%', 'ventureoutdoors'),
-    checked: isHeight100,
-    onChange: function onChange() {
-      setAttributes({
-        isHeight100: !isHeight100
-      });
-    }
-  })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.CheckboxControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('width=100%', 'ventureoutdoors'),
-    checked: isWidth100,
-    onChange: function onChange() {
-      setAttributes({
-        isWidth100: !isWidth100
-      });
-    }
-  })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Responsive Image Sizes', 'ventureoutdoors'),
-    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('The image download sizes, separeate sizes by comma', 'ventureoutdoors'),
-    value: imageSizes,
-    onChange: function onChange(imageSizes) {
-      setAttributes({
-        imageSizes: imageSizes
-      });
-    }
-  })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.CheckboxControl, {
+  }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.CheckboxControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('lazyload', 'ventureoutdoors'),
     checked: is_lazyload,
     onChange: function onChange() {
@@ -2484,6 +2460,24 @@ var Edit = function Edit(_ref) {
     onChange: function onChange() {
       setAttributes({
         is_placeholder: !is_placeholder
+      });
+    }
+  })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Custom Height', 'ventureoutdoors'),
+    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Give the height with the measure apprivation', 'ventureoutdoors'),
+    value: customHeight,
+    onChange: function onChange(customHeight) {
+      setAttributes({
+        customHeight: customHeight
+      });
+    }
+  })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Custom Width', 'ventureoutdoors'),
+    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Give the width with the measure apprivation', 'ventureoutdoors'),
+    value: customWidth,
+    onChange: function onChange(customWidth) {
+      setAttributes({
+        customWidth: customWidth
       });
     }
   })))));
@@ -2554,18 +2548,10 @@ function _extends() { _extends = Object.assign ? Object.assign.bind() : function
     version: {
       type: "number"
     },
-    sizes: {
+    customHeight: {
       type: "string"
     },
-    isHeight100: {
-      type: "boolean",
-      default: false
-    },
-    isWidth100: {
-      type: "boolean",
-      default: false
-    },
-    imageSizes: {
+    customWidth: {
       type: "string"
     },
     is_lazyload: {
@@ -2585,22 +2571,46 @@ function _extends() { _extends = Object.assign ? Object.assign.bind() : function
         context = _ref$attributes.context,
         height = _ref$attributes.height,
         width = _ref$attributes.width,
-        isHeight100 = _ref$attributes.isHeight100,
-        isWidth100 = _ref$attributes.isWidth100,
+        customHeight = _ref$attributes.customHeight,
+        customWidth = _ref$attributes.customWidth,
         is_lazyload = _ref$attributes.is_lazyload,
         is_responsive = _ref$attributes.is_responsive,
         is_placeholder = _ref$attributes.is_placeholder;
     var alt = context ? context.alt : '';
-    width = isWidth100 ? "100%" : width;
-    height = isHeight100 ? "100%" : height;
     var blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useBlockProps.save();
+    var thisHeight = height.toString();
+    var thisWidth = width.toString();
+
+    if (customHeight) {
+      var heightParts = customHeight.split(/([0-9]+)/).filter(Boolean);
+
+      if (heightParts[1] === '%') {
+        thisHeight = customHeight;
+        customHeight = '';
+      }
+    }
+
+    if (customWidth) {
+      var widthParts = customWidth.split(/([0-9]+)/).filter(Boolean);
+
+      if (widthParts[1] == '%') {
+        thisWidth = customWidth;
+        customWidth = '';
+      }
+    }
+
     return /*#__PURE__*/React.createElement("img", _extends({
-      width: width,
-      height: height
+      width: thisWidth,
+      height: thisHeight
     }, is_lazyload && {
       loading: "lazy"
     }, blockProps, {
-      "data-public-id": public_id,
+      "data-public-id": public_id
+    }, customWidth && {
+      'data-width': customWidth
+    }, customHeight && {
+      'data-height': customHeight
+    }, {
       "data-lazyload": is_lazyload,
       "data-responsive": is_responsive,
       "data-placeholder": is_placeholder,
@@ -5947,6 +5957,7 @@ function _extends() { _extends = Object.assign ? Object.assign.bind() : function
     var blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useBlockProps.save({
       className: 'flush-top'
     });
+    var loading = is_lazyload ? "lazy" : "eager";
     return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.RichText.Content, _extends({}, blockProps, {
       tagName: "p",
       value: content
@@ -5955,17 +5966,21 @@ function _extends() { _extends = Object.assign ? Object.assign.bind() : function
     }, /*#__PURE__*/React.createElement("div", null, "\u2014 ", /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.RichText.Content, {
       tagName: "span",
       value: author
-    }), /*#__PURE__*/React.createElement("img", {
+    }), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: 'inline-block'
+      }
+    }, /*#__PURE__*/React.createElement("img", {
       width: width,
       height: height,
-      loading: "lazy",
+      loading: loading,
       "data-public-id": public_id,
       "data-transformation": newTransformation.join(),
       "data-lazyload": is_lazyload,
       "data-responsive": is_responsive,
       "data-placeholder": is_placeholder,
       alt: alt
-    }))));
+    })))));
   }
 });
 

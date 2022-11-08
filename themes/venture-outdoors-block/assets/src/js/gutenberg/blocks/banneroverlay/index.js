@@ -45,7 +45,7 @@ registerBlockType("vo-blocks/banneroverlay", {
             <div className="banner-txt text-shadow-black">
               <InnerBlocks.Content />
             </div>
-            <img src="https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto/vector-images/feather-divider.svg" className="imgdivider small hidden-xs-down" />
+            <img width="173" height="25" loading="eager" className="imgdivider small hidden-xs-down" data-public-id="vector-images/feather-divider" data-height="25" data-lazyload="false" data-responsive="false" data-placeholder="false" />
           </div>
         </div>
       </>

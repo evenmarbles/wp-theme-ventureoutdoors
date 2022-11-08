@@ -30,10 +30,8 @@ registerBlockType("vo-blocks/genericimg", {
     height: { type: "number" },
     width: { type: "number" },
     version: { type: "number" },
-    sizes: { type: "string" },
-    isHeight100: { type: "boolean", default: false },
-    isWidth100: { type: "boolean", default: false },
-    imageSizes: { type: "string" },
+    customHeight: { type: "string" },
+    customWidth: { type: "string" },
     is_lazyload: { type: "boolean" },
     is_responsive: { type: "boolean" },
     is_placeholder: { type: "boolean" }
@@ -41,16 +39,32 @@ registerBlockType("vo-blocks/genericimg", {
 
   edit: Edit,
 
-  save( { attributes: { public_id, context, height, width, isHeight100, isWidth100, is_lazyload, is_responsive, is_placeholder } } ) {
-    let alt = context ? context.alt : '';
-
-    width = isWidth100 ? "100%" : width;
-    height = isHeight100 ? "100%" : height;
+  save( { attributes: { public_id, context, height, width, customHeight, customWidth, is_lazyload, is_responsive, is_placeholder } } ) {
+    let alt = context ? context.alt : ''
 
     const blockProps = useBlockProps.save();
 
+    var thisHeight = height.toString()
+    var thisWidth = width.toString()
+
+    if ( customHeight ) {
+      var heightParts = customHeight.split(/([0-9]+)/).filter(Boolean)
+      if ( heightParts[1] === '%' ) {
+        thisHeight = customHeight
+        customHeight = ''
+      }
+    }
+    if ( customWidth ) {
+      var widthParts = customWidth.split(/([0-9]+)/).filter(Boolean)
+      if ( widthParts[1] == '%' ) {
+        thisWidth = customWidth
+        customWidth = ''
+      }
+    }
+
+
     return (
-      <img width={ width } height={ height } { ...( is_lazyload && { loading: "lazy" } ) } { ...blockProps } data-public-id={ public_id } data-lazyload={ is_lazyload } data-responsive={ is_responsive } data-placeholder={ is_placeholder } alt={ alt } />
+      <img width={ thisWidth } height={ thisHeight } { ...( is_lazyload && { loading: "lazy" } ) } { ...blockProps } data-public-id={ public_id } { ...( customWidth && {'data-width': customWidth }) } { ...( customHeight && {'data-height': customHeight }) } data-lazyload={ is_lazyload } data-responsive={ is_responsive } data-placeholder={ is_placeholder } alt={ alt } />
     )
   }
 })
