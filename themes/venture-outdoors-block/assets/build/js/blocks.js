@@ -989,10 +989,9 @@ __webpack_require__.r(__webpack_exports__);
     }, /*#__PURE__*/React.createElement("img", {
       width: "600",
       height: "300",
-      loading: "eager",
       "data-lazyload": "false",
       "data-responsive": "true",
-      "data-placeholder": "false",
+      "data-placeholder": "true",
       id: "randomImage"
     })), /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.InnerBlocks.Content, null));
   }

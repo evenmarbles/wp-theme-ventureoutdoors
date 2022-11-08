@@ -45,6 +45,7 @@ class Assets {
 		 */
 		add_action( 'wp_enqueue_scripts', [ $this, 'register_styles' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'register_scripts' ] );
+		add_action( 'wp_head', [ $this, 'preload_lcp' ] );
 		// add_action( 'wp_head', [ $this, 'hook_css'] );
 
 		add_filter( 'clean_url', [ $this, 'defer_parsing_of_js' ], 11, 1 );
@@ -223,6 +224,13 @@ class Assets {
 		return "$url' defer ";
 	}
 
+	public function preload_lcp() {
+		$src = 'https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto,c_scale,h_361/background-images/bg-guide-blue.png';
+		
+		/** Output the link HTML tag */
+    printf( '<link rel="preload" as="image" href="%s" %s/>', esc_url( $src ) );
+	}
+
 	public function add_rel_preload( $html, $handle, $href, $media ) {
 		if ( is_admin() ) {
 			return $html;
@@ -232,6 +240,11 @@ class Assets {
 <link rel='preload' as='style' onload="this.onload=null;this.rel='stylesheet'" id='$handle' href='$href' type='text/css' media='all' />
 EOT;
     return $html;
+	}
+
+	public function hook_css() {
+		// see: https://www.namehero.com/startup/how-to-inline-and-defer-css-on-wordpress-without-plugins/
+		// [insert critical css here]
 	}
 
 }
