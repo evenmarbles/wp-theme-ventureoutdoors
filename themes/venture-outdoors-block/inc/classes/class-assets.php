@@ -228,7 +228,7 @@ class Assets {
 		$src = 'https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto,c_scale,h_361/background-images/bg-guide-blue.png';
 		
 		/** Output the link HTML tag */
-    printf( '<link rel="preload" as="image" href="%s" %s/>', esc_url( $src ) );
+    printf( '<link rel="preload" as="image" href="%s"/>', esc_url( $src ) );
 	}
 
 	public function add_rel_preload( $html, $handle, $href, $media ) {
