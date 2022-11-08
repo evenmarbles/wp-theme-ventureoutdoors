@@ -1270,7 +1270,7 @@
   background-color: var(--wp--preset--color--anti-flash-white);
   border-radius: 25px;
   height: 24px;
-  padding: 5px 20px;
+  padding: 4px 15px;
 }
 
 .sec-review [class*=btn-] {

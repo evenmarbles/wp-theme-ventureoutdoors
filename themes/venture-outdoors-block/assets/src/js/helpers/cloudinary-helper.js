@@ -54,11 +54,15 @@ class CloudinaryHelper {
     }
     if ( imgTag.getAttribute('data-responsive') === 'true' ) {
       plugins.push( responsive() )
-    } else if ( imgTag.hasAttribute('data-width') ) {
-      image.resize(scale().width(imgTag.getAttribute('data-width')))
-    } else if ( imgTag.hasAttribute('data-height') ) {
-      image.resize(scale().height(imgTag.getAttribute('data-height')))
-    }else {
+    } else if ( imgTag.hasAttribute('data-width') || imgTag.hasAttribute('data-height') ) {
+      if ( imgTag.hasAttribute('data-width') && imgTag.hasAttribute('data-height') ) {
+        image.resize( scale().width(imgTag.getAttribute('data-width')).height(imgTag.getAttribute('data-height')) )
+      } else if ( imgTag.hasAttribute('data-width') ) {
+        image.resize(scale().width(imgTag.getAttribute('data-width')))
+      } else if ( imgTag.hasAttribute('data-height') ) {
+        image.resize(scale().height(imgTag.getAttribute('data-height')))
+      }
+    } else {
       image.resize(scale().width('auto'))
     }
     if( /*!isNativeLazyload() &&*/ imgTag.getAttribute('data-placeholder') === 'true' ) {

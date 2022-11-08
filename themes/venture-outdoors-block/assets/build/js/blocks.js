@@ -5926,6 +5926,8 @@ function _extends() { _extends = Object.assign ? Object.assign.bind() : function
         is_placeholder = _ref$attributes.is_placeholder;
     var alt = context ? context.alt : '';
     var newTransformation = [];
+    var customHeight = 0;
+    var customWidth = 0;
 
     if (transformation) {
       var transformArray = transformation.split('/');
@@ -5937,13 +5939,13 @@ function _extends() { _extends = Object.assign ? Object.assign.bind() : function
               var pos = d.search('w_');
 
               if (pos !== -1) {
-                width = parseInt(d.substring(pos + 2));
+                customWidth = parseInt(d.substring(pos + 2));
               }
 
               pos = d.search('h_');
 
               if (pos !== -1) {
-                height = parseInt(d.substring(pos + 2));
+                customHeight = parseInt(d.substring(pos + 2));
               }
             });
           } else {
@@ -5956,7 +5958,6 @@ function _extends() { _extends = Object.assign ? Object.assign.bind() : function
     var blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useBlockProps.save({
       className: 'flush-top'
     });
-    var loading = is_lazyload ? "lazy" : "eager";
     return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.RichText.Content, _extends({}, blockProps, {
       tagName: "p",
       value: content
@@ -5967,19 +5968,28 @@ function _extends() { _extends = Object.assign ? Object.assign.bind() : function
       value: author
     }), /*#__PURE__*/React.createElement("div", {
       style: {
-        display: 'inline-block'
+        display: 'inline-block',
+        height: '24px',
+        width: '113px'
       }
-    }, /*#__PURE__*/React.createElement("img", {
-      width: width,
-      height: height,
-      loading: loading,
+    }, /*#__PURE__*/React.createElement("img", _extends({
+      width: "100%",
+      height: "100%"
+    }, is_lazyload && {
+      loading: "lazy"
+    }, {
       "data-public-id": public_id,
-      "data-transformation": newTransformation.join(),
+      "data-transformation": newTransformation.join()
+    }, customWidth && {
+      'data-width': customWidth
+    }, customHeight && {
+      'data-height': customHeight
+    }, {
       "data-lazyload": is_lazyload,
       "data-responsive": is_responsive,
       "data-placeholder": is_placeholder,
       alt: alt
-    })))));
+    }))))));
   }
 });
 

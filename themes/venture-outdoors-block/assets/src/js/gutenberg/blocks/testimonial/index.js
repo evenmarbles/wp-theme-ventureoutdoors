@@ -57,6 +57,9 @@ registerBlockType("vo-blocks/testimonial", {
 
     var newTransformation = []
 
+    var customHeight = 0;
+    var customWidth = 0;
+
     if ( transformation ) {
       var transformArray = transformation.split( '/' )
       transformArray.forEach( item => {
@@ -66,11 +69,11 @@ registerBlockType("vo-blocks/testimonial", {
             dims.forEach( d => {
               var pos =  d.search( 'w_' )
               if ( pos !== -1 ) {
-                width = parseInt( d.substring( pos + 2 ) )
+                customWidth = parseInt( d.substring( pos + 2 ) )
               }
               pos =  d.search( 'h_' )
               if ( pos !== -1 ) {
-                height = parseInt( d.substring( pos + 2 ) )
+                customHeight = parseInt( d.substring( pos + 2 ) )
               }
             })
           } else {
@@ -84,14 +87,12 @@ registerBlockType("vo-blocks/testimonial", {
       className: 'flush-top',
     } );
 
-    const loading = is_lazyload ? "lazy" : "eager"
-
     return (
       <>
         <RichText.Content { ...blockProps } tagName='p' value={ content } />
         <div className="testimonial-author">
           <div>— <RichText.Content tagName='span' value={ author } />
-            <div style={{ display: 'inline-block'}}><img width={ width } height={ height } loading={ loading } data-public-id={ public_id } data-transformation={ newTransformation.join() } data-lazyload={ is_lazyload } data-responsive={ is_responsive } data-placeholder={ is_placeholder } alt={ alt } /></div>
+            <div style={{ display: 'inline-block', height: '24px', width: '113px' }}><img width="100%" height="100%" { ...( is_lazyload && { loading: "lazy" } ) } data-public-id={ public_id } data-transformation={ newTransformation.join() } { ...( customWidth && {'data-width': customWidth }) } { ...( customHeight && {'data-height': customHeight }) } data-lazyload={ is_lazyload } data-responsive={ is_responsive } data-placeholder={ is_placeholder } alt={ alt } /></div>
           </div>
         </div>
       </>
