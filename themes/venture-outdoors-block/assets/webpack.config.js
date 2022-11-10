@@ -5,8 +5,8 @@ const { CleanWebpackPlugin } = require( 'clean-webpack-plugin' );
 const TerserWebpackPlugin = require( 'terser-webpack-plugin' );
 const CopyPlugin = require('copy-webpack-plugin'); // https://webpack.js.org/plugins/copy-webpack-plugin/
 const DependencyExtractionWebpackPlugin = require( '@wordpress/dependency-extraction-webpack-plugin' );
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HtmlCriticalWebpackPlugin = require("html-critical-webpack-plugin");
+// const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const HtmlCriticalWebpackPlugin = require("html-critical-webpack-plugin");
 
 const JS_DIR = path.resolve( __dirname, 'src/js' );
 const IMG_DIR = path.resolve( __dirname, 'src/images/' );
@@ -62,35 +62,35 @@ const output = {
     combineAssets: true,
   }),
 
-  new HtmlCriticalWebpackPlugin({
-    src: 'https://venture-outdoors-classic.local/activities',
-    dest: BUILD_DIR + '/css/archive-activity-critical.css'
-  }),
+  // new HtmlCriticalWebpackPlugin({
+  //   src: 'https://venture-outdoors-classic.local/activities',
+  //   dest: BUILD_DIR + '/css/archive-activity-critical.css'
+  // }),
 
-  new HtmlCriticalWebpackPlugin({
-    src: 'https://venture-outdoors-classic.local/',
-    dest: BUILD_DIR + '/css/frontpage-critical.css'
-  }),
+  // new HtmlCriticalWebpackPlugin({
+  //   src: 'https://venture-outdoors-classic.local/',
+  //   dest: BUILD_DIR + '/css/frontpage-critical.css'
+  // }),
 
-  new HtmlCriticalWebpackPlugin({
-    src: 'https://venture-outdoors-classic.local/contact',
-    dest: BUILD_DIR + '/css/page-contact-critical.css'
-  }),
+  // new HtmlCriticalWebpackPlugin({
+  //   src: 'https://venture-outdoors-classic.local/contact',
+  //   dest: BUILD_DIR + '/css/page-contact-critical.css'
+  // }),
 
-  new HtmlCriticalWebpackPlugin({
-    src: 'https://venture-outdoors-classic.local/about',
-    dest: BUILD_DIR + '/css/page-critical.css'
-  }),
+  // new HtmlCriticalWebpackPlugin({
+  //   src: 'https://venture-outdoors-classic.local/about',
+  //   dest: BUILD_DIR + '/css/page-critical.css'
+  // }),
     
-  new HtmlCriticalWebpackPlugin({
-    src: 'https://venture-outdoors-classic.local/activity-types/day-kayak-tours/',
-    dest: BUILD_DIR + '/css/single-activity-type-critical.css'
-  }),
+  // new HtmlCriticalWebpackPlugin({
+  //   src: 'https://venture-outdoors-classic.local/activity-types/day-kayak-tours/',
+  //   dest: BUILD_DIR + '/css/single-activity-type-critical.css'
+  // }),
 
-  new HtmlCriticalWebpackPlugin({
-    src: 'https://venture-outdoors-classic.local/activities/manatee-discovery-tour/',
-    dest: BUILD_DIR + '/css/single-activity-critical.css'
-  }),
+  // new HtmlCriticalWebpackPlugin({
+  //   src: 'https://venture-outdoors-classic.local/activities/manatee-discovery-tour/',
+  //   dest: BUILD_DIR + '/css/single-activity-critical.css'
+  // }),
 
 ];
 
