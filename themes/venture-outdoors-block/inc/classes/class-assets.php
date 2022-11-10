@@ -46,7 +46,7 @@ class Assets {
 		add_action( 'wp_enqueue_scripts', [ $this, 'register_styles' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'register_scripts' ] );
 		// add_action( 'wp_head', [ $this, 'critical_css'] );
-		add_action( 'wp_head', [ $this, 'preload_lcp' ] );
+		// add_action( 'wp_head', [ $this, 'preload_lcp' ] );
 
 		add_filter( 'clean_url', [ $this, 'defer_parsing_of_js' ], 11, 1 );
 		// add_filter( 'style_loader_tag', [ $this, 'add_rel_preload'], 10, 4 );
@@ -216,7 +216,7 @@ class Assets {
 	}
 
 	public function preload_lcp() {
-		$src = 'https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto,c_scale,h_361/background-images/bg-guide-blue.png';
+		$src = 'https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto,c_scale,h_361/background-images/bg-guide-blue';
 		
 		/** Output the link HTML tag */
     printf( '<link rel="preload" fetchpriority="high" as="image" href="%s"/>', esc_url( $src ) );
@@ -279,16 +279,16 @@ class Assets {
 		return "$url' defer ";
 	}
 
-// 	public function add_rel_preload( $html, $handle, $href, $media ) {
-// 		if ( is_admin() ) {
-// 			return $html;
-// 		}
+	public function add_rel_preload( $html, $handle, $href, $media ) {
+		if ( is_admin() ) {
+			return $html;
+		}
 
-// 		$html = <<<EOT
-// <link rel='preload' as='style' onload="this.onload=null;this.rel='stylesheet'" id='$handle' href='$href' type='text/css' media='all' />
-// EOT;
-//     return $html;
-// 	}
+		$html = <<<EOT
+<link rel='preload' as='style' onload="this.onload=null;this.rel='stylesheet'" id='$handle' href='$href' type='text/css' media='all' /><noscript><link rel='stylesheet' href='$href'></noscript>
+EOT;
+    return $html;
+	}
 
 	public function defer_parsing_non_critical_css( $html, $handle, $href, $media ) {
 		if ( is_admin() ) {
