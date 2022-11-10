@@ -283,7 +283,7 @@ input[type=checkbox],
 input[type=radio] {
   cursor: pointer;
   font: inherit;
-  display: grid;
+  // display: grid;
   appearance: none;
   -webkit-appearance: none;
   background-color: var(--wp--preset--color--white);

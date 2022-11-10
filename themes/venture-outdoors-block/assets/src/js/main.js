@@ -4,7 +4,7 @@ import '../sass/main.scss'
 // Third Party packages
 import "selectric"
 
-import lazyload from './helpers/lazyload'
+// import lazyload from './helpers/lazyload'
 import Affix from "./header/affix"
 import BackToTop from './components/back-to-top'
 import Logo from "./header/logo"

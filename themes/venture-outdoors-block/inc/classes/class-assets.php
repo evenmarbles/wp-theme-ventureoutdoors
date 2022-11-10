@@ -45,12 +45,13 @@ class Assets {
 		 */
 		add_action( 'wp_enqueue_scripts', [ $this, 'register_styles' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'register_scripts' ] );
+		add_action( 'wp_head', [ $this, 'critical_css'] );
 		add_action( 'wp_head', [ $this, 'preload_lcp' ] );
-		// add_action( 'wp_head', [ $this, 'hook_css'] );
 
 		add_filter( 'clean_url', [ $this, 'defer_parsing_of_js' ], 11, 1 );
-		//add_filter( 'style_loader_tag', [ $this, 'add_rel_preload'], 10, 4 );
-		
+		// add_filter( 'style_loader_tag', [ $this, 'add_rel_preload'], 10, 4 );
+		add_filter( 'style_loader_tag', [ $this, 'defer_parsing_non_critical_css'], 10, 4 );
+
 		/**
 		 * The 'enqueue_block_assets' hook includes styles and scripts both in editor and frontend,
 		 * except when is_admin() is used to include them conditionally
@@ -214,6 +215,60 @@ class Assets {
 		);
 	}
 
+	public function preload_lcp() {
+		$src = 'https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto,c_scale,h_361/background-images/bg-guide-blue.png';
+		
+		/** Output the link HTML tag */
+    printf( '<link rel="preload" fetchpriority="high" as="image" href="%s"/>', esc_url( $src ) );
+	}
+
+	public function critical_css() {
+		// Note: https://kingdesignllc.com/blog/defining-a-critical-css-workflow-for-wordpress/
+
+		if ( is_admin() ) {
+			return;
+		}
+		
+		$styles = '';
+		$template = '';
+
+		if ( is_singular( 'activity-type' ) ) {
+			$template = 'single-activity-type';
+		}
+
+		if ( is_singular( 'activity' ) ) {
+			$template = 'single-activity';
+		}
+
+		if ( is_archive( 'activity' ) ) {
+			$template = 'achive-activity';
+		}
+
+		if ( is_page() ) {
+			$template = 'page';
+		}
+
+		if ( is_page( 'contact' ) ) {
+			$template = 'page-contact';
+		}
+
+		// if ( is_single() ) {
+		// 	wp_enqueue_script( 'single' );
+		// }
+
+		if ( is_front_page() ) {
+			$template = 'frontpage';
+		}
+
+		if ( !$template ) {
+			error_log( 'critical_css: Template does not exist.' );
+			return;
+		}
+
+		$styles .= '<style id="critical-css">' . file_get_contents( VENTUREOUTDOORS_BUILD_CSS_URI . '/' . $template . '-critical.css', FILE_USE_INCLUDE_PATH ) .'</style>';
+		echo( $styles );
+	}
+
 	public function defer_parsing_of_js( $url ) {
 		if ( is_admin() ) {
 			return $url;
@@ -224,27 +279,26 @@ class Assets {
 		return "$url' defer ";
 	}
 
-	public function preload_lcp() {
-		$src = 'https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto,c_scale,h_361/background-images/bg-guide-blue.png';
-		
-		/** Output the link HTML tag */
-    printf( '<link rel="preload" fetchpriority="high" as="image" href="%s"/>', esc_url( $src ) );
-	}
+// 	public function add_rel_preload( $html, $handle, $href, $media ) {
+// 		if ( is_admin() ) {
+// 			return $html;
+// 		}
 
-	public function add_rel_preload( $html, $handle, $href, $media ) {
+// 		$html = <<<EOT
+// <link rel='preload' as='style' onload="this.onload=null;this.rel='stylesheet'" id='$handle' href='$href' type='text/css' media='all' />
+// EOT;
+//     return $html;
+// 	}
+
+	public function defer_parsing_non_critical_css( $html, $handle, $href, $media ) {
 		if ( is_admin() ) {
 			return $html;
 		}
 
 		$html = <<<EOT
-<link rel='preload' as='style' onload="this.onload=null;this.rel='stylesheet'" id='$handle' href='$href' type='text/css' media='all' />
+<link rel='stylesheet' onload="this.media='all'" id='$handle' href='$href' media='print' /><noscript><link rel='stylesheet' href='$href'></noscript>
 EOT;
     return $html;
-	}
-
-	public function hook_css() {
-		// see: https://www.namehero.com/startup/how-to-inline-and-defer-css-on-wordpress-without-plugins/
-		// [insert critical css here]
 	}
 
 }

@@ -43,6 +43,9 @@ plugins/*
 *.tar
 *.zip
 
+# Ignore LICENSE.txt
+*.LICENSE.txt
+
 # Ignore node dependency directories
 node_modules/
 

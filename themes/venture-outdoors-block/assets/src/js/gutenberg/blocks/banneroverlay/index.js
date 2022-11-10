@@ -45,7 +45,7 @@ registerBlockType("vo-blocks/banneroverlay", {
             <div className="banner-txt text-shadow-black">
               <InnerBlocks.Content />
             </div>
-            <img width="173" height="25" loading="eager" className="imgdivider small hidden-xs-down" data-public-id="vector-images/feather-divider" data-height="25" data-lazyload="false" data-responsive="false" data-placeholder="false" />
+            <img width="173" height="25" loading="lazy" className="imgdivider small hidden-xs-down" data-public-id="vector-images/feather-divider" data-height="25" data-lazyload="true" data-responsive="false" data-placeholder="false" />
           </div>
         </div>
       </>
