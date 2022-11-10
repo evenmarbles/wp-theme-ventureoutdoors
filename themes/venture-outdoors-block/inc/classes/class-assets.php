@@ -49,7 +49,7 @@ class Assets {
 		add_action( 'wp_head', [ $this, 'preload_lcp' ] );
 
 		add_filter( 'clean_url', [ $this, 'defer_parsing_of_js' ], 11, 1 );
-		// add_filter( 'style_loader_tag', [ $this, 'add_rel_preload'], 10, 4 );
+		add_filter( 'style_loader_tag', [ $this, 'add_rel_preload'], 10, 4 );
 		// add_filter( 'style_loader_tag', [ $this, 'defer_parsing_non_critical_css'], 10, 4 );
 
 		/**
