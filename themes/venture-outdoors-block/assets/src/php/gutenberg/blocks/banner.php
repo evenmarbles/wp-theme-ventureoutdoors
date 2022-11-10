@@ -16,7 +16,6 @@ $query = $activities->get_query( ...$clean_params );
   </div>
   <?php echo $content; ?>
   <div class="banner-form">
-    <img fetchpriority="high" style="display: none;" src="https://res.cloudinary.com/ventureoutdoors/image/upload/q_auto,f_auto,c_scale,h_361/background-images/bg-guide-blue" alt="">
     <div class="banner-form__content">
       <h2 class="h4 flush-top">Find Your Ideal Outdoor Activity</h2>
       <div class="row">

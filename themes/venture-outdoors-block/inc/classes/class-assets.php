@@ -46,7 +46,7 @@ class Assets {
 		add_action( 'wp_enqueue_scripts', [ $this, 'register_styles' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'register_scripts' ] );
 		// add_action( 'wp_head', [ $this, 'critical_css'] );
-		// add_action( 'wp_head', [ $this, 'preload_lcp' ] );
+		add_action( 'wp_head', [ $this, 'preload_lcp' ] );
 
 		add_filter( 'clean_url', [ $this, 'defer_parsing_of_js' ], 11, 1 );
 		// add_filter( 'style_loader_tag', [ $this, 'add_rel_preload'], 10, 4 );
