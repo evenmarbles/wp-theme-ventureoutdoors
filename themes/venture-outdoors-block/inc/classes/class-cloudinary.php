@@ -67,7 +67,11 @@ class Cloudinary {
 	}
 
 	public function get_image_tag( $publicId, $class, $width='auto', $lazyload=true, $responsive=true, $placeholder=true ) {
-		$admin = new AdminApi();
+		try {
+			$admin = new AdminApi();
+		} catch ( Exception $e ) {
+			echo 'Caught exception: ',  $e->getMessage(), "\n";
+		}
 		$details = $admin->asset( $publicId );
 
 		// $details = [
@@ -84,8 +88,8 @@ class Cloudinary {
 		       isset($details[ 'context' ][ 'custom' ]) && isset($details[ 'context' ][ 'custom' ][ 'alt' ]) ? $details[ 'context' ][ 'custom' ][ 'alt' ] : '';
 		$alt = '"' . htmlspecialchars($alt) . '"';
 
-		$width = $width === 'auto' ? $details[ 'width' ] : $width;
-		$height = $details[ 'height' ];
+		$width = $width === 'auto' ? isset( $details[ 'width' ] ) : $width;
+		$height = isset( $details[ 'height' ] );
 
 		$imageTag = "<img width='$width' height='$height'";
 

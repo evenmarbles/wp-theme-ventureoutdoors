@@ -48,7 +48,7 @@ class Assets {
 		// add_action( 'wp_head', [ $this, 'critical_css'] );
 		add_action( 'wp_head', [ $this, 'preload_lcp' ] );
 
-		add_filter( 'clean_url', [ $this, 'defer_parsing_of_js' ], 11, 1 );
+		// add_filter( 'clean_url', [ $this, 'defer_parsing_of_js' ], 11, 1 );
 		add_filter( 'style_loader_tag', [ $this, 'add_rel_preload'], 10, 4 );
 		// add_filter( 'style_loader_tag', [ $this, 'defer_parsing_non_critical_css'], 10, 4 );
 
@@ -276,7 +276,7 @@ class Assets {
 
 		if ( false === strpos( $url, '.js' ) ) return $url;
 		if ( strpos( $url, 'jquery.js' ) ) return $url;
-		return "$url' defer ";
+		return "$url defer";
 	}
 
 	public function add_rel_preload( $html, $handle, $href, $media ) {
