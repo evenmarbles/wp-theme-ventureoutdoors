@@ -177,8 +177,14 @@ class VENTUREOUTDOORS_THEME {
 		 * @see https://developer.wordpress.org/block-editor/developers/themes/theme-support/#editor-styles
 		 */
 		add_theme_support( 'editor-styles' );
+
 		/**
+		 * Add Excerpts to Pages.
 		 *
+		 */
+		add_post_type_support( 'page', 'excerpt' );
+
+		/**
 		 * Path to our custom editor style.
 		 * It allows you to link a custom stylesheet file to the TinyMCE editor within the post edit screen.
 		 *
