@@ -4,7 +4,7 @@ function ventureoutdoors_post_types() {
   // Activity Type post type
   register_post_type('activity-type', array(
     'show_in_rest' => true,
-    'supports' => array('page-attributes','title', 'editor'),
+    'supports' => array('page-attributes','title', 'editor', 'excerpt'),
     'rewrite' => array('slug' => 'activity-types'),
     'has_archive' => true,
     'hierarchical' => true,
